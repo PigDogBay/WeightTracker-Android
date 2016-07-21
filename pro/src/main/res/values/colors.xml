@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="skyblue">#00145E9D</color>
+    <color name="pink">#fffdd7e4</color>
+    <color name="fb_blue">#3b5998</color>
+    <color name="blue">#00F</color>
+    <color name="grey">#444</color>
+    <color name="translucentred">#40FF0000</color>
+    <color name="report_header_bg">#FF101050</color>
+    <color name="report_header">#FFFFFFFF</color>
+    <color name="report_field_title_bg">#30bbbbbb</color>
+    <color name="report_field_title">#FF000000</color>
+    <color name="report_field_value_bg">#50ffffff</color>
+    <color name="report_field_value">#ff000000</color>
+    <drawable name="skyblue">#40145E9D</drawable>
+    <drawable name="translucentred">#40FF0000</drawable>
+    <drawable name="white">#ffffffff</drawable>
+    <drawable name="blue">#00f</drawable>
+    <drawable name="light_blue">#88f</drawable>    
+    <drawable name="light_grey">#888</drawable>     
+    <drawable name="dark_blue">#008</drawable>     
+    <drawable name="fb_blue">#3b5998</drawable>
+</resources>

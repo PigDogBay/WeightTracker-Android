@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/ReportHeader"
+            android:text="@string/report_body_mass_index" />
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:layout_weight="3"
+                android:text="@string/report_latest" />
+
+            <TextView
+                android:id="@+id/ReportTextViewLatestBMI"
+                style="@style/ReportFieldValue"
+                android:layout_weight="5"
+                android:text="27.1 (Overweight)" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_average_bmi" />
+
+            <TextView
+                android:id="@+id/ReportTextViewAverageBMI"
+                style="@style/ReportFieldValue"
+                android:text="26.2" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_goal" />
+
+            <TextView
+                android:id="@+id/ReportTextViewGoalBMI"
+                style="@style/ReportFieldValue"
+                android:text="25.2 (Overweight)" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_ideal_weight" />
+
+            <TextView
+                android:id="@+id/ReportTextViewIdealRange"
+                style="@style/ReportFieldValue"
+                android:text="58.5 to 74.3 kg" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/ReportHeader"
+            android:text="@string/report_trends" />
+
+        <TextView
+            style="@style/ReportSubHeader"
+            android:text="@string/report_last_7_days" />
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendWeekTitle"
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_losing" />
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendWeekValue"
+                style="@style/ReportFieldValue"
+                android:text="0.3 kg per week" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_goal_date" />
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendWeekGoalDate"
+                style="@style/ReportFieldValue"
+                android:text="16th Aug 2013" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/ReportSubHeader"
+            android:text="@string/report_last_30_days" />
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendMonthTitle"
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_losing" />
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendMonthValue"
+                style="@style/ReportFieldValue"
+                android:text="0.3 kg per week" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_goal_date" />
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendMonthGoalDate"
+                style="@style/ReportFieldValue"
+                android:text="16th Aug 2013" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/ReportSubHeader"
+            android:text="@string/report_all_time" />
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendAllTitle"
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_losing" />
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendAllValue"
+                style="@style/ReportFieldValue"
+                android:text="0.3 kg per week" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_goal_date" />
+
+            <TextView
+                android:id="@+id/ReportTextViewTrendAllGoalDate"
+                style="@style/ReportFieldValue"
+                android:text="16th Aug 2013" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/ReportHeader"
+            android:text="@string/report_weight" />
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_average_weight" />
+
+            <TextView
+                android:id="@+id/ReportTextViewAverageWeight"
+                style="@style/ReportFieldValue"
+                android:text="73.0 kg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_min_weight" />
+
+            <TextView
+                android:id="@+id/ReportTextViewMinWeight"
+                style="@style/ReportFieldValue"
+                android:text="72.1 kg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_max_weight" />
+
+            <TextView
+                android:id="@+id/ReportTextViewMaxWeight"
+                style="@style/ReportFieldValue"
+                android:text="77.5 kg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_max_minus_min_weight" />
+
+            <TextView
+                android:id="@+id/ReportTextViewMaxMinusMinWeight"
+                style="@style/ReportFieldValue"
+                android:text="5.2 kg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_first_weight" />
+
+            <TextView
+                android:id="@+id/ReportTextViewFirstWeight"
+                style="@style/ReportFieldValue"
+                android:text="72.1 kg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_last_weight" />
+
+            <TextView
+                android:id="@+id/ReportTextViewLastWeight"
+                style="@style/ReportFieldValue"
+                android:text="77.5 kg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_first_minus_last_weight" />
+
+            <TextView
+                android:id="@+id/ReportTextViewFirstMinusLastWeight"
+                style="@style/ReportFieldValue"
+                android:text="5.2 kg" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/ReportHeader"
+            android:text="@string/report_stats" />
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_number_of_readings" />
+
+            <TextView
+                android:id="@+id/ReportTextViewCount"
+                style="@style/ReportFieldValue"
+                android:text="136" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_first_date" />
+
+            <TextView
+                android:id="@+id/ReportTextViewFirstDate"
+                style="@style/ReportFieldValue"
+                android:text="25th Dec 2013" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_last_date" />
+
+            <TextView
+                android:id="@+id/ReportTextViewLastDate"
+                style="@style/ReportFieldValue"
+                android:text="25th Dec 2014" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:text="@string/report_time_spent" />
+
+            <TextView
+                android:id="@+id/ReportTextViewTimeSpent"
+                style="@style/ReportFieldValue"
+                android:text="365 days" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

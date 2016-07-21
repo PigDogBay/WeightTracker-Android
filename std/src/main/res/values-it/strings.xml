@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="backup_readings_error">Errore durante il Backup</string>
+    <string name="about_header_info">INFO</string>
+    <string name="about_header_feedback">FEEDBACK</string>
+    <string name="about_body_feedback">Vota questa app per incrementarne lo sviluppo, il tuo parere è molto gradito. Prova le altre nostre Apps su Google Play.</string>
+    <string name="about_button_rate">VOTA QUESTA APP</string>
+    <string name="about_button_facebook">ALTRE APPS</string>
+    <string name="about_button_legal">Notizie legali</string>
+    <string name="about_no_market_app">Non e\' possibile trovare il market app</string>    
+    <string name="menu_settings">Impostazioni</string>
+    <string name="title_main">Weight Tracker</string>
+    <string name="title_chart">Grafico</string>
+    <string name="title_list">Pesate</string>
+    <string name="title_new">Nuovo peso</string>
+    <string name="title_edit">Modifica peso</string>
+    <string name="title_import">Importa pesate</string>
+    <string name="title_report">Report</string>
+    <string name="title_about">A proposito di Weight Tracker</string>
+    <string name="title_help">Guida</string>
+    <string name="title_settings">Impostazioni</string>
+    <string name="title_welcome">Benvenuto</string>
+    <string name="chart_notenoughdata_title">Pesate insufficenti</string>
+    <string name="chart_notenoughdata_message">Hai fatto meno di 3 pesate, per questo il grafico mostra solo un esempio. </string>
+    <string name="chart_xaxis_title">Data</string>
+    <string name="chart_yaxis_title">Peso</string>
+    <string name="chart_share_chooser_title">Condividi il grafico</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancella</string>
+    <string name="main_btn_enter">Inserisci</string>
+    <string name="main_btn_edit">Modifica</string>
+    <string name="main_btn_chart">Grafico</string>
+    <string name="main_btn_report">Report</string>
+    <string name="main_btn_settings">Opzioni</string>
+    <string name="main_btn_shop">Shop</string>
+    <string name="main_btn_help">Aiuto</string>
+    <string name="edit_weight_hint">Digita peso</string>
+    <string name="edit_comment_hint">Scrivi commento</string>
+    <string name="edit_weight_error">Digita il peso</string>
+    <string name="edit_no_speech">Il tuo smartphone non supporta la funzione da voce a testo</string>
+    <string name="edit_speak_prompt_weight">Pronuncia il peso</string>
+    <string name="edit_speak_prompt_comment">Pronuncia il commento</string>
+    <string name="addreading_stay_on_the_screen">Se devi introdurre piu pesate</string>
+    <string name="addreading_tip">Per definire il peso usare i pulsanti +/- oppure pigia il pulsante centrale.Ora pigia il pulsante Aggiungi per memorizzate la tua pesata</string>
+    <string name="addreading_added">Pesata aggiunta</string>
+    <string name="addreading_add_btn">Aggiungi</string>
+    <string name="addreading_reached_goal_title">Congratulazioni!</string>
+    <string name="addreading_reached_goal_message">Hai raggiunto il tuo peso desiderao. Vai nelle impostazioni per definire un altro obiettivo.</string>
+    <string name="editreading_updated">Pesata aggiornata</string>
+    <string name="editreading_deleted">Pesata eliminata</string>
+    <string name="editreading_update_btn">Aggiorna</string>
+    <string name="editreading_delete_btn">Elimina</string>
+    <string name="editreading_delete_dialog_title">Conferma</string>
+    <string name="editreading_delete_dialog_message">Sei sicuro di voler eliminare tutte le pesate?</string>
+    <string name="menu_main_help">Guida</string>
+    <string name="menu_main_about">A proposito</string>
+    <string name="menu_main_welcome">Mostra il benvenuto</string>
+    <string name="menu_chart_all">Mostra tutto</string>
+    <string name="menu_chart_share">Condividi</string>
+    <string name="menu_chart_30">30 Giorni</string>
+    <string name="menu_chart_60">60 Giorni</string>
+    <string name="menu_chart_90">90 Giorni</string>
+    <string name="menu_chart_year">Un anno</string>
+    <string name="menu_readings_list_import">Importa pesate</string>
+    <string name="menu_readings_list_export">Condividi pesate</string>
+    <string name="menu_readings_list_delete_all">Elimina tutto</string>
+    <string name="menu_report_export">Condividi</string>
+    <string name="bmi_class_severely_underweight">Gravemente sottopeso</string>
+    <string name="bmi_class_underweight">Sottopeso</string>
+    <string name="bmi_class_normal">Normale</string>
+    <string name="bmi_class_overweight">Sovrapeso</string>
+    <string name="bmi_class_obese1">Obeso Classe I</string>
+    <string name="bmi_class_obese2">Obeso Classe II</string>
+    <string name="bmi_class_obese3">Obeso Classe III</string>
+    <string name="bmi_error">Controlla le impostazioni dell\'altezza</string>
+    <string name="readings_bmi_prefix">BMI</string>
+    <string name="readings_no_readings_export">Non ci sono pesate da esportare</string>
+    <string name="readings_export_error">Non e\' possibile esportare le pesate</string>
+    <string name="readings_share_chooser_title">Condividi le pesate</string>
+    <string name="readings_no_readings_dialog_title">Nessuna pesata</string>
+    <string name="readings_no_readings_dialog_msg">Non ci sono pesate da mostrare.Se vuoi importare delle pesate pigia il pulsante Importa pesate nel menu.</string>
+    <string name="report_notenoughdata_title">Pesate insufficenti</string>
+    <string name="report_notenoughdata_message">Non hai pesate,per queso il grafico mostrera\' solo un esempio.</string>
+    <string name="report_share_chooser_title">Condividi report</string>
+    <string name="report_email_subject">Weight Tracker Report</string>
+    <string name="report_per_no_readings">Non ci sono pesate disponibili</string>
+    <string name="report_per_week">per settimana</string>
+    <string name="report_body_mass_index">Indice Massa corporea (BMI)</string>
+    <string name="report_latest">Ultimo</string>
+    <string name="report_goal">Obiettivo</string>
+    <string name="report_ideal_weight">Peso ideale</string>
+    <string name="report_trends">Andamento</string>
+    <string name="report_last_7_days">Ultimi 7 giorni</string>
+    <string name="report_losing">Persi</string>
+    <string name="report_gaining">Acquistati</string>
+    <string name="report_goal_date">Data dell\'obiettivo</string>
+    <string name="report_last_30_days">Ultimi 30 giorni</string>
+    <string name="report_all_time">Totale</string>
+    <string name="report_weight">Peso</string>
+    <string name="report_stats">Periodo</string>
+    <string name="report_min_weight">Min</string>
+    <string name="report_max_weight">Max</string>
+    <string name="report_max_minus_min_weight">Max - Min</string>
+    <string name="report_first_weight">Primo</string>
+    <string name="report_last_weight">Ultimo</string>
+    <string name="report_first_minus_last_weight">Primo - Ultimo</string>
+    <string name="report_average_weight">Media</string>
+    <string name="report_average_bmi">Media BMI</string>
+    <string name="report_first_date">Data d\'inizio</string>
+    <string name="report_last_date">Ultima data</string>
+    <string name="report_time_spent">Periodo</string>
+    <string name="report_days">giorni</string>
+    <string name="report_number_of_readings">Numero di pesate</string>
+    <string name="settings_purchase_color_pack_title">E\' richiesto l\'acquisto</string>
+    <string name="settings_purchase_color_pack_message">Acquista il pacchetto per il colore nello Shop per poter cambiare lo sfondo.</string>
+    <string name="import_import_button">Importa</string>
+    <string name="import_load_backup_button">Ripristina un Backup delle pesate</string>
+    <string name="import_no_backup_file">Non ci sono backup disponibili</string>
+    <string name="import_error_loading_backup_file">Errore nel caricamento di un backup</string>
+    <string name="import_hint">Incolla qui le pesate</string>
+    <string name="import_no_text">Niente da importare</string>
+    <string name="import_readings_added">\u0020Pesate aggiunte</string>
+    <string name="import_dialog_title">Aiuto per l\'Import</string>
+    <string name="import_dialog_message">
+        Pigia il pulsante Ripristina un Backup per caricare l\'ultimo backup disponibile delle pesate.
+        \n\nPigia il pulsante Importa pesate per aggiungere delle pesate a quelle eventualmente presenti nell\'app.
+        \n\nGuarda la schermata di aiuto per altre info.</string>
+    <string name="help_html">
+        <![CDATA[
+		<b>Introduzione</b><br/><br/>
+        Digita il tuo peso ogni giorno, usa il grafico per vedere come procede la tua dieta.
+        <br/><br/><b>Impostazioni</b><br/><br/>
+        Fai scorrere il dito sulle schede delle Opzioni per selezionare:
+        <br/><br/><i>Peso</i><br/><br/>
+        Imposta l\'unita\' di misura: per esempio pounds o chilogrammi.
+        <br/>Imposta il peso che vuoi raggiungere, questo sara\' usato nel grafico e nel report.
+        <br/><br/><i>Altezza</i><br/><br/>
+        La tua altezza è necessaria per calcolare l\'indice della massa corporea (BMI) mostrato nel Report. 
+        <br/>Prima imposta l\'unita\' di misura e poi la tua altezza.
+        <br/><br/><i>Colore di sfondo</i><br/><br/>
+        Personalizza l\'app per scegliere uno sfondo.
+        <br/><br/><i>Altro</i><br/><br/>
+        L\'app eseguira\' automaticamente il backup delle pesate ogni settimana, puoi modificare questa opzione qui.
+        <br/>Il grafico visualizza la linea di tendenza dei tuoi dati e il tuo obiettivo di peso, è possibile moficare questa opzione qui.  
+        <br/><br/><b>Nuovo</b><br/><br/>
+        Inserisci qui ogni giorno le nuove pesate, la data sarà già impostata e si può anche aggiungere commenti. Si possono inserire pesate anche nel passato
+        <br/><br/>Puoi inserire qui il tuo peso. È inoltre possibile utilizzare i pulsanti / - per regolare il peso.
+        <br/><br/><b>Modifica</b><br/><br/>
+        Le tue letture sono tutti visualizzate in un elenco. Premere una pesata per modificarla o eliminarla.
+        <br/><br/>Condividi le tue letture con altre applicazioni come Google Drive e Evernote premendo il tasto menu Condividi.
+        <br/><br/>Importa delle pesate nell\'app cliccando il pulsante Importa pesate.
+        <br/><br/><b>Grafico</b><br/><br/>
+        Il grafico mostra come varia il peso nel tempo. si puo\' ingrandire usando lo schermo o i relativi pulsanti.
+        <br/><br/>Il tuo peso obiettivo è mostrato come una linea orizzontale blu,la tua tendenza del peso viene visualizzata come una linea retta rossa:  laddove le 2 rette si intersecano è il punto in cui hai raggiunto il tuo peso obiettivo.
+		<br/><br/>Premere il menu per un elenco di opzioni per modificare la visuale. È possibile visualizzare gli ultimi 30, 60, 90 giorni e 1 anno dalla data corrente, premere Tutto tUTTO bene per tutti per visualizzazione completa.         
+        <br/><br/>Condividi il grafico con altre apps come Facebook e Twitter cliccando su pulsante Condividi.
+        <br/><br/><b>Report</b><br/><br/>
+        Visualizza i tuoi ultimi BMI, peso statistiche e tendenze. Condividi il tuo report con altre applicazioni come Gmail premendo il menu Condividi. Il report è diviso in 3 sezioni:
+        <br/><br/><i>Indice Massa Corporea (BMI)</i><br/><br/>
+        Mostra il tuo ultimo Indice di massa corporea sulla base di l\'ultima lettura del peso e la tua. L\'obiettivo BMI si basa sul vostro peso obiettivo. Peso ideale si basa sulla tua altezza, vedere Impostazioni di peso nominale e le impostazioni di altezza.
+        <br/><br/><i>Andamento</i><br/><br/>
+        Mostra quanto peso si sta perdendo o guadagnando sulla base delle pesate dell\'ultima settimana, mese e complessivamente. Il report calcola quando si raggiunge il peso di destinazione (Data obiettivo) in base alle tue tendenza di perdita di peso
+        <br/><br/><i>Statistica</i><br/><br/>
+        Mostra il peso minimo, medio e massimo in realazione alle tue pesate.Il Coefficente massa corporea (BMI) medio è basato sul peso medio e l\'altezza.
+        <br/><br/><b>Argomenti avanzati</b><br/><br/>
+        È possibile importare ed esportare i dati tramite il menu sullo schermo Modifica. I dati vengono presentati come testo con una virgola come separatore campi(CSV) per la compatibilità con i fogli elettronici. 
+		<br/><br/>Ogni settimana l\'applicazione eseguirà il backup del database nella cartella download sulla scheda SD. Tramite l\'utilizzo di un app visualizzatore di file come ad esempio ASTROFile Manager è possibile accedere alla cartella download e aprire i file direttamente in Weight Tracker.
+		<br/><br/>Le pesate importate vengono aggiunte aquelle presenti nel database dell\'app, se una pesata ha la stessa data, l\'importazione sovrascrive quello nel database. 
+        <br/><br/>Quando si importa pesate fare attenzione al formato di cui si riporta un esempio:
+        <br/><br/>92.50,2013-07-04 16:24:35,lovely day
+        <br/><br/>Il peso e\' pari 92.50kg, la pesata e\' stata fatta il 4 Luglio 2013 alle ore 16:24:35pm e il commento e\' lovely day.
+        <br/><br/>*Si ricorda che il peso e\' espresso in chilogrammi, per convertirli in pounds moltiplicarli per 2,20462.
+]]>
+    </string>
+    <string name="report_template">
+        <![CDATA[
+Weight Tracker Report<br/>
+<br/>
+--- Indice Massa Corporea (BMI) ---<br/>
+<br/>
+Ultimo 								\t\t\t\t\t\t$LatestBMI<br/>
+Media BMI 						\t\t\t\t\t$AverageBMI<br/>
+Obiettivo 								\t\t\t\t\t\t$GoalBMI<br/>
+Peso ideale 						\t\t\t$IdealRange<br/>
+<br/>
+<br/>
+--- Andamento ---<br/>
+<br/>
+Ultimi 7 giorni<br/>
+$TrendWeekTitle						\t\t\t\t\t\t$TrendWeekValue<br/>
+Data dell\'obiettivo 							\t\t\t\t$TrendWeekGoalDate<br/>
+<br/>
+Ultimi 30 giorni<br/>
+$TrendMonthTitle					\t\t\t\t\t\t$TrendMonthValue<br/>
+Data dell\'obiettivo 							\t\t\t\t$TrendMonthGoalDate<br/>
+<br/>
+All Time<br/>
+$TrendAllTitle						\t\t\t\t\t\t$TrendAllValue<br/>
+Data dell\'obiettivo  							\t\t\t\t$TrendAllGoalDate<br/>
+<br/>
+<br/>
+--- Peso ---<br/>
+<br/>
+Media Peso 						\t\t\t\t$AverageWeight<br/>
+Peso min 							\t\t\t\t\t\t$MinWeight<br/>
+Peso max 							\t\t\t\t\t$MaxWeight<br/>
+Max - Min 							\t\t\t\t\t$MaxMinusMinWeight<br/>
+Peso iniziale 						\t\t\t\t\t\t$FirstWeight<br/>
+Ultimo peso 						\t\t\t\t\t$LastWeight<br/>
+Primo - Ultimo 						\t\t\t\t\t$FirstMinusLastWeight<br/>
+<br/>		
+<br/>		
+--- Statistica ---<br/>
+Numero di pesate 					\t\t$Count<br/>
+Data d\'inizio	 						\t\t\t\t\t$FirstDate<br/>
+Data Ultima pesata	 						\t\t\t\t\t$LastDate<br/>
+Giorni trascorsi	 						\t\t\t\t\t$TimeSpent<br/>
+<br/>		
+<br/>		
+http://www.pigdogbay.com<br/>
+		]]>
+	</string>
+    <string name="menu_help_text_small">Testo piccolo</string>
+    <string name="menu_help_text_medium">Testo medio</string>
+    <string name="menu_help_text_large">Testo largo</string>
+    <string name="length_unit_metres">Metri</string>
+    <string name="length_unit_centimetres">Centimetri</string>
+    <string name="length_unit_inches">Inches</string>
+    <string name="length_unit_feet">Feet e Inches</string>
+    <string name="weight_unit_kilograms">Chilogrammi</string>
+    <string name="weight_unit_pounds">Pounds</string>
+    <string name="weight_unit_stones">Stones</string>
+    <string name="share_readings_chooser_title">Condividi le pesate</string>
+    <string name="rate_dialog_title">Vota Weight Tracker</string>
+    <string name="rate_dialog_message">Se Weight Tracker ti piace , dedica un momento per votarla. Grazie per il supporto!</string>
+    <string name="rate_dialog_positive">Votalo!</string>
+    <string name="rate_dialog_neutral">Ricordami piu tardi</string>
+    <string name="rate_dialog_negative">No grazie</string>
+    <string name="quickhelp_description_add">Aggiungi giornalmete il tuo peso</string>
+    <string name="quickhelp_description_edit">Rivedi e modifica la pesata</string>
+    <string name="quickhelp_description_chart">Il grafico mostra la variazione di peso nel tempo</string>
+    <string name="quickhelp_description_report">Statistiche del tuo peso e del BMI</string>
+    <string name="quickhelp_description_settings">Cambia le impostazioni come l\'unità di misura del peso</string>
+    <string name="quickhelp_description_help">Mostra la schermata di aiuto</string>
+    <string name="weight_settings_units_title">Unità per di peso</string>
+    <string name="weight_settings_units_description">Seleziona l\'unità di misura per il peso: per esempio pounds o chilogrammi</string>
+    <string name="weight_settings_target_weight_title">Peso da raggiungiure</string>
+    <string name="weight_settings_target_weight_description">Imposta il peso che vuoi raggiungere. Per impostarlo usa  pulsanti +/- o pigia sul pulsante centrale.</string>
+    <string name="height_settings_units_title">Unità per l\'altezza</string>
+    <string name="height_settings_units_description">Imposta l\'unita\' di misura per l\'altezza: per esempio inches o metri</string>
+    <string name="height_settings_height_title">La tua altezza</string>
+    <string name="height_settings_height_description">Digita la tua altezza che verra\' usata per calcolare l\'indice di massa corporea. Usa i bottoni +/- o digitarlo direttamente.</string>
+    <string name="background_settings_title">Colore dello sfondo</string>
+    <string name="background_settings_description">Seleziona lo sfondo desiderato.</string>
+    <string name="chart_settings_title">Impostazione grafico</string>
+    <string name="chart_settings_description">Mostra la linea di tendenza e/o la linea del peso obiettivo</string>
+    <string name="chart_settings_trendline">Mostra la tendenza del peso</string>
+    <string name="chart_settings_targetline">Mostra il peso obiettivo</string>
+    <string name="other_settings_title">Impostazioni generali</string>
+    <string name="other_settings_description">Abilita il backup settimanale dei tuoi dati che verrà effettuato nella cartella Download. </string>
+    <string name="other_settings_backups">Backup automatico</string>
+    <string name="fragment_welcome_end_title">Questo e\' tutto!</string>
+    <string name="fragment_welcome_end_msg1">Ora puoi iniziare a monitorare il tuo peso. Pigia l\'icona dell\'app in alto a sinistra per iniziare.</string>
+    <string name="fragment_welcome_end_msg2">Suggerimento: pigia il pulsante Guida nella schermata iniziale per vedere la Guida.</string>
+    <string name="fragment_welcome_start_title">Benvenuto!</string>
+    <string name="fragment_welcome_start_msg1">Prima di iniziare, introduci la tua altezza e il tuo peso</string>
+    <string name="fragment_welcome_start_msg2">&lt;&lt; Pagina &gt;&gt;</string>
+    <string name="fragment_welcome_wizard_page_title_welcome">BENEVUTO</string>
+    <string name="fragment_welcome_wizard_page_title_weight">PESO</string>
+    <string name="fragment_welcome_wizard_page_title_height">ALTEZZA</string>
+    <string name="fragment_welcome_wizard_page_title_finished">FINITO</string>
+    <string name="fragment_help_wizard_page_title_quick_help">GUIDA VELOCE</string>
+    <string name="fragment_help_wizard_page_title_help">GUIDA</string>
+    <string name="fragment_settings_wizard_page_title_weight">PESO</string>
+    <string name="fragment_settings_wizard_page_title_height">ALTEZZA</string>
+    <string name="fragment_settings_wizard_page_title_background">SFONDO</string>
+    <string name="fragment_settings_wizard_page_title_other">ALTRO</string>
+    <string name="color_skyblue">Blu cielo</string>
+    <string name="color_dark_pink">Rosa intenso</string>
+    <string name="color_light_pink">Fior di melo</string>
+    <string name="color_turquoise">Oceano</string>
+    <string name="color_yellow">Giallo</string>
+    <string name="color_grey">Grigio sfumato</string>
+    <string name="color_white">Bianco semplice</string>    
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.pigdogbay.weightrecorder.DatePickerSpinner
+            android:id="@+id/EditFragmentDatePickerSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp" >
+
+            <Button
+                android:id="@+id/EditFragmentWeightPickerMinus"
+                style="@android:style/TextAppearance.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minEms="2"
+                android:minWidth="50dp"
+                android:text="-"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/EditFragmentWeightPickerEdit"
+                style="@android:style/TextAppearance.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minEms="2"
+                android:minWidth="150dp"
+                android:text="97.6 kg" />
+
+            <Button
+                android:id="@+id/EditFragmentWeightPickerPlus"
+                style="@android:style/TextAppearance.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minEms="2"
+                android:minWidth="50dp"
+                android:text="+"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#80808080"
+            android:orientation="horizontal"
+            android:padding="4dp" >
+
+            <EditText
+                android:id="@+id/EditFragmentComment"
+                style="@android:style/TextAppearance.Large"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ffffffff"
+                android:hint="@string/edit_comment_hint"
+                android:inputType="text"
+                android:padding="5dp" />
+
+            <ImageButton
+                android:id="@+id/EditFragmentCommentSpeak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="#ffffffff"
+                android:padding="5dp"
+                android:src="@android:drawable/ic_btn_speak_now" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/AddReadingBtnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/addreading_add_btn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:text="@string/addreading_tip" />
+
+        <CheckBox
+            android:id="@+id/AddReadingStayOnScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/addreading_stay_on_the_screen" />
+    </LinearLayout>
+
+</ScrollView>

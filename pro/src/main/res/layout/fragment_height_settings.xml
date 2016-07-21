@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/SettingTitle"
+            android:text="@string/height_settings_units_title" />
+
+        <TextView
+            style="@style/SettingDescription"
+            android:text="@string/height_settings_units_description" />
+
+        <RadioGroup style="@style/SettingRadioGroup" >
+
+            <RadioButton
+                android:id="@+id/rbHeightSettingInches"
+                android:text="@string/length_unit_inches"
+                style="@style/SettingRadioButton" />
+
+            <RadioButton
+                android:id="@+id/rbHeightSettingFeet"
+                android:text="@string/length_unit_feet"
+                style="@style/SettingRadioButton" />
+
+            <RadioButton
+                android:id="@+id/rbHeightSettingMetres"
+                android:text="@string/length_unit_metres"
+                style="@style/SettingRadioButton" />
+
+            <RadioButton
+                android:id="@+id/rbHeightSettingCentimetres"
+                android:text="@string/length_unit_centimetres"
+                style="@style/SettingRadioButton" />
+        </RadioGroup>
+
+        <TextView
+            style="@style/SettingTitle"
+            android:text="@string/height_settings_height_title" />
+
+        <TextView
+            style="@style/SettingDescription"
+            android:text="@string/height_settings_height_description" />
+
+        <com.pigdogbay.lib.usercontrols.NumberPicker
+            android:id="@+id/HeightSettingsPicker"
+            style="@style/SettingNumberPicker" />
+    </LinearLayout>
+
+</ScrollView>

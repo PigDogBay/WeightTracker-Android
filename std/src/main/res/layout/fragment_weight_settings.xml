@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/SettingTitle"
+            android:text="@string/weight_settings_units_title" />
+
+        <TextView
+            style="@style/SettingDescription"
+            android:text="@string/weight_settings_units_description" />
+
+        <RadioGroup style="@style/SettingRadioGroup" >
+
+            <RadioButton
+                android:id="@+id/rbWeightSettingPounds"
+                style="@style/SettingRadioButton"
+                android:text="@string/weight_unit_pounds" />
+
+            <RadioButton
+                android:id="@+id/rbWeightSettingKilograms"
+                style="@style/SettingRadioButton"
+                android:text="@string/weight_unit_kilograms" />
+
+            <RadioButton
+                android:id="@+id/rbWeightSettingStones"
+                style="@style/SettingRadioButton"
+                android:text="@string/weight_unit_stones" />
+        </RadioGroup>
+
+        <TextView
+            style="@style/SettingTitle"
+            android:text="@string/weight_settings_target_weight_title" />
+
+        <TextView
+            style="@style/SettingDescription"
+            android:text="@string/weight_settings_target_weight_description" />
+
+        <com.pigdogbay.lib.usercontrols.NumberPicker
+            android:id="@+id/WeightSettingsGoal"
+            style="@style/SettingNumberPicker" />
+    </LinearLayout>
+
+</ScrollView>

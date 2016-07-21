@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="backup_readings_error">Backup Error</string>
+    <string name="about_header_info">INFO</string>
+    <string name="about_header_feedback">FEEDBACK</string>
+    <string name="about_body_feedback">Keep updates coming by rating the app, your feedback is most welcome. Try out my other Apps on Google Play.</string>
+    <string name="about_button_rate">RATE THIS APP</string>
+    <string name="about_button_facebook">GET MORE APPS</string>
+    <string name="about_button_legal">Legal Notices</string>
+    <string name="about_no_market_app">Unable to find market app</string>    
+    <string name="menu_settings">Settings</string>
+    <string name="title_main">Weight Tracker Pro</string>
+    <string name="title_chart">Chart</string>
+    <string name="title_list">Readings</string>
+    <string name="title_new">New Weight</string>
+    <string name="title_edit">Edit Weight</string>
+    <string name="title_import">Import Readings</string>
+    <string name="title_report">Report</string>
+    <string name="title_about">About Weight Tracker Pro</string>
+    <string name="title_help">Help</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_welcome">Welcome</string>
+    <string name="chart_notenoughdata_title">Not Enough Readings</string>
+    <string name="chart_notenoughdata_message">You have less than 3 readings, the chart will show example data. </string>
+    <string name="chart_xaxis_title">Date</string>
+    <string name="chart_yaxis_title">Weight</string>
+    <string name="chart_share_chooser_title">Share Chart</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="main_btn_enter">New</string>
+    <string name="main_btn_edit">Edit</string>
+    <string name="main_btn_chart">Chart</string>
+    <string name="main_btn_report">Report</string>
+    <string name="main_btn_settings">Settings</string>
+    <string name="main_btn_shop">Shop</string>
+    <string name="main_btn_help">Help</string>
+    <string name="edit_weight_hint">Enter weight</string>
+    <string name="edit_comment_hint">Enter comment</string>
+    <string name="edit_weight_error">Please enter weight</string>
+    <string name="edit_no_speech">Your device does not support speech to text</string>
+    <string name="edit_speak_prompt_weight">Speak your weight</string>
+    <string name="edit_speak_prompt_comment">Speak your comment</string>
+    <string name="addreading_stay_on_the_screen">Stay on the screen</string>
+    <string name="addreading_tip">Use the +/- buttons to adjust or press the center button to edit. When done, press the Add button to record your reading.</string>
+    <string name="addreading_added">Reading Added</string>
+    <string name="addreading_add_btn">Add</string>
+    <string name="addreading_reached_goal_title">Congratulations!</string>
+    <string name="addreading_reached_goal_message">You have reached your target weight. Go to Settings and set yourself a new goal.</string>
+    <string name="editreading_updated">Reading Updated</string>
+    <string name="editreading_deleted">Reading Deleted</string>
+    <string name="editreading_update_btn">Update</string>
+    <string name="editreading_delete_btn">Delete</string>
+    <string name="editreading_delete_dialog_title">Confirm</string>
+    <string name="editreading_delete_dialog_message">Are you sure you wish to delete all the readings?</string>
+    <string name="menu_main_help">Help</string>
+    <string name="menu_main_about">About</string>
+    <string name="menu_main_welcome">Show Welcome</string>
+    <string name="menu_chart_all">Fit All</string>
+    <string name="menu_chart_share">Share</string>
+    <string name="menu_chart_30">30 Days</string>
+    <string name="menu_chart_60">60 Days</string>
+    <string name="menu_chart_90">90 Days</string>
+    <string name="menu_chart_year">One Year</string>
+    <string name="menu_readings_list_import">Import Readings</string>
+    <string name="menu_readings_list_export">Share Readings</string>
+    <string name="menu_readings_list_delete_all">Delete All</string>
+    <string name="menu_report_export">Share</string>
+    <string name="bmi_class_severely_underweight">Severely Underweight</string>
+    <string name="bmi_class_underweight">Underweight</string>
+    <string name="bmi_class_normal">Normal</string>
+    <string name="bmi_class_overweight">Overweight</string>
+    <string name="bmi_class_obese1">Obese Class I</string>
+    <string name="bmi_class_obese2">Obese Class II</string>
+    <string name="bmi_class_obese3">Obese Class III</string>
+    <string name="bmi_error">Check height settings</string>
+    <string name="readings_bmi_prefix">BMI</string>
+    <string name="readings_no_readings_export">No readings to export</string>
+    <string name="readings_export_error">Unable to export readings</string>
+    <string name="readings_share_chooser_title">Share Readings</string>
+    <string name="readings_no_readings_dialog_title">No Readings</string>
+    <string name="readings_no_readings_dialog_msg">There are no readings to show. If you would like to import existing readings press the IMPORT button on the menu.</string>
+    <string name="report_notenoughdata_title">Not Enough Readings</string>
+    <string name="report_notenoughdata_message">You have no readings the report will show example data.</string>
+    <string name="report_share_chooser_title">Share Report</string>
+    <string name="report_email_subject">Weight Tracker Pro Report</string>
+    <string name="report_per_no_readings">No readings available</string>
+    <string name="report_per_week">per week</string>
+    <string name="report_body_mass_index">Body Mass Index</string>
+    <string name="report_latest">Latest</string>
+    <string name="report_goal">Goal</string>
+    <string name="report_ideal_weight">Ideal Weight</string>
+    <string name="report_trends">Trends</string>
+    <string name="report_last_7_days">Last 7 Days</string>
+    <string name="report_losing">Losing</string>
+    <string name="report_gaining">Gaining</string>
+    <string name="report_goal_date">Goal Date</string>
+    <string name="report_last_30_days">Last 30 Days</string>
+    <string name="report_all_time">All Time</string>
+    <string name="report_weight">Weight</string>
+    <string name="report_stats">Stats</string>
+    <string name="report_min_weight">Min</string>
+    <string name="report_max_weight">Max</string>
+    <string name="report_max_minus_min_weight">Max - Min</string>
+    <string name="report_first_weight">First</string>
+    <string name="report_last_weight">Last</string>
+    <string name="report_first_minus_last_weight">First - Last</string>
+    <string name="report_average_weight">Average</string>
+    <string name="report_average_bmi">Average BMI</string>
+    <string name="report_first_date">Start Date</string>
+    <string name="report_last_date">Last Date</string>
+    <string name="report_time_spent">Time Spent</string>
+    <string name="report_days">days</string>
+    <string name="report_number_of_readings">Number of Readings</string>
+    <string name="settings_purchase_color_pack_title">Purchase Required</string>
+    <string name="settings_purchase_color_pack_message">Please purchase the Color Pack item from the Shop to unlock the background color settings.</string>
+    <string name="import_import_button">Import</string>
+    <string name="import_load_backup_button">Get Backup Readings</string>
+    <string name="import_no_backup_file">No backup available</string>
+    <string name="import_error_loading_backup_file">Error loading backup</string>
+    <string name="import_hint">Paste readings here</string>
+    <string name="import_no_text">Nothing to import</string>
+    <string name="import_readings_added">\u0020Readings Added</string>
+    <string name="import_dialog_title">Import Help</string>
+    <string name="import_dialog_message">
+        Press the Get Backup Readings button to load your latest backup readings if available.
+        \n\nPress the Import button to merge the readings into the app.
+        \n\nSee the help screen for further details.</string>
+    <string name="help_html">
+        <![CDATA[
+		<b>Introduction</b><br/><br/>
+        Enter your weight each day, use the chart and report screens to see how your diet is going.
+        <br/><br/><b>Settings</b><br/><br/>
+        Slide your finger over the settings tabs to select them:
+        <br/><br/><i>Weight</i><br/><br/>
+        Set your weight units such as pounds or kilograms.
+        <br/>Enter the weight you would like to be, this is used by the chart and report.
+        <br/><br/><i>Height</i><br/><br/>
+        Your height is needed for the  Body Mass Index calculations which are used in your Report. 
+        <br/>First set your length units and then enter your height.
+        <br/><br/><i>Background Color</i><br/><br/>
+        Personalize the app by choosing one of the exciting background.
+        <br/><br/><i>Other</i><br/><br/>
+        The app will automatically back up your readings every week, you can turn this feature off here.
+        <br/>The chart will display a trend line through your data and your target weight, you can turn these off here.  
+        <br/><br/><b>New</b><br/><br/>
+        Enter new daily weight readings here, the date will already be set and you can also add comments. Past weight measurements can also be entered.
+        <br/><br/>To enter your weight press the button displaying the weight. You can also use the -/+ buttons to adjust the weight.
+        <br/><br/><b>Edit</b><br/><br/>
+        Your readings are all displayed in a list with the most recent first. Press a reading to edit or delete it.
+        <br/><br/>Share your readings with other apps such as Google Drive and Evernote by pressing the Share menu button.
+        <br/><br/>Import readings into the app by pressing the Import menu button.
+        <br/><br/><b>Chart</b><br/><br/>
+        The chart displays weight changes over time. You can drag and zoom the chart using touch or by using the chart buttons.
+        <br/><br/>Your weight goal is shown as a light blue horizontal line and your weight trend is shown as a red straight line going through your weight readings. See if the two lines meet, this is your target weight prediction.
+		<br/><br/>Press the menu for a list of options to change the fit. You can view the last 30, 60, 90 days and 1 year from the current date, press fit all to position all your weight readings onto the chart.         
+        <br/><br/>Share the chart with other apps such as Facebook and Twitter by pressing the Share menu button.
+        <br/><br/><b>Report</b><br/><br/>
+        Displays your latest BMI, weight statistics and trends. Share the report with other apps such as Gmail by pressing the Share menu button. The report is split into 3 sections:
+        <br/><br/><i>Body Mass Index</i><br/><br/>
+        Shows your latest BMI measurement based on your the last weight reading and your height. The goal BMI is based upon your target weight. Ideal weight is based upon your height, see Settings for target weight and height settings.
+        <br/><br/><i>Trends</i><br/><br/>
+        Shows how much weight you are losing or gaining based on your weight entries for the last week, month and overall. The report will calculate when you will reach your target weight (Goal Date) based on your weight loss trends.
+        <br/><br/><i>Stats</i><br/><br/>
+        Shows the minimum, maximum and average weight based on all your readings. Average BMI is based on your average weight and height setting.
+        <br/><br/><b>Advanced Topics</b><br/><br/>
+        You can import and export your data via the menu on the Edit screen. The data is presenteded as text in a comma separated values (CSV) format for compatibility with spreadsheets. 
+		<br/><br/>Every week the app will back up its database to your downloads folder on your SD card. Using a file viewer app such as ASTRO File Manager you can browse to the downloads folder and open the files directly into Weight Tracker Pro.
+		<br/><br/>The imported readings are merged with the readings in the apps database, if any two readings have the same date, the imported reading will overwrite the one in the database. 
+        <br/><br/>When importing data, please ensure the format of the data is similar to:
+        <br/><br/>92.50,2013-07-04 16:24:35,lovely day
+        <br/><br/>Weight is 92.50kg, date is July 4th 2013, time is 4:24:35pm and the comment is lovely day.
+        <br/><br/>*Please note that weights are expressed in kilograms, to convert to pounds multiply by 2.20462.
+]]>
+    </string>
+    <string name="report_template">
+        <![CDATA[
+Weight Tracker Pro Report<br/>
+<br/>
+--- Body Mass Index ---<br/>
+<br/>
+Latest 								\t\t\t\t\t\t$LatestBMI<br/>
+Average BMI 						\t\t\t\t\t$AverageBMI<br/>
+Goal 								\t\t\t\t\t\t$GoalBMI<br/>
+Ideal Weight 						\t\t\t$IdealRange<br/>
+<br/>
+<br/>
+--- Trends ---<br/>
+<br/>
+Last 7 Days<br/>
+$TrendWeekTitle						\t\t\t\t\t\t$TrendWeekValue<br/>
+Goal Date 							\t\t\t\t$TrendWeekGoalDate<br/>
+<br/>
+Last 30 Days<br/>
+$TrendMonthTitle					\t\t\t\t\t\t$TrendMonthValue<br/>
+Goal Date 							\t\t\t\t$TrendMonthGoalDate<br/>
+<br/>
+All Time<br/>
+$TrendAllTitle						\t\t\t\t\t\t$TrendAllValue<br/>
+Goal Date 							\t\t\t\t$TrendAllGoalDate<br/>
+<br/>
+<br/>
+--- Weight ---<br/>
+<br/>
+Average Weight 						\t\t\t\t$AverageWeight<br/>
+Min Weight 							\t\t\t\t\t\t$MinWeight<br/>
+Max Weight 							\t\t\t\t\t$MaxWeight<br/>
+Max - Min 							\t\t\t\t\t$MaxMinusMinWeight<br/>
+First Weight 						\t\t\t\t\t\t$FirstWeight<br/>
+Last Weight 						\t\t\t\t\t$LastWeight<br/>
+First - Last 						\t\t\t\t\t$FirstMinusLastWeight<br/>
+<br/>		
+<br/>		
+--- Stats ---<br/>
+Number of Readings 					\t\t$Count<br/>
+Start Date	 						\t\t\t\t\t$FirstDate<br/>
+Last Date	 						\t\t\t\t\t$LastDate<br/>
+Time Spent	 						\t\t\t\t\t$TimeSpent<br/>
+<br/>		
+<br/>		
+http://www.pigdogbay.com<br/>
+		]]>
+	</string>
+    <string name="menu_help_text_small">Text Small</string>
+    <string name="menu_help_text_medium">Text Medium</string>
+    <string name="menu_help_text_large">Text Large</string>
+    <string name="length_unit_metres">Metres</string>
+    <string name="length_unit_centimetres">Centimetres</string>
+    <string name="length_unit_inches">Inches</string>
+    <string name="length_unit_feet">Feet and Inches</string>
+    <string name="weight_unit_kilograms">Kilograms</string>
+    <string name="weight_unit_pounds">Pounds</string>
+    <string name="weight_unit_stones">Stones</string>
+    <string name="share_readings_chooser_title">Share Readings</string>
+    <string name="rate_dialog_title">Rate Weight Tracker Pro</string>
+    <string name="rate_dialog_message">If you enjoy using Weight Tracker Pro, please take a moment to rate it. Thanks for your support!</string>
+    <string name="rate_dialog_positive">Rate it!</string>
+    <string name="rate_dialog_neutral">Remind me later</string>
+    <string name="rate_dialog_negative">No thanks</string>
+    <string name="quickhelp_description_add">Add new daily weight measurements</string>
+    <string name="quickhelp_description_edit">Review and edit your data</string>
+    <string name="quickhelp_description_chart">Chart showing your weight changes over time</string>
+    <string name="quickhelp_description_report">Statistics about your weight and BMI</string>
+    <string name="quickhelp_description_settings">Change settings like the weight units</string>
+    <string name="quickhelp_description_help">Show this help screen</string>
+    <string name="weight_settings_units_title">Weight Units</string>
+    <string name="weight_settings_units_description">Select the weight units to use such as pounds or kilograms</string>
+    <string name="weight_settings_target_weight_title">Target Weight</string>
+    <string name="weight_settings_target_weight_description">Enter the weight you would like to achieve. Use the +/- buttons to adjust or press the middle button to edit.</string>
+    <string name="height_settings_units_title">Height Units</string>
+    <string name="height_settings_units_description">Select the height units to use such as inches or metres</string>
+    <string name="height_settings_height_title">Your Height</string>
+    <string name="height_settings_height_description">Enter your height so that your Body Mass Index can be calculated. Use the +/- buttons to adjust or press the middle button to edit.</string>
+    <string name="background_settings_title">Background Color</string>
+    <string name="background_settings_description">Select the background color to use.</string>
+    <string name="chart_settings_title">Chart Settings</string>
+    <string name="chart_settings_description">Show the trend line or your weight goal line on the chart</string>
+    <string name="chart_settings_trendline">Show Trend Line</string>
+    <string name="chart_settings_targetline">Show Target Weight</string>
+    <string name="other_settings_title">General Settings</string>
+    <string name="other_settings_description">Allow automatic weekly backups of your data</string>
+    <string name="other_settings_backups">Automatic Backups</string>
+    <string name="fragment_welcome_end_title">That\'s It!</string>
+    <string name="fragment_welcome_end_msg1">You are now ready to begin tracking your weight. Press the app ICON on the top left to exit.</string>
+    <string name="fragment_welcome_end_msg2">Tip: Press the help button on the home screen for a Quick Help Guide.</string>
+    <string name="fragment_welcome_start_title">Welcome!</string>
+    <string name="fragment_welcome_start_msg1">Before starting, please enter your height and weight details</string>
+    <string name="fragment_welcome_start_msg2">&lt;&lt; Slide &gt;&gt;</string>
+    <string name="fragment_welcome_wizard_page_title_welcome">WELCOME</string>
+    <string name="fragment_welcome_wizard_page_title_weight">WEIGHT</string>
+    <string name="fragment_welcome_wizard_page_title_height">HEIGHT</string>
+    <string name="fragment_welcome_wizard_page_title_finished">FINISHED</string>
+    <string name="fragment_help_wizard_page_title_quick_help">QUICK HELP</string>
+    <string name="fragment_help_wizard_page_title_help">HELP</string>
+    <string name="fragment_settings_wizard_page_title_weight">WEIGHT</string>
+    <string name="fragment_settings_wizard_page_title_height">HEIGHT</string>
+    <string name="fragment_settings_wizard_page_title_background">BACKGROUND</string>
+    <string name="fragment_settings_wizard_page_title_other">OTHER</string>
+</resources>

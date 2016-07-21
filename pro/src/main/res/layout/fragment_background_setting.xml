@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/SettingTitle"
+            android:text="@string/background_settings_title" />
+
+        <TextView
+            style="@style/SettingDescription"
+            android:text="@string/background_settings_description" />
+
+        <RadioGroup style="@style/SettingRadioGroup" >
+
+            <RadioButton
+                android:id="@+id/BackgroundSettingSkyBlue"
+                style="@style/SettingRadioButton"
+                android:text="@string/color_skyblue" />
+
+            <RadioButton
+                android:id="@+id/BackgroundSettingDarkPink"
+                style="@style/SettingRadioButton"
+                android:text="@string/color_dark_pink" />
+
+            <RadioButton
+                android:id="@+id/BackgroundSettingLightPink"
+                style="@style/SettingRadioButton"
+                android:text="@string/color_light_pink" />
+
+            <RadioButton
+                android:id="@+id/BackgroundSettingTurquoise"
+                style="@style/SettingRadioButton"
+                android:text="@string/color_turquoise" />
+
+            <RadioButton
+                android:id="@+id/BackgroundSettingYellow"
+                style="@style/SettingRadioButton"
+                android:text="@string/color_yellow" />
+
+            <RadioButton
+                android:id="@+id/BackgroundSettingGrey"
+                style="@style/SettingRadioButton"
+                android:text="@string/color_grey" />
+
+            <RadioButton
+                android:id="@+id/BackgroundSettingWhite"
+                style="@style/SettingRadioButton"
+                android:text="@string/color_white" />
+        </RadioGroup>
+    </LinearLayout>
+
+</ScrollView>

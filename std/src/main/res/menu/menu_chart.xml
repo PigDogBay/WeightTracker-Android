@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:icon="@drawable/ic_menu_share"   
+        android:showAsAction="ifRoom"     
+        android:id="@+id/menu_chart_share"
+        android:title="@string/menu_chart_share"/>
+    <item 
+        android:id="@+id/menu_chart_all" 
+        android:title="@string/menu_chart_all"/>   
+    <item 
+        android:id="@+id/menu_chart_30_days" 
+        android:title="@string/menu_chart_30"/>   
+    <item 
+        android:id="@+id/menu_chart_60_days" 
+        android:title="@string/menu_chart_60"/>  
+    <item 
+        android:id="@+id/menu_chart_90_days" 
+        android:title="@string/menu_chart_90"/>  
+    <item 
+        android:id="@+id/menu_chart_one_year" 
+        android:title="@string/menu_chart_year"/>   
+    
+</menu>

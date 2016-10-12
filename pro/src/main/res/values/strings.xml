@@ -275,4 +275,5 @@ http://www.pigdogbay.com<br/>
     <string name="fragment_settings_wizard_page_title_height">HEIGHT</string>
     <string name="fragment_settings_wizard_page_title_background">BACKGROUND</string>
     <string name="fragment_settings_wizard_page_title_other">OTHER</string>
+    <string name="microphone_icon">Microphone Icon</string>
 </resources>

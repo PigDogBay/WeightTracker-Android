@@ -1,6 +1,6 @@
 package com.pigdogbay.weighttrackerpro;
 
-import com.pigdogbay.lib.usercontrols.NumberPicker;
+import com.pigdogbay.lib.usercontrols.CustomNumberPicker;
 import com.pigdogbay.weightrecorder.model.IUnitConverter;
 import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.UnitConverterAdapter;
@@ -17,7 +17,7 @@ import android.widget.RadioButton;
 public class WeightSettingsFragment extends Fragment implements OnClickListener{
 	
 	MainModel _MainModel;
-	NumberPicker _NumberPicker; 
+	CustomNumberPicker _NumberPicker;
 	UnitConverterAdapter _UnitConverterAdapter;
 	int _WeightUnitsId;
 
@@ -30,10 +30,10 @@ public class WeightSettingsFragment extends Fragment implements OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_weight_settings, container, false);
-    	((RadioButton)rootView.findViewById(R.id.rbWeightSettingKilograms)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.rbWeightSettingPounds)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.rbWeightSettingStones)).setOnClickListener(this);
-    	_NumberPicker = (NumberPicker)rootView.findViewById(R.id.WeightSettingsGoal);
+    	rootView.findViewById(R.id.rbWeightSettingKilograms).setOnClickListener(this);
+    	rootView.findViewById(R.id.rbWeightSettingPounds).setOnClickListener(this);
+    	rootView.findViewById(R.id.rbWeightSettingStones).setOnClickListener(this);
+    	_NumberPicker = (CustomNumberPicker)rootView.findViewById(R.id.WeightSettingsGoal);
     	setupNumberPicker(_MainModel.getTargetWeightInKilograms());
     	setupRadioButtons(rootView);
         return rootView;

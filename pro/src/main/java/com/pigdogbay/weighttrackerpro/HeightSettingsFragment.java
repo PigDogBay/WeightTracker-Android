@@ -1,6 +1,6 @@
 package com.pigdogbay.weighttrackerpro;
 
-import com.pigdogbay.lib.usercontrols.NumberPicker;
+import com.pigdogbay.lib.usercontrols.CustomNumberPicker;
 import com.pigdogbay.weightrecorder.model.IUnitConverter;
 import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.UnitConverterAdapter;
@@ -17,7 +17,7 @@ import android.widget.RadioButton;
 public class HeightSettingsFragment extends Fragment implements OnClickListener{
 	
 	MainModel _MainModel;
-	NumberPicker _NumberPicker; 
+	CustomNumberPicker _NumberPicker;
 	UnitConverterAdapter _UnitConverterAdapter;
 	int _LengthUnitsId;
 	@Override
@@ -30,11 +30,11 @@ public class HeightSettingsFragment extends Fragment implements OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_height_settings, container, false);
     	setupRadioButtons(rootView);
-    	((RadioButton)rootView.findViewById(R.id.rbHeightSettingCentimetres)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.rbHeightSettingInches)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.rbHeightSettingFeet)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.rbHeightSettingMetres)).setOnClickListener(this);
-    	_NumberPicker = (NumberPicker)rootView.findViewById(R.id.HeightSettingsPicker);
+    	rootView.findViewById(R.id.rbHeightSettingCentimetres).setOnClickListener(this);
+    	rootView.findViewById(R.id.rbHeightSettingInches).setOnClickListener(this);
+    	rootView.findViewById(R.id.rbHeightSettingFeet).setOnClickListener(this);
+    	rootView.findViewById(R.id.rbHeightSettingMetres).setOnClickListener(this);
+    	_NumberPicker = (CustomNumberPicker)rootView.findViewById(R.id.HeightSettingsPicker);
     	setupNumberPicker(_MainModel.getHeightInMetres());
         return rootView;
     }

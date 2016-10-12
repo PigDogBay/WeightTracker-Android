@@ -4,8 +4,8 @@ import com.pigdogbay.lib.usercontrols.INumberPickerValue;
 
 public class UnitConverterAdapter implements INumberPickerValue{
 
-	double _Value = 0;
-	IUnitConverter _Converter;
+	private double _Value = 0;
+	private IUnitConverter _Converter;
 	public UnitConverterAdapter(IUnitConverter converter)
 	{
 		_Converter = converter;
@@ -41,7 +41,17 @@ public class UnitConverterAdapter implements INumberPickerValue{
 			_Value=0;
 		}
 	}
-	
+
+	@Override
+	public String getDisplayFormat() {
+		return "";
+	}
+
+	@Override
+	public void setDisplayFormat(String format) {
+
+	}
+
 	public double getValueInPrimaryUnits()
 	{
 		return _Converter.inverse(_Value);

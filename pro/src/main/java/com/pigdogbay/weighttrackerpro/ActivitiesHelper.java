@@ -117,7 +117,7 @@ public class ActivitiesHelper {
 		File dir = Environment
 				.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 		File[] matches = dir.listFiles(new DateStampedFileFilter(activity.getString(R.string.app_name), CSV_FILE_EXTENSION));
-		if (matches.length>0)
+		if (matches!=null && matches.length>0)
 		{
 			Arrays.sort(matches, new DateStampComparator());
 			return matches[matches.length-1];

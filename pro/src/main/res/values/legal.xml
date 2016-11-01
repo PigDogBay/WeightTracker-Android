@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="copyright_title">Copyright</string>
-    <string name="copyright">
+    <string translatable="false" name="copyright_title">Copyright</string>
+    <string translatable="false" name="copyright">
         <![CDATA[
 \nCopyright 2015 Weight Tracker Pro by Mark Bailey
 \n\nChart control is AChartEngine by www.4viewsoft.com under Apache License 2.0

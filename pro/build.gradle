@@ -2,19 +2,28 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "23.0.3"
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
-        applicationId "com.pigdogbay.weighttrackerpro"
         minSdkVersion 16
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 25
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        weightTrackerPro{
+            applicationId "com.pigdogbay.weighttrackerpro"
+            versionCode 20200
+            versionName "2.02.00"
+        }
+        weightTrackerStd{
+            applicationId "com.pigdogbay.weightrecorder"
+            versionCode 11800
+            versionName "1.18.00"
         }
     }
 }

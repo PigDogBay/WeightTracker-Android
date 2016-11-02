@@ -225,7 +225,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
     }
 
-    private DriveId findFile(String title){
+    private DriveId find(String title){
         Query query = new Query.Builder().addFilter(Filters.and(
                 Filters.eq(SearchableField.TITLE, title),
                 Filters.eq(SearchableField.TRASHED,false)
@@ -241,6 +241,21 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         return metadataBufferResult.getMetadataBuffer().get(0).getDriveId();
     }
 
+    private DriveFile findFile(String title){
+        DriveId driveId = find(title);
+        if (driveId!=null){
+            return driveId.asDriveFile();
+        }
+        return null;
+    }
+    private DriveFolder findFolder(String title){
+        DriveId driveId = find(title);
+        if (driveId!=null){
+            return driveId.asDriveFolder();
+        }
+        return null;
+    }
+
     private void writeDate(DriveContents driveContents) throws IOException {
         OutputStream outputStream = driveContents.getOutputStream();
         Writer writer = new OutputStreamWriter(outputStream);
@@ -253,13 +268,14 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         @Override
         protected Boolean doInBackground(String... strings) {
 
-//            Query query = new Query.Builder().addFilter(Filters.and(
-//                    Filters.eq(SearchableField.TITLE, title)
-//            )).build();
-
+            DriveFolder driveFolder = findFolder(strings[0]);
+            if (driveFolder!=null) {
+                //folder already exists
+                return Boolean.TRUE;
+            }
             MetadataChangeSet changeSet = new MetadataChangeSet.Builder()
-                    .setTitle(strings[0])
-                    .build();
+                .setTitle(strings[0])
+                .build();
             DriveFolder.DriveFolderResult driveFolderResult = Drive.DriveApi.getRootFolder(googleApiClient).createFolder(googleApiClient, changeSet).await();
             return driveFolderResult.getStatus().isSuccess() ? Boolean.TRUE : Boolean.FALSE;
         }
@@ -275,7 +291,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     private class WriteAsyncTask extends AsyncTask<String, Void, Boolean>{
         @Override
         protected Boolean doInBackground(String... fileNames) {
-            DriveFile driveFile = findFile(fileNames[0]).asDriveFile();
+            DriveFile driveFile = findFile(fileNames[0]);
             if (driveFile==null) {
                 //create a new file
                 DriveApi.DriveContentsResult result = Drive.DriveApi.newDriveContents(googleApiClient).await();
@@ -337,7 +353,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(String... fileNames) {
-            DriveFile driveFile = findFile(fileNames[0]).asDriveFile();
+            DriveFile driveFile = findFile(fileNames[0]);
             if (driveFile!=null) {
                 DriveApi.DriveContentsResult openResult = driveFile.open(googleApiClient, DriveFile.MODE_READ_ONLY, null).await();
                 if (openResult.getStatus().isSuccess()) {
@@ -368,7 +384,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(String... fileNames) {
-            DriveFile driveFile = findFile(fileNames[0]).asDriveFile();
+            DriveFile driveFile = findFile(fileNames[0]);
             if (driveFile!=null) {
                 com.google.android.gms.common.api.Status deleteStatus = driveFile.delete(googleApiClient).await();
                 if (deleteStatus.isSuccess()) {
@@ -389,7 +405,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(String... fileNames) {
-            DriveFolder driveFolder = findFile(fileNames[0]).asDriveFolder();
+            DriveFolder driveFolder = findFolder(fileNames[0]);
             if (driveFolder!=null) {
                 com.google.android.gms.common.api.Status deleteStatus = driveFolder.delete(googleApiClient).await();
                 if (deleteStatus.isSuccess()) {

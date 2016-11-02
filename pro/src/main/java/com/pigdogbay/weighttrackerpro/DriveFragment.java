@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.api.BooleanResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
@@ -50,6 +51,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     private TextView statusTextView;
 
     private static final String FILENAME = "WeightTracker.csv";
+    private static final String FOLDER_NAME = "WeightTracker";
 
     private String readString="";
 
@@ -89,6 +91,18 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
             @Override
             public void onClick(View view) {
                 delete();
+            }
+        });
+        view.findViewById(R.id.driveFolderBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createFolder();
+            }
+        });
+        view.findViewById(R.id.driveDeleteFolderBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteFolder();
             }
         });
         statusTextView = (TextView)view.findViewById(R.id.driveStatus);
@@ -174,15 +188,6 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
                 if (status.isSuccess()) {
                     for (Metadata metadata : metadataBufferResult.getMetadataBuffer()) {
                         Log.i(TAG, metadata.getTitle());
-                        Log.i(TAG,metadata.getFileExtension());
-                        Log.i(TAG,metadata.getMimeType());
-                        Log.i(TAG,metadata.getCreatedDate().toString());
-                        Log.i(TAG,metadata.getModifiedDate().toString());
-                        Log.i(TAG,metadata.getLastViewedByMeDate().toString());
-                        Log.i(TAG,metadata.getAlternateLink());
-                        Log.i(TAG,metadata.getOriginalFilename());
-                        Log.i(TAG,metadata.getDriveId().toString());
-                        Log.i(TAG,String.valueOf(metadata.getFileSize()));
                     }
                 }
             }
@@ -196,6 +201,11 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         DeleteAsyncTask deleteAsyncTask = new DeleteAsyncTask();
         deleteAsyncTask.execute(FILENAME);
     }
+    private void deleteFolder(){
+        statusTextView.setText("Deleting Folder...");
+        DeleteFolderAsyncTask deleteAsyncTask = new DeleteFolderAsyncTask();
+        deleteAsyncTask.execute(FOLDER_NAME);
+    }
     private void createFile(){
         statusTextView.setText("Writing...");
         WriteAsyncTask writeAsyncTask = new WriteAsyncTask();
@@ -208,9 +218,17 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         readAsyncTask.execute(FILENAME);
     }
 
-    private DriveFile findFile(String title){
+    private void createFolder(){
+        statusTextView.setText("Creating Folder...");
+        CreateFolderAsyncTask createFolderAsyncTask = new CreateFolderAsyncTask();
+        createFolderAsyncTask.execute(FOLDER_NAME);
+
+    }
+
+    private DriveId findFile(String title){
         Query query = new Query.Builder().addFilter(Filters.and(
-                Filters.eq(SearchableField.TITLE, title)
+                Filters.eq(SearchableField.TITLE, title),
+                Filters.eq(SearchableField.TRASHED,false)
         )).build();
         DriveApi.MetadataBufferResult metadataBufferResult= Drive.DriveApi.query(googleApiClient,query).await();
         com.google.android.gms.common.api.Status queryStatus =  metadataBufferResult.getStatus();
@@ -220,10 +238,8 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         if (metadataBufferResult.getMetadataBuffer().getCount()==0){
             return null;
         }
-        DriveId driveId = metadataBufferResult.getMetadataBuffer().get(0).getDriveId();
-        return driveId.asDriveFile();
+        return metadataBufferResult.getMetadataBuffer().get(0).getDriveId();
     }
-
 
     private void writeDate(DriveContents driveContents) throws IOException {
         OutputStream outputStream = driveContents.getOutputStream();
@@ -232,11 +248,34 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         writer.write(message);
         writer.close();
     }
+    private class CreateFolderAsyncTask extends AsyncTask<String, Void, Boolean>{
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+
+//            Query query = new Query.Builder().addFilter(Filters.and(
+//                    Filters.eq(SearchableField.TITLE, title)
+//            )).build();
+
+            MetadataChangeSet changeSet = new MetadataChangeSet.Builder()
+                    .setTitle(strings[0])
+                    .build();
+            DriveFolder.DriveFolderResult driveFolderResult = Drive.DriveApi.getRootFolder(googleApiClient).createFolder(googleApiClient, changeSet).await();
+            return driveFolderResult.getStatus().isSuccess() ? Boolean.TRUE : Boolean.FALSE;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+            String status = aBoolean ? "Folder - Success" : "Folder - Failed";
+            statusTextView.setText(status);
+        }
+    }
 
     private class WriteAsyncTask extends AsyncTask<String, Void, Boolean>{
         @Override
         protected Boolean doInBackground(String... fileNames) {
-            DriveFile driveFile = findFile(fileNames[0]);
+            DriveFile driveFile = findFile(fileNames[0]).asDriveFile();
             if (driveFile==null) {
                 //create a new file
                 DriveApi.DriveContentsResult result = Drive.DriveApi.newDriveContents(googleApiClient).await();
@@ -298,7 +337,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(String... fileNames) {
-            DriveFile driveFile = findFile(fileNames[0]);
+            DriveFile driveFile = findFile(fileNames[0]).asDriveFile();
             if (driveFile!=null) {
                 DriveApi.DriveContentsResult openResult = driveFile.open(googleApiClient, DriveFile.MODE_READ_ONLY, null).await();
                 if (openResult.getStatus().isSuccess()) {
@@ -329,7 +368,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(String... fileNames) {
-            DriveFile driveFile = findFile(fileNames[0]);
+            DriveFile driveFile = findFile(fileNames[0]).asDriveFile();
             if (driveFile!=null) {
                 com.google.android.gms.common.api.Status deleteStatus = driveFile.delete(googleApiClient).await();
                 if (deleteStatus.isSuccess()) {
@@ -343,6 +382,27 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
             String status = aBoolean ? "Delete - Success" : "Delete - Failed";
+            statusTextView.setText(status);
+        }
+    }
+    private class DeleteFolderAsyncTask extends AsyncTask<String, Void, Boolean>{
+
+        @Override
+        protected Boolean doInBackground(String... fileNames) {
+            DriveFolder driveFolder = findFile(fileNames[0]).asDriveFolder();
+            if (driveFolder!=null) {
+                com.google.android.gms.common.api.Status deleteStatus = driveFolder.delete(googleApiClient).await();
+                if (deleteStatus.isSuccess()) {
+                    return Boolean.TRUE;
+                }
+            }
+            return Boolean.FALSE;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+            String status = aBoolean ? "Delete Folder - Success" : "Delete Folder- Failed";
             statusTextView.setText(status);
         }
     }

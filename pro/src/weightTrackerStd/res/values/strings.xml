@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string translatable="false" name="app_name">Weight Tracker</string>
+    <string translatable="false" name="market_app_url">market://details?id=com.pigdogbay.weighttrackerpro</string>
+    <string translatable="false" name="about_version">Version 2.02.01</string>
+    <string translatable="false" name="about_button_feedback_subject">Weight Tracker Pro v2.02 Feedback</string>
+    <string name="title_main">Weight Tracker</string>
+
+</resources>

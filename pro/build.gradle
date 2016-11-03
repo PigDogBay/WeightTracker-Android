@@ -10,7 +10,8 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
+            //need to be disabled so achart is included
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

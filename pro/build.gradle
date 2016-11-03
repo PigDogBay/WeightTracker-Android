@@ -17,13 +17,13 @@ android {
     productFlavors {
         weightTrackerPro{
             applicationId "com.pigdogbay.weighttrackerpro"
-            versionCode 20200
-            versionName "2.02.00"
+            versionCode 20201
+            versionName "2.02.01"
         }
         weightTrackerStd{
             applicationId "com.pigdogbay.weightrecorder"
-            versionCode 11800
-            versionName "1.18.00"
+            versionCode 11801
+            versionName "1.18.01"
         }
     }
 }

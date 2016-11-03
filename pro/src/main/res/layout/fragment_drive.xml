@@ -14,33 +14,21 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/driveSaveBtn"
+        android:minHeight="60dp"
+        android:text="Save"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/driveRestoreBtn"
+        android:minHeight="60dp"
+        android:text="Restore"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/driveQueryBtn"
         android:minHeight="60dp"
         android:text="Query"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/driveCreateBtn"
-        android:minHeight="60dp"
-        android:text="Create File"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/driveDeleteBtn"
-        android:minHeight="60dp"
-        android:text="Delete File"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/driveReadBtn"
-        android:minHeight="60dp"
-        android:text="Read File"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/driveFolderBtn"
-        android:minHeight="60dp"
-        android:text="Create Folder"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

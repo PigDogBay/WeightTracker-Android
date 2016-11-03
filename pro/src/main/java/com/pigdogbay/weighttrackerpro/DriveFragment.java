@@ -407,7 +407,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            DriveFolder driveFolder = createOpenFolder(FOLDER_NAME);
+            DriveFolder driveFolder = findFolder(FOLDER_NAME);
             if (driveFolder != null) {
                 List<Metadata> files = findFiles(driveFolder, FILENAME_PREFIX);
                 if (files.size() > 0) {

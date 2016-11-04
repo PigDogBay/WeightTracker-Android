@@ -163,14 +163,12 @@
         Shows how much weight you are losing or gaining based on your weight entries for the last week, month and overall. The report will calculate when you will reach your target weight (Goal Date) based on your weight loss trends.
         <br/><br/><i>Stats</i><br/><br/>
         Shows the minimum, maximum and average weight based on all your readings. Average BMI is based on your average weight and height setting.
-        <br/><br/><b>Advanced Topics</b><br/><br/>
-        You can import and export your data via the menu on the Edit screen. The data is presenteded as text in a comma separated values (CSV) format for compatibility with spreadsheets. 
-		<br/><br/>Every week the app will back up its database to your downloads folder on your SD card. Using a file viewer app such as ASTRO File Manager you can browse to the downloads folder and open the files directly into Weight Tracker Pro.
-		<br/><br/>The imported readings are merged with the readings in the apps database, if any two readings have the same date, the imported reading will overwrite the one in the database. 
-        <br/><br/>When importing data, please ensure the format of the data is similar to:
-        <br/><br/>92.50,2013-07-04 16:24:35,lovely day
-        <br/><br/>Weight is 92.50kg, date is July 4th 2013, time is 4:24:35pm and the comment is lovely day.
-        <br/><br/>*Please note that weights are expressed in kilograms, to convert to pounds multiply by 2.20462.
+        <br/><br/><b>Sync</b><br/><br/>
+        Share your readings with other devices.
+        <br/><br/>Note you need a Google Account (eg GMail) to use this facility as it needs to access your Google Drive, you may also be asked to allow permission for the app to access Google Drive.
+        <br/><br/>Press the Save button to save your readings to Google Drive
+        <br/><br/>Press the Restore button to load your readings from Google Drive, if no readings are found, wait a minute and try again.
+        <br/><br/>Google Drive needs a network connection to send and receive data, allow a minute for Google Drive to sync on your device.
 ]]>
     </string>
     <string name="report_template">
@@ -242,7 +240,7 @@ http://www.pigdogbay.com<br/>
     <string name="quickhelp_description_chart">Chart showing your weight changes over time</string>
     <string name="quickhelp_description_report">Statistics about your weight and BMI</string>
     <string name="quickhelp_description_settings">Change settings like the weight units</string>
-    <string name="quickhelp_description_help">Show this help screen</string>
+    <string name="quickhelp_description_sync">Share your readings with other devices</string>
     <string name="weight_settings_units_title">Weight Units</string>
     <string name="weight_settings_units_description">Select the weight units to use such as pounds or kilograms</string>
     <string name="weight_settings_target_weight_title">Target Weight</string>

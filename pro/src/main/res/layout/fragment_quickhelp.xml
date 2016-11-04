@@ -66,9 +66,9 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:drawablePadding="10dp"
-        android:drawableLeft="@drawable/help"
+        android:drawableLeft="@drawable/refresh"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/quickhelp_description_help"
+        android:text="@string/quickhelp_description_sync"
         android:gravity="center_vertical"
         />
 </LinearLayout>

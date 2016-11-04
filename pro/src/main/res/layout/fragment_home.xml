@@ -57,12 +57,12 @@
             android:text="@string/main_btn_settings" />
 
         <Button
-            android:id="@+id/HomeBtnHelp"
+            android:id="@+id/HomeBtnSync"
             style="@style/HomeButton"
             android:layout_below="@id/HomeBtnReport"
             android:layout_toRightOf="@id/HomeHorizontalCentre"
-            android:drawableTop="@drawable/help"
-            android:text="@string/main_btn_help" />
+            android:drawableTop="@drawable/refresh"
+            android:text="@string/main_btn_sync" />
     </RelativeLayout>
 
 </ScrollView>

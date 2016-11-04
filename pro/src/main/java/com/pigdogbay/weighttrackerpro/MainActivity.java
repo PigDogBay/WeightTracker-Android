@@ -241,11 +241,14 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		replaceFragment(new ReportFragment(), ReportFragment.TAG);
 	}
 	public void showHelp(){
-//		setTitle(getString(R.string.title_help));
-//		replaceFragment(new HelpWizardFragment(), HelpWizardFragment.TAG);
+		setTitle(getString(R.string.title_help));
+		replaceFragment(new HelpWizardFragment(), HelpWizardFragment.TAG);
+	}
+	public void showSync() {
 		setTitle(getString(R.string.title_drive));
 		replaceFragment(new DriveFragment(), DriveFragment.TAG);
 	}
+
 	public void showImport(){
 		setTitle(getString(R.string.title_import));
 		replaceFragment(new ImportFragment(), ImportFragment.TAG);
@@ -261,5 +264,6 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 	@Override
 	public void setBackgroundColor(int id) {
 		ActivityUtils.setBackground(this, R.id.root_layout, id);
-	}	
+	}
+
 }

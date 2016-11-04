@@ -40,6 +40,9 @@ public class HomeFragment extends Fragment {
 		case (R.id.menu_home_welcome):
 			((MainActivity) getActivity()).showWelcome();
 			return true;
+		case (R.id.menu_home_help):
+			((MainActivity) getActivity()).showHelp();
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
@@ -76,10 +79,10 @@ public class HomeFragment extends Fragment {
 				activity.showReport();
 			}
 		});
-		((Button) view.findViewById(R.id.HomeBtnHelp))
+		((Button) view.findViewById(R.id.HomeBtnSync))
 		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				activity.showHelp();
+				activity.showSync();
 			}
 		});
 		

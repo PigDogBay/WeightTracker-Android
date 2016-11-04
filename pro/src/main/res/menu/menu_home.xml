@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item 
-        android:id="@+id/menu_home_welcome" 
-		android:icon="@drawable/ic_menu_preferences"        
-        android:title="@string/menu_main_welcome"/>    
-    <item 
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+    <item
+        android:id="@+id/menu_home_welcome"
+        android:icon="@drawable/ic_menu_preferences"
+        android:title="@string/menu_main_welcome"/>
+    <item
+        android:id="@+id/menu_home_help"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_menu_help"
+        android:title="@string/menu_main_help"/>
+    <item
         android:id="@+id/menu_home_about" 
-        android:showAsAction="ifRoom"     
-		android:icon="@drawable/ic_menu_info_details"        
+		android:icon="@drawable/ic_menu_info_details"
         android:title="@string/menu_main_about"/>    
 </menu>

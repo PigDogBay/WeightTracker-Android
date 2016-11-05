@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -55,15 +56,13 @@ import java.util.List;
 public class DriveFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     public static final String TAG = "drive";
     private static final int REQUEST_CODE_RESOLUTION = 3;
-
-    private GoogleApiClient googleApiClient;
-    private TextView statusTextView;
-
     private static final String FILENAME_PREFIX = "readings";
     private static final String FILENAME_EXTENSION = ".csv";
     private static final String FOLDER_NAME = "WeightTracker";
     private static final String MIME_TYPE = "text/csv";
 
+    private GoogleApiClient googleApiClient;
+    private TextView statusTextView;
 
     public DriveFragment() {
         // Required empty public constructor
@@ -113,6 +112,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     public void onResume() {
         super.onResume();
 
+        statusTextView.setText("Connecting");
         if (googleApiClient == null) {
             googleApiClient = new GoogleApiClient.Builder(getContext())
                     .addApi(Drive.API)
@@ -135,19 +135,19 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        Log.i(TAG, "Connected");
+        statusTextView.setText("Connected");
+
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-        Log.i(TAG, "Connection Suspended");
-
+        statusTextView.setText("Disconnected");
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult result) {
+        statusTextView.setText("Disconnected");
         // Called whenever the API client fails to connect.
-        Log.i(TAG, "GoogleApiClient connection failed: " + result.toString());
         if (!result.hasResolution()) {
             // show the localized error dialog.
             GoogleApiAvailability.getInstance().getErrorDialog(getActivity(), result.getErrorCode(), 0).show();
@@ -160,7 +160,6 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         try {
             result.startResolutionForResult(getActivity(), REQUEST_CODE_RESOLUTION);
         } catch (IntentSender.SendIntentException e) {
-            Log.e(TAG, "Exception while starting resolution activity", e);
         }
     }
 
@@ -169,12 +168,14 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case REQUEST_CODE_RESOLUTION:
-                Log.i(TAG, "Resolution Result");
                 break;
         }
     }
 
     private void queryFiles() {
+        if (!checkIfConnected()){
+            return;
+        }
         statusTextView.setText("Querying...");
         Query query = new Query.Builder().addFilter(Filters.and(
                 Filters.contains(SearchableField.TITLE, FILENAME_PREFIX)
@@ -195,22 +196,36 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
     }
 
+    private boolean checkIfConnected(){
+        if (googleApiClient!=null && googleApiClient.isConnected()){
+            return true;
+        }
+        Toast.makeText(getContext(),"Not connected to Google Drive",Toast.LENGTH_SHORT).show();
+        return false;
+    }
+
     private void save() {
-        statusTextView.setText("Saving...");
-        SaveAsyncTask saveAsyncTask = new SaveAsyncTask();
-        saveAsyncTask.execute();
+        if (checkIfConnected()) {
+            statusTextView.setText("Saving...");
+            SaveAsyncTask saveAsyncTask = new SaveAsyncTask();
+            saveAsyncTask.execute();
+        }
     }
 
     private void restore() {
-        statusTextView.setText("Restoring...");
-        RestoreAsyncTask restoreAsyncTask = new RestoreAsyncTask();
-        restoreAsyncTask.execute();
+        if (checkIfConnected()) {
+            statusTextView.setText("Restoring...");
+            RestoreAsyncTask restoreAsyncTask = new RestoreAsyncTask();
+            restoreAsyncTask.execute();
+        }
     }
 
     private void deleteFolder() {
-        statusTextView.setText("Deleting Folder...");
-        DeleteFolderAsyncTask deleteAsyncTask = new DeleteFolderAsyncTask();
-        deleteAsyncTask.execute(FOLDER_NAME);
+        if (checkIfConnected()) {
+            statusTextView.setText("Deleting Folder...");
+            DeleteFolderAsyncTask deleteAsyncTask = new DeleteFolderAsyncTask();
+            deleteAsyncTask.execute(FOLDER_NAME);
+        }
     }
 
 

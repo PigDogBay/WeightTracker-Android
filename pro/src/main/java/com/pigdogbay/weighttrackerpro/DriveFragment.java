@@ -60,9 +60,11 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     private static final String FILENAME_EXTENSION = ".csv";
     private static final String FOLDER_NAME = "WeightTracker";
     private static final String MIME_TYPE = "text/csv";
+    private static final int MAX_RETRIES = 3;
 
     private GoogleApiClient googleApiClient;
     private TextView statusTextView;
+    private int resolutionCounter;
 
     public DriveFragment() {
         // Required empty public constructor
@@ -76,6 +78,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         View view = inflater.inflate(R.layout.fragment_drive, container, false);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         wireUpControls(view);
+        resolutionCounter = 0;
         return view;
     }
 
@@ -147,6 +150,10 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult result) {
         statusTextView.setText("Disconnected");
+        resolutionCounter++;
+        if (resolutionCounter>MAX_RETRIES){
+            return;
+        }
         // Called whenever the API client fails to connect.
         if (!result.hasResolution()) {
             // show the localized error dialog.

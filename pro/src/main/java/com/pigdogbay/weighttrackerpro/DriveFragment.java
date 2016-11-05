@@ -10,7 +10,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +19,6 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.drive.Drive;
 import com.google.android.gms.drive.DriveApi;
 import com.google.android.gms.drive.DriveContents;
@@ -44,15 +41,12 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class DriveFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     public static final String TAG = "drive";
     private static final int REQUEST_CODE_RESOLUTION = 3;
@@ -98,7 +92,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         view.findViewById(R.id.driveQueryBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                queryFiles();
+                query();
             }
         });
         view.findViewById(R.id.driveDeleteFolderBtn).setOnClickListener(new View.OnClickListener() {
@@ -138,8 +132,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        statusTextView.setText("Connected");
-
+        query();
     }
 
     @Override
@@ -151,7 +144,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     public void onConnectionFailed(@NonNull ConnectionResult result) {
         statusTextView.setText("Disconnected");
         resolutionCounter++;
-        if (resolutionCounter>MAX_RETRIES){
+        if (resolutionCounter > MAX_RETRIES) {
             return;
         }
         // Called whenever the API client fails to connect.
@@ -179,36 +172,20 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         }
     }
 
-    private void queryFiles() {
-        if (!checkIfConnected()){
-            return;
-        }
-        statusTextView.setText("Querying...");
-        Query query = new Query.Builder().addFilter(Filters.and(
-                Filters.contains(SearchableField.TITLE, FILENAME_PREFIX)
-        )).build();
-
-        Drive.DriveApi.query(googleApiClient, query).setResultCallback(new ResultCallback<DriveApi.MetadataBufferResult>() {
-            @Override
-            public void onResult(@NonNull DriveApi.MetadataBufferResult metadataBufferResult) {
-                Status status = metadataBufferResult.getStatus();
-                statusTextView.setText("Files Found: " + String.valueOf(metadataBufferResult.getMetadataBuffer().getCount()));
-                if (status.isSuccess()) {
-                    for (Metadata metadata : metadataBufferResult.getMetadataBuffer()) {
-                        Log.i(TAG, metadata.getTitle());
-                    }
-                }
-            }
-        });
-
-    }
-
-    private boolean checkIfConnected(){
-        if (googleApiClient!=null && googleApiClient.isConnected()){
+    private boolean checkIfConnected() {
+        if (googleApiClient != null && googleApiClient.isConnected()) {
             return true;
         }
-        Toast.makeText(getContext(),"Not connected to Google Drive",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Not connected to Google Drive", Toast.LENGTH_SHORT).show();
         return false;
+    }
+
+    private void query() {
+        if (checkIfConnected()) {
+            statusTextView.setText("Querying...");
+            QueryAsyncTask queryAsyncTask = new QueryAsyncTask();
+            queryAsyncTask.execute();
+        }
     }
 
     private void save() {
@@ -293,6 +270,18 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         DriveId driveId = find(title);
         if (driveId != null) {
             return driveId.asDriveFolder();
+        }
+        return null;
+    }
+
+    private Metadata getLatest() {
+        DriveFolder driveFolder = findFolder(FOLDER_NAME);
+        if (driveFolder != null) {
+            List<Metadata> files = findFiles(driveFolder, FILENAME_PREFIX);
+            if (files.size() > 0) {
+                sortFilesByData(files);
+                return files.get(files.size() - 1);
+            }
         }
         return null;
     }
@@ -431,20 +420,13 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            DriveFolder driveFolder = findFolder(FOLDER_NAME);
-            if (driveFolder != null) {
-                List<Metadata> files = findFiles(driveFolder, FILENAME_PREFIX);
-                if (files.size() > 0) {
-                    sortFilesByData(files);
-                    Metadata latest = files.get(files.size() - 1);
-                    Log.i(TAG, latest.getTitle());
-                    try {
-                        String readings = readString(latest.getDriveId().asDriveFile());
-                        ActivitiesHelper.mergeReadings(getActivity(), readings);
-                        return Boolean.TRUE;
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+            Metadata latest = getLatest();
+            if (latest != null) {
+                try {
+                    String readings = readString(latest.getDriveId().asDriveFile());
+                    ActivitiesHelper.mergeReadings(getActivity(), readings);
+                    return Boolean.TRUE;
+                } catch (IOException e) {
                 }
             }
             return Boolean.FALSE;
@@ -455,6 +437,25 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
             super.onPostExecute(aBoolean);
             String status = aBoolean ? "Restore - Success" : "Restore - Failed";
             statusTextView.setText(status);
+        }
+    }
+
+    private class QueryAsyncTask extends AsyncTask<Void, Void, Metadata> {
+
+        @Override
+        protected Metadata doInBackground(Void... voids) {
+            return getLatest();
+        }
+
+        @Override
+        protected void onPostExecute(Metadata latest) {
+            super.onPostExecute(latest);
+            if (latest == null) {
+                statusTextView.setText("No files found");
+            } else {
+                String dateString = SimpleDateFormat.getDateTimeInstance().format(latest.getModifiedDate());
+                statusTextView.setText("Latest " + dateString);
+            }
         }
     }
 

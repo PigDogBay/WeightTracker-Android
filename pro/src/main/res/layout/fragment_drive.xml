@@ -29,10 +29,4 @@
         android:id="@+id/driveQueryBtn"
         android:minHeight="60dp"
         android:text="Query"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/driveDeleteFolderBtn"
-        android:minHeight="60dp"
-        android:text="Delete Folder"/>
 </LinearLayout>

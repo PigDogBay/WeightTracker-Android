@@ -283,5 +283,7 @@ http://www.pigdogbay.com<br/>
     <string name="color_grey">Shades of Grey</string>
     <string name="color_white">Simply White</string>
     <string name="main_btn_sync">Sync</string>
+    <string name="menu_drive_delete">Delete Drive Files</string>
+    <string name="drive_delete_dialog_message">Are you sure you want to delete all the weight tracker files on your Google Drive?</string>
 
 </resources>

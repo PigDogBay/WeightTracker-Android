@@ -59,6 +59,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     private GoogleApiClient googleApiClient;
     private TextView statusTextView;
     private int resolutionCounter;
+    private boolean isTaskRunning;
 
     public DriveFragment() {
         // Required empty public constructor
@@ -73,6 +74,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         wireUpControls(view);
         resolutionCounter = 0;
+        isTaskRunning =false;
         return view;
     }
 
@@ -173,6 +175,9 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     }
 
     private boolean checkIfConnected() {
+        if (isTaskRunning){
+            return false;
+        }
         if (googleApiClient != null && googleApiClient.isConnected()) {
             return true;
         }
@@ -364,6 +369,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(String... fileNames) {
+            isTaskRunning =true;
             DriveFolder driveFolder = findFolder(fileNames[0]);
             if (driveFolder != null) {
                 com.google.android.gms.common.api.Status deleteStatus = driveFolder.delete(googleApiClient).await();
@@ -377,6 +383,8 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         @Override
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
+            isTaskRunning =false;
+            isTaskRunning =false;
             String status = aBoolean ? "Delete Folder - Success" : "Delete Folder- Failed";
             statusTextView.setText(status);
         }
@@ -386,6 +394,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(Void... voids) {
+            isTaskRunning =true;
             String data = readingsToString(getActivity());
             if (data.equals("")) {
                 return Boolean.FALSE;
@@ -411,6 +420,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         @Override
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
+            isTaskRunning =false;
             String status = aBoolean ? "Save - Success" : "Save - Failed";
             statusTextView.setText(status);
         }
@@ -420,6 +430,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Boolean doInBackground(Void... voids) {
+            isTaskRunning =true;
             Metadata latest = getLatest();
             if (latest != null) {
                 try {
@@ -435,6 +446,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         @Override
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
+            isTaskRunning =false;
             String status = aBoolean ? "Restore - Success" : "Restore - Failed";
             statusTextView.setText(status);
         }
@@ -444,12 +456,14 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
         @Override
         protected Metadata doInBackground(Void... voids) {
+            isTaskRunning =true;
             return getLatest();
         }
 
         @Override
         protected void onPostExecute(Metadata latest) {
             super.onPostExecute(latest);
+            isTaskRunning =false;
             if (latest == null) {
                 statusTextView.setText("No files found");
             } else {

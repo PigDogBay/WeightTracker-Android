@@ -22,6 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@id/HomeHorizontalCentre"
             android:drawableTop="@drawable/tape_measure_add"
+            android:background="#00000000"
             android:text="@string/main_btn_enter" />
 
         <Button
@@ -30,6 +31,7 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@id/HomeHorizontalCentre"
             android:drawableTop="@drawable/index_edit"
+            android:background="#00000000"
             android:text="@string/main_btn_edit" />
 
         <Button
@@ -38,6 +40,7 @@
             android:layout_below="@id/HomeBtnEntry"
             android:layout_toLeftOf="@id/HomeHorizontalCentre"
             android:drawableTop="@drawable/line_chart"
+            android:background="#00000000"
             android:text="@string/main_btn_chart" />
 
         <Button
@@ -46,6 +49,7 @@
             android:layout_below="@id/HomeBtnEntry"
             android:layout_toRightOf="@id/HomeHorizontalCentre"
             android:drawableTop="@drawable/presentation_chart"
+            android:background="#00000000"
             android:text="@string/main_btn_report" />
 
         <Button
@@ -54,6 +58,7 @@
             android:layout_below="@id/HomeBtnChart"
             android:layout_toLeftOf="@id/HomeHorizontalCentre"
             android:drawableTop="@drawable/wrench"
+            android:background="#00000000"
             android:text="@string/main_btn_settings" />
 
         <Button
@@ -62,6 +67,7 @@
             android:layout_below="@id/HomeBtnReport"
             android:layout_toRightOf="@id/HomeHorizontalCentre"
             android:drawableTop="@drawable/refresh"
+            android:background="#00000000"
             android:text="@string/main_btn_sync" />
     </RelativeLayout>
 

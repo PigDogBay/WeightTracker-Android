@@ -19,18 +19,21 @@
             <Button
                 android:id="@+id/HomeBtnEntry"
                 style="@style/HomeButton"
+                android:background="#00000000"
                 android:drawableTop="@drawable/tape_measure_add"
                 android:text="@string/main_btn_enter" />
 
             <Button
                 android:id="@+id/HomeBtnEditor"
                 style="@style/HomeButton"
+                android:background="#00000000"
                 android:drawableTop="@drawable/index_edit"
                 android:text="@string/main_btn_edit" />
 
             <Button
                 android:id="@+id/HomeBtnSettings"
                 style="@style/HomeButton"
+                android:background="#00000000"
                 android:drawableTop="@drawable/wrench"
                 android:text="@string/main_btn_settings" />
         </LinearLayout>
@@ -45,18 +48,21 @@
             <Button
                 android:id="@+id/HomeBtnChart"
                 style="@style/HomeButton"
+                android:background="#00000000"
                 android:drawableTop="@drawable/line_chart"
                 android:text="@string/main_btn_chart" />
 
             <Button
                 android:id="@+id/HomeBtnReport"
                 style="@style/HomeButton"
+                android:background="#00000000"
                 android:drawableTop="@drawable/presentation_chart"
                 android:text="@string/main_btn_report" />
 
             <Button
                 android:id="@+id/HomeBtnSync"
                 style="@style/HomeButton"
+                android:background="#00000000"
                 android:drawableTop="@drawable/refresh"
                 android:text="@string/main_btn_sync"/>
         </LinearLayout>

@@ -285,5 +285,9 @@ http://www.pigdogbay.com<br/>
     <string name="main_btn_sync">Sync</string>
     <string name="menu_drive_delete">Delete Drive Files</string>
     <string name="drive_delete_dialog_message">Are you sure you want to delete all the weight tracker files on your Google Drive?</string>
+    <string name="drive_status">---</string>
+    <string name="save">Save</string>
+    <string name="restore">Restore</string>
+    <string name="query">Refresh</string>
 
 </resources>

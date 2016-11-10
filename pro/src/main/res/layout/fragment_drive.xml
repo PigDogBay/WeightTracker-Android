@@ -8,25 +8,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/driveStatus"
-        android:text="---"
+        android:text="@string/drive_status"
         android:layout_gravity="center_horizontal"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/driveSaveBtn"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:minHeight="60dp"
-        android:text="Save"/>
+        android:text="@string/save"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:id="@+id/driveRestoreBtn"
         android:minHeight="60dp"
-        android:text="Restore"/>
+        android:text="@string/restore"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:id="@+id/driveQueryBtn"
         android:minHeight="60dp"
-        android:text="Query"/>
+        android:text="@string/query"/>
 </LinearLayout>

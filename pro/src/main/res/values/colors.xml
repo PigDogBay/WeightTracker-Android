@@ -11,6 +11,10 @@
     <!--purple-->
     <color name="colorPrimary">#9c27b0</color>
     <color name="colorPrimaryDark">#7b1fa2</color>
+    <color name="colorPrimaryDarkest">#4a148c</color>
+    <color name="colorPrimaryLight">#ba6bc8</color>
+    <color name="colorPrimaryLighter">#e1bee7</color>
+    <color name="colorPrimaryLightest">#f3e5f5</color>
     <color name="colorAccent">#aa00ff</color>
     <!--Deep Purple-->
     <!--<color name="colorPrimary">#673ab7</color>-->

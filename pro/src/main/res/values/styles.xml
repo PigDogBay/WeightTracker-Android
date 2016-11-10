@@ -64,7 +64,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/report_header</item>
-        <item name="android:background">@color/report_header_bg</item>
+        <item name="android:background">@color/colorPrimaryDarkest</item>
         <item name="android:paddingBottom">2dp</item>
         <item name="android:paddingLeft">2dp</item>
         <item name="android:paddingTop">2dp</item>

@@ -289,5 +289,14 @@ http://www.pigdogbay.com<br/>
     <string name="save">Save</string>
     <string name="restore">Restore</string>
     <string name="query">Refresh</string>
+    <string name="drive_status_connecting">Connecting</string>
+    <string name="drive_status_disconnected">Disconnected</string>
+    <string name="drive_status_refreshing">Querying…</string>
+    <string name="drive_status_saving">Saving…</string>
+    <string name="drive_status_restoring">Restoring…</string>
+    <string name="drive_status_deleting">Deleting Drive Files</string>
+    <string name="drive_status_no_files_found">No files found</string>
+    <string name="drive_toast_not_connected">Not connected to Google Drive</string>
+    <string name="drive_status_latest">Latest %s</string>
 
 </resources>

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -76,7 +77,10 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_drive, container, false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (supportActionBar!=null){
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
         setHasOptionsMenu(true);
         wireUpControls(view);
         resolutionCounter = 0;
@@ -128,7 +132,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     public void onResume() {
         super.onResume();
 
-        statusTextView.setText("Connecting");
+        statusTextView.setText(R.string.drive_status_connecting);
         if (googleApiClient == null) {
             googleApiClient = new GoogleApiClient.Builder(getContext())
                     .addApi(Drive.API)
@@ -156,12 +160,12 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
     @Override
     public void onConnectionSuspended(int i) {
-        statusTextView.setText("Disconnected");
+        statusTextView.setText(R.string.drive_status_disconnected);
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult result) {
-        statusTextView.setText("Disconnected");
+        statusTextView.setText(R.string.drive_status_disconnected);
         resolutionCounter++;
         if (resolutionCounter > MAX_RETRIES) {
             return;
@@ -179,6 +183,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         try {
             result.startResolutionForResult(getActivity(), REQUEST_CODE_RESOLUTION);
         } catch (IntentSender.SendIntentException e) {
+            e.printStackTrace();
         }
     }
 
@@ -198,13 +203,13 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
         if (googleApiClient != null && googleApiClient.isConnected()) {
             return true;
         }
-        Toast.makeText(getContext(), "Not connected to Google Drive", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), R.string.drive_toast_not_connected, Toast.LENGTH_SHORT).show();
         return false;
     }
 
     private void query() {
         if (checkIfConnected()) {
-            statusTextView.setText("Querying...");
+            statusTextView.setText(R.string.drive_status_refreshing);
             QueryAsyncTask queryAsyncTask = new QueryAsyncTask();
             queryAsyncTask.execute();
         }
@@ -212,7 +217,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
     private void save() {
         if (checkIfConnected()) {
-            statusTextView.setText("Saving...");
+            statusTextView.setText(R.string.drive_status_saving);
             SaveAsyncTask saveAsyncTask = new SaveAsyncTask();
             saveAsyncTask.execute();
         }
@@ -220,7 +225,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
     private void restore() {
         if (checkIfConnected()) {
-            statusTextView.setText("Restoring...");
+            statusTextView.setText(R.string.drive_status_restoring);
             RestoreAsyncTask restoreAsyncTask = new RestoreAsyncTask();
             restoreAsyncTask.execute();
         }
@@ -248,7 +253,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int which) {
-                                statusTextView.setText("Deleting Drive Files");
+                                statusTextView.setText(R.string.drive_status_deleting);
                                 DeleteFolderAsyncTask deleteAsyncTask = new DeleteFolderAsyncTask();
                                 deleteAsyncTask.execute(FOLDER_NAME);
                                 dialog.dismiss();
@@ -479,6 +484,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
                     ActivitiesHelper.mergeReadings(getActivity(), readings);
                     return Boolean.TRUE;
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
             return Boolean.FALSE;
@@ -506,10 +512,10 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
             super.onPostExecute(latest);
             isTaskRunning = false;
             if (latest == null) {
-                statusTextView.setText("No files found");
+                statusTextView.setText(R.string.drive_status_no_files_found);
             } else {
                 String dateString = SimpleDateFormat.getDateTimeInstance().format(latest.getModifiedDate());
-                statusTextView.setText("Latest " + dateString);
+                statusTextView.setText(String.format(getString(R.string.drive_status_latest), dateString));
             }
         }
     }

@@ -298,5 +298,16 @@ http://www.pigdogbay.com<br/>
     <string name="drive_status_no_files_found">No files found</string>
     <string name="drive_toast_not_connected">Not connected to Google Drive</string>
     <string name="drive_status_latest">Latest %s</string>
+    <string name="drive_toast_busy">Busy</string>
+    <string name="drive_status_delete_folder_success">Delete Folder - Success</string>
+    <string name="drive_status_delete_folder_failed">Delete Folder- Failed</string>
+    <string name="drive_status_save_no_readings">No readings to save</string>
+    <string name="drive_status_save_create_folder_failed">Unable to create folder</string>
+    <string name="drive_status_save_create_file_failed">Unable to create file</string>
+    <string name="drive_status_save_success">Save - Success</string>
+    <string name="drive_status_save_write_failed">Save - write failed</string>
+    <string name="drive_status_restore_no_files">No files found</string>
+    <string name="drive_status_restore_succuess">Restore - Success</string>
+    <string name="drive_status_restore_load_error">Restore - failed</string>
 
 </resources>

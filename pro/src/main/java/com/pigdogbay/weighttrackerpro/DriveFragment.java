@@ -198,6 +198,7 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
 
     private boolean checkIfConnected() {
         if (isTaskRunning) {
+            Toast.makeText(getContext(), R.string.drive_toast_busy, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (googleApiClient != null && googleApiClient.isConnected()) {
@@ -431,71 +432,72 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
             super.onPostExecute(aBoolean);
             isTaskRunning = false;
             isTaskRunning = false;
-            String status = aBoolean ? "Delete Folder - Success" : "Delete Folder- Failed";
-            statusTextView.setText(status);
+            int msg = aBoolean ? R.string.drive_status_delete_folder_success : R.string.drive_status_delete_folder_failed;
+            statusTextView.setText(msg);
         }
     }
 
-    private class SaveAsyncTask extends AsyncTask<Void, Void, Boolean> {
+    private class SaveAsyncTask extends AsyncTask<Void, Void, Integer> {
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected Integer doInBackground(Void... voids) {
             isTaskRunning = true;
             String data = readingsToString(getActivity());
             if (data.equals("")) {
-                return Boolean.FALSE;
+                return R.string.drive_status_save_no_readings;
             }
 
             DriveFolder driveFolder = createOpenFolder(FOLDER_NAME);
             if (driveFolder == null) {
-                return Boolean.FALSE;
+                return R.string.drive_status_save_create_folder_failed;
             }
             String fileName = FileUtils.appendDate(FILENAME_PREFIX, FILENAME_EXTENSION);
             DriveFile driveFile = createOpenFile(driveFolder, fileName, MIME_TYPE);
             if (driveFile == null) {
-                return Boolean.FALSE;
+                return R.string.drive_status_save_create_file_failed;
             }
             try {
-                return writeString(driveFile, data);
+                return writeString(driveFile, data) ? R.string.drive_status_save_success : R.string.drive_status_save_write_failed;
             } catch (IOException e) {
                 e.printStackTrace();
-                return Boolean.FALSE;
+                return R.string.drive_status_save_write_failed;
             }
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
+        protected void onPostExecute(Integer id) {
+            super.onPostExecute(id);
             isTaskRunning = false;
-            String status = aBoolean ? "Save - Success" : "Save - Failed";
-            statusTextView.setText(status);
+            statusTextView.setText(id);
         }
     }
 
-    private class RestoreAsyncTask extends AsyncTask<Void, Void, Boolean> {
+    private class RestoreAsyncTask extends AsyncTask<Void, Void, Integer> {
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected Integer doInBackground(Void... voids) {
             isTaskRunning = true;
             Metadata latest = getLatest();
-            if (latest != null) {
+            if (latest == null) {
+                return R.string.drive_status_restore_no_files;
+            }
+
                 try {
                     String readings = readString(latest.getDriveId().asDriveFile());
                     ActivitiesHelper.mergeReadings(getActivity(), readings);
-                    return Boolean.TRUE;
+                    return R.string.drive_status_restore_succuess;
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
-            return Boolean.FALSE;
+            return R.string.drive_status_restore_load_error;
+
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
+        protected void onPostExecute(Integer id) {
+            super.onPostExecute(id);
             isTaskRunning = false;
-            String status = aBoolean ? "Restore - Success" : "Restore - Failed";
-            statusTextView.setText(status);
+            statusTextView.setText(id);
         }
     }
 

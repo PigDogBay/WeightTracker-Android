@@ -17,15 +17,15 @@
         android:id="@+id/driveSaveBtn"
         android:theme="@style/MaterialButton"
         style="@style/DriveButton"
-        android:text="@string/save"/>
+        android:text="@string/drive_save_button"/>
     <Button
         android:id="@+id/driveRestoreBtn"
         android:theme="@style/MaterialButton"
         style="@style/DriveButton"
-        android:text="@string/restore"/>
+        android:text="@string/drive_restore_button"/>
     <Button
         android:id="@+id/driveQueryBtn"
         android:theme="@style/MaterialButton"
         style="@style/DriveButton"
-        android:text="@string/query"/>
+        android:text="@string/drive_query_button"/>
 </LinearLayout>

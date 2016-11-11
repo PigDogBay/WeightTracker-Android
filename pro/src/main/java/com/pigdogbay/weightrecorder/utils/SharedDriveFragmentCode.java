@@ -72,7 +72,6 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
     }
 
     public void connect(GoogleApiClient.ConnectionCallbacks connectionCallbacks){
-        setText(R.string.drive_status_connecting);
         if (googleApiClient == null) {
             googleApiClient = new GoogleApiClient.Builder(activity)
                     .addApi(Drive.API)
@@ -81,7 +80,8 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
                     .addConnectionCallbacks(connectionCallbacks)
                     .build();
         }
-        if (!googleApiClient.isConnecting()) {
+        if (!googleApiClient.isConnecting() && !googleApiClient.isConnected()) {
+            setText(R.string.drive_status_connecting);
             googleApiClient.connect();
         }
 

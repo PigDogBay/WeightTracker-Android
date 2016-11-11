@@ -161,7 +161,14 @@ public class MainModel
 	{
 		getPreferencesHelper().setBoolean(R.string.code_pref_enable_goal_congratulations_key, flag);
 	}
-	
+
+	public void setDriveConnected(boolean hasConnnected){
+		getPreferencesHelper().setBoolean(R.string.code_pref_drive_connected_key,hasConnnected);
+	}
+	public boolean getDriveConnected(){
+		return getPreferencesHelper().getBoolean(R.string.code_pref_drive_connected_key,false);
+	}
+
 	public UserSettings getUserSettings()
 	{
 		UserSettings userSettings = new UserSettings();

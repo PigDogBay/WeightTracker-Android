@@ -11,6 +11,7 @@
     <string translatable="false" name="code_pref_auto_backup_key">auto_backup_key</string>
     <string translatable="false" name="code_pref_auto_backup_last_date_key">auto_backup_last_date_key</string>
     <string translatable="false" name="code_pref_enable_goal_congratulations_key">enable_goal_congratulations_key</string>
+    <string translatable="false" name="code_pref_drive_connected_key">drive_connected_key</string>
     <string translatable="false" name="market_pigdogbay_apps">market://search?q=pub:Pig%20Dog%20Bay</string>
     <string translatable="false" name="app_name">Weight Tracker</string>
     <string translatable="false" name="market_weightrecorder">market://details?id=com.pigdogbay.weighttrackerpro</string>

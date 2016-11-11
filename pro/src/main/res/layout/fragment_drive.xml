@@ -10,7 +10,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:id="@+id/driveStatus"
-        android:text="@string/drive_status"
+        android:text="@string/drive_status_disconnected"
         android:layout_gravity="center_horizontal"
         />
     <Button

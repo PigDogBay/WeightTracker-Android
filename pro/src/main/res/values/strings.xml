@@ -18,7 +18,7 @@
     <string name="title_report">Report</string>
     <string name="title_about">About Weight Tracker Pro</string>
     <string name="title_help">Help</string>
-    <string translatable="false" name="title_drive">Sync Readings</string>
+    <string name="title_drive" translatable="false">Sync Readings</string>
     <string name="title_settings">Settings</string>
     <string name="title_welcome">Welcome</string>
     <string name="chart_notenoughdata_title">Not Enough Readings</string>
@@ -267,6 +267,7 @@ http://www.pigdogbay.com<br/>
     <string name="fragment_welcome_wizard_page_title_welcome">WELCOME</string>
     <string name="fragment_welcome_wizard_page_title_weight">WEIGHT</string>
     <string name="fragment_welcome_wizard_page_title_height">HEIGHT</string>
+    <string name="fragment_welcome_wizard_page_title_connect">CONNECT</string>
     <string name="fragment_welcome_wizard_page_title_finished">FINISHED</string>
     <string name="fragment_help_wizard_page_title_quick_help">QUICK HELP</string>
     <string name="fragment_help_wizard_page_title_help">HELP</string>
@@ -274,7 +275,7 @@ http://www.pigdogbay.com<br/>
     <string name="fragment_settings_wizard_page_title_height">HEIGHT</string>
     <string name="fragment_settings_wizard_page_title_background">BACKGROUND</string>
     <string name="fragment_settings_wizard_page_title_other">OTHER</string>
-    <string translatable="false" name="microphone_icon">Microphone Icon</string>
+    <string name="microphone_icon" translatable="false">Microphone Icon</string>
     <string name="color_skyblue">Sky Blue</string>
     <string name="color_dark_pink">Deep Pink</string>
     <string name="color_light_pink">Apple Blossom</string>
@@ -285,7 +286,7 @@ http://www.pigdogbay.com<br/>
     <string name="main_btn_sync">Sync</string>
     <string name="menu_drive_delete">Delete Drive Files</string>
     <string name="drive_delete_dialog_message">Are you sure you want to delete all the weight tracker files on your Google Drive?</string>
-    <string name="drive_status">---</string>
+
     <string name="drive_save_button">Save to Google Drive</string>
     <string name="drive_restore_button">Restore from Google Drive</string>
     <string name="drive_query_button">Refresh Latest</string>
@@ -309,5 +310,11 @@ http://www.pigdogbay.com<br/>
     <string name="drive_status_restore_no_files">No files found</string>
     <string name="drive_status_restore_succuess">Restore - Success</string>
     <string name="drive_status_restore_load_error">Restore - failed</string>
+
+    <string name="connect_status_not_connected">Not Connected</string>
+    <string name="connect_connect_button">Connect to Google Drive</string>
+    <string name="connect_help_text">Automatically back up your readings and transfer them to other devices. Press CONNECT to allow the app access to your Google Drive</string>
+    <string name="drive_status_connected">Connected</string>
+    <string name="connect_status_connected">Connected, you are good to go!</string>
 
 </resources>

@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +19,11 @@ public class WelcomeWizardFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		setHasOptionsMenu(true);
+        ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (supportActionBar!=null){
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        setHasOptionsMenu(true);
 		View rootView = inflater.inflate(R.layout.fragment_welcome_wizard, container,false);
 		//Need to use ChildFragmentManager as ViewPager is nested in a fragment
 		//If you use getFragmentManager then the red/blue/green fragments are not released
@@ -33,7 +37,7 @@ public class WelcomeWizardFragment extends Fragment {
     public static class WelcomePagerAdapter extends FragmentPagerAdapter {
     	Context _Context;
 
-        public WelcomePagerAdapter(FragmentManager fm, Context context) {
+        WelcomePagerAdapter(FragmentManager fm, Context context) {
             super(fm);
             _Context = context;
         }
@@ -48,6 +52,8 @@ public class WelcomeWizardFragment extends Fragment {
                 case 2:
                     return new HeightSettingsFragment();
                 case 3:
+                    return new ConnectToDriveFragment();
+                case 4:
                     return new WelcomeEndFragment();
             }
             return null;
@@ -55,7 +61,7 @@ public class WelcomeWizardFragment extends Fragment {
 
         @Override
         public int getCount() {
-            return 4;
+            return 5;
         }
 
         @Override
@@ -68,6 +74,8 @@ public class WelcomeWizardFragment extends Fragment {
                 case 2:
                     return _Context.getString(R.string.fragment_welcome_wizard_page_title_height);
                 case 3:
+                    return _Context.getString(R.string.fragment_welcome_wizard_page_title_connect);
+                case 4:
                     return _Context.getString(R.string.fragment_welcome_wizard_page_title_finished);
             }
             return null;
@@ -77,15 +85,13 @@ public class WelcomeWizardFragment extends Fragment {
     public static class WelcomeStartFragment extends Fragment{
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_welcome_start, container, false);
-            return rootView;
+            return inflater.inflate(R.layout.fragment_welcome_start, container, false);
         }
     }	
     public static class WelcomeEndFragment extends Fragment{
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_welcome_end, container, false);
-            return rootView;
+            return inflater.inflate(R.layout.fragment_welcome_end, container, false);
         }
     }		
 }

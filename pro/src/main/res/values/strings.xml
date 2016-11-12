@@ -314,7 +314,8 @@ http://www.pigdogbay.com<br/>
     <string name="connect_status_not_connected">Not Connected</string>
     <string name="connect_connect_button">Connect to Google Drive</string>
     <string name="connect_help_text">Automatically back up your readings and transfer them to other devices. Press CONNECT to allow the app access to your Google Drive</string>
+    <string name="connect_restore_help_text">Connected to Google Drive.\nPress RESTORE to retrieve any previous readings</string>
     <string name="drive_status_connected">Connected</string>
-    <string name="connect_status_connected">Connected, you are good to go!</string>
+    <string name="connect_restore_button">Restore Readings</string>
 
 </resources>

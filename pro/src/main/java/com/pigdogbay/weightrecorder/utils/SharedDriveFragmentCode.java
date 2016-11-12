@@ -71,6 +71,10 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
 
     }
 
+    public boolean isConnected(){
+        return googleApiClient!=null && googleApiClient.isConnected();
+    }
+
     public void connect(GoogleApiClient.ConnectionCallbacks connectionCallbacks){
         if (googleApiClient == null) {
             googleApiClient = new GoogleApiClient.Builder(activity)
@@ -114,7 +118,7 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
     }
 
     public void onConnected() {
-        setText(R.string.connect_status_connected);
+        setText(R.string.drive_status_connected);
         //set a flag to indicate drive has connected
         //if the drive has connected at least once, it is then worth trying to backup data in the future
         MainModel mainModel = new MainModel(activity);

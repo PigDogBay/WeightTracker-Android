@@ -19,11 +19,6 @@ public class WelcomeWizardFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-        ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-////        if (supportActionBar!=null){
-////            supportActionBar.setDisplayHomeAsUpEnabled(true);
-////        }
-//        setHasOptionsMenu(true);
 		View rootView = inflater.inflate(R.layout.fragment_welcome_wizard, container,false);
 		//Need to use ChildFragmentManager as ViewPager is nested in a fragment
 		//If you use getFragmentManager then the red/blue/green fragments are not released

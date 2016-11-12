@@ -20,10 +20,10 @@ public class WelcomeWizardFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
         ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        if (supportActionBar!=null){
-            supportActionBar.setDisplayHomeAsUpEnabled(true);
-        }
-        setHasOptionsMenu(true);
+////        if (supportActionBar!=null){
+////            supportActionBar.setDisplayHomeAsUpEnabled(true);
+////        }
+//        setHasOptionsMenu(true);
 		View rootView = inflater.inflate(R.layout.fragment_welcome_wizard, container,false);
 		//Need to use ChildFragmentManager as ViewPager is nested in a fragment
 		//If you use getFragmentManager then the red/blue/green fragments are not released
@@ -91,7 +91,14 @@ public class WelcomeWizardFragment extends Fragment {
     public static class WelcomeEndFragment extends Fragment{
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_welcome_end, container, false);
+            View view = inflater.inflate(R.layout.fragment_welcome_end, container, false);
+            view.findViewById(R.id.welcomeEndDoneBtn).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    getActivity().onBackPressed();
+                }
+            });
+            return view;
         }
     }		
 }

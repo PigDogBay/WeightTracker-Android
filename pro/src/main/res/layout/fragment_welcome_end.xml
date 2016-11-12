@@ -32,4 +32,10 @@
         android:layout_marginRight="10dp"
         android:text="@string/fragment_welcome_end_msg2"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+    <Button
+        android:id="@+id/welcomeEndDoneBtn"
+        android:theme="@style/MaterialButton"
+        style="@style/DriveButton"
+        android:text="@string/fragment_welcome_end_done_button"/>
+
 </LinearLayout>

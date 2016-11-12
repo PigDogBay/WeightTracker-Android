@@ -259,8 +259,9 @@ http://www.pigdogbay.com<br/>
     <string name="other_settings_description">Allow automatic weekly backups of your data</string>
     <string name="other_settings_backups">Automatic Backups</string>
     <string name="fragment_welcome_end_title">That\'s It!</string>
-    <string name="fragment_welcome_end_msg1">You are now ready to begin tracking your weight. Press the app ICON on the top left to exit.</string>
-    <string name="fragment_welcome_end_msg2">Tip: Press the help button on the home screen for a Quick Help Guide.</string>
+    <string name="fragment_welcome_end_msg1">You are now ready to begin tracking your weight. Press DONE to exit to the home screen.</string>
+    <string name="fragment_welcome_end_msg2">Tip: Press the help icon on the top right of the home screen for a quick guide.</string>
+    <string name="fragment_welcome_end_done_button">Done</string>
     <string name="fragment_welcome_start_title">Welcome!</string>
     <string name="fragment_welcome_start_msg1">Before starting, please enter your height and weight details</string>
     <string name="fragment_welcome_start_msg2">&lt;&lt; Slide &gt;&gt;</string>

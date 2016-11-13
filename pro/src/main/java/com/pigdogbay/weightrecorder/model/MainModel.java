@@ -145,6 +145,14 @@ public class MainModel
 	{
 		getPreferencesHelper().setBoolean(R.string.code_pref_auto_backup_key, flag);
 	}
+	public long getBackupDate(){
+		return getPreferencesHelper().getLong(R.string.code_pref_auto_backup_last_date_key, 0L);
+	}
+	public void setBackupDate(long timeInMillis)
+	{
+		getPreferencesHelper().setLong(R.string.code_pref_auto_backup_last_date_key, timeInMillis);
+	}
+
 	public boolean getIsFirstTime()
 	{
 		return getPreferencesHelper().getBoolean(R.string.code_pref_welcome_shown_key, false);

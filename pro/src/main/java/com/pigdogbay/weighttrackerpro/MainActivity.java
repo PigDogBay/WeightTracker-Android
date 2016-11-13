@@ -1,19 +1,5 @@
 package com.pigdogbay.weighttrackerpro;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Locale;
-
-import com.pigdogbay.lib.apprate.AppRate;
-import com.pigdogbay.lib.mvp.BackgroundColorPresenter;
-import com.pigdogbay.lib.mvp.IBackgroundColorView;
-import com.pigdogbay.lib.utils.ActivityUtils;
-import com.pigdogbay.lib.utils.FileUtils;
-import com.pigdogbay.lib.utils.PreferencesHelper;
-import com.pigdogbay.weightrecorder.model.AutoBackup;
-import com.pigdogbay.weightrecorder.model.MainModel;
-import com.pigdogbay.weightrecorder.model.Reading;
-import com.pigdogbay.weightrecorder.model.SettingsUtils;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -24,6 +10,19 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+
+import com.pigdogbay.lib.apprate.AppRate;
+import com.pigdogbay.lib.mvp.BackgroundColorPresenter;
+import com.pigdogbay.lib.mvp.IBackgroundColorView;
+import com.pigdogbay.lib.utils.ActivityUtils;
+import com.pigdogbay.lib.utils.FileUtils;
+import com.pigdogbay.weightrecorder.model.MainModel;
+import com.pigdogbay.weightrecorder.model.Reading;
+import com.pigdogbay.weightrecorder.model.SettingsUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements OnSharedPreferenceChangeListener,IBackgroundColorView{
 	public static final String TAG = "WeightTracker";
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		{
 			try {
 				checkFirstTime(mainModel);
-				checkIfBackupDue(mainModel.getPreferencesHelper());
 				checkRate();
 			}
 			catch (Exception e) {
@@ -79,8 +77,6 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		if (!mainModel.getIsFirstTime()) {
 			SettingsUtils.setDefaultSettings(Locale.getDefault(), new MainModel(this));
 			mainModel.setIsFirstTime(true);
-			AutoBackup autoBackup = new AutoBackup(mainModel.getPreferencesHelper());
-			autoBackup.setBackupDateToNow();
 			loadReadingsInBackground();
 			showWelcome();
 		}
@@ -123,16 +119,6 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		int count = ActivitiesHelper.mergeReadings(this, data);
 		Log.v(TAG,"Import "+count+" files");
 	}
-	
-	private void checkIfBackupDue(PreferencesHelper prefHelper) {
-		AutoBackup autoBackup = new AutoBackup(prefHelper);
-		if (autoBackup.isAutoBackupEnabled()
-				&& autoBackup.isBackupDue(AutoBackup.WEEKLY_BACKUP_PERIOD_IN_DAYS)) {
-			autoBackup.setBackupDateToNow();
-			ActivitiesHelper.backupReadings(this);
-		}
-	}
-	
 	
 	private AlertDialog.Builder createRateDialog() {
 		return new AlertDialog.Builder(this)

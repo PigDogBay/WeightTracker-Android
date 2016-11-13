@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.IntentSender;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.Reading;
 import com.pigdogbay.weightrecorder.model.ReadingsSerializer;
 import com.pigdogbay.weighttrackerpro.ActivitiesHelper;
+import com.pigdogbay.weighttrackerpro.MainActivity;
 import com.pigdogbay.weighttrackerpro.R;
 
 import java.io.IOException;
@@ -148,7 +150,7 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
     {
         if (checkIfConnected())
         {
-            statusTextView.setText(R.string.drive_status_refreshing);
+            setText(R.string.drive_status_refreshing);
             QueryAsyncTask queryAsyncTask = new QueryAsyncTask();
             queryAsyncTask.execute();
         }
@@ -158,7 +160,7 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
     {
         if (checkIfConnected())
         {
-            statusTextView.setText(R.string.drive_status_saving);
+            setText(R.string.drive_status_saving);
             SaveAsyncTask saveAsyncTask = new SaveAsyncTask();
             saveAsyncTask.execute();
         }
@@ -168,10 +170,18 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
     {
         if (checkIfConnected())
         {
-            statusTextView.setText(R.string.drive_status_restoring);
+            setText(R.string.drive_status_restoring);
             RestoreAsyncTask restoreAsyncTask = new RestoreAsyncTask();
             restoreAsyncTask.execute();
         }
+    }
+
+    /**
+     * Quietly save readings and disconnect when done
+     */
+    void autoSave(){
+        AutoSaveAsyncTask autoSaveAsyncTask = new AutoSaveAsyncTask();
+        autoSaveAsyncTask.execute();
     }
 
     public void deleteFolder()
@@ -202,7 +212,7 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
                             public void onClick(DialogInterface dialog,
                                                 int which)
                             {
-                                statusTextView.setText(R.string.drive_status_deleting);
+                                setText(R.string.drive_status_deleting);
                                 DeleteFolderAsyncTask deleteAsyncTask = new DeleteFolderAsyncTask();
                                 deleteAsyncTask.execute(FOLDER_NAME);
                                 dialog.dismiss();
@@ -254,7 +264,7 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
             isTaskRunning = false;
             isTaskRunning = false;
             int msg = aBoolean ? R.string.drive_status_delete_folder_success : R.string.drive_status_delete_folder_failed;
-            statusTextView.setText(msg);
+            setText(msg);
         }
     }
 
@@ -298,7 +308,43 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
         {
             super.onPostExecute(id);
             isTaskRunning = false;
-            statusTextView.setText(id);
+            setText(id);
+        }
+    }
+
+    /**
+     * Saves in the background so don't report back and close the connection afterwards
+     */
+    private class AutoSaveAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            Log.v(MainActivity.TAG,"Backing up readings");
+            DriveUtils driveUtils = new DriveUtils(googleApiClient);
+            String data = readingsToString(activity);
+            if (!data.equals("")) {
+                DriveFolder driveFolder = driveUtils.createOpenFolder(FOLDER_NAME);
+                if (driveFolder != null) {
+                    String fileName = FileUtils.appendDate(FILENAME_PREFIX, FILENAME_EXTENSION);
+                    DriveFile driveFile = driveUtils.createOpenFile(driveFolder, fileName, MIME_TYPE);
+                    if (driveFile != null)
+                        try {
+                            if (driveUtils.writeString(driveFile, data)) {
+                                Log.v(MainActivity.TAG,"Backup - success");
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Log.v(MainActivity.TAG,"Backup - disconnecting from drive");
+            disconnect();
         }
     }
 
@@ -334,7 +380,7 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
         {
             super.onPostExecute(id);
             isTaskRunning = false;
-            statusTextView.setText(id);
+            setText(id);
         }
     }
 
@@ -356,11 +402,13 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
             isTaskRunning = false;
             if (latest == null)
             {
-                statusTextView.setText(R.string.drive_status_no_files_found);
+                setText(R.string.drive_status_no_files_found);
             } else
             {
                 String dateString = SimpleDateFormat.getDateTimeInstance().format(latest.getModifiedDate());
-                statusTextView.setText(String.format(activity.getString(R.string.drive_status_latest), dateString));
+                if (statusTextView!=null) {
+                    statusTextView.setText(String.format(activity.getString(R.string.drive_status_latest), dateString));
+                }
             }
         }
     }

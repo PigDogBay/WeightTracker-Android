@@ -1,6 +1,7 @@
 package com.pigdogbay.weightrecorder.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -14,15 +15,9 @@ public class AutoBackup {
 
     private static final long WEEKLY_BACKUP_PERIOD_IN_DAYS = 7L;
     private static final long DAY_IN_MILLIS = 24L * 60L * 60L * 1000L;
-    private final Activity activity;
 
-    public AutoBackup(Activity activity) {
-
-        this.activity = activity;
-    }
-
-    public boolean isBackupDue() {
-        MainModel mainModel = new MainModel(activity);
+    public static boolean isBackupDue(Context context) {
+        MainModel mainModel = new MainModel(context);
         if (mainModel.getIsAutoBackupEnabled() && mainModel.getDriveConnected()) {
             long now = new Date().getTime();
             long last = mainModel.getBackupDate();
@@ -37,7 +32,7 @@ public class AutoBackup {
     }
 
 
-    public void backUpReadings() {
+    public static void backUpReadings(final Activity activity) {
         final SharedDriveFragmentCode sharedDriveFragmentCode = new SharedDriveFragmentCode(activity);
         sharedDriveFragmentCode.connect(new GoogleApiClient.ConnectionCallbacks() {
             @Override

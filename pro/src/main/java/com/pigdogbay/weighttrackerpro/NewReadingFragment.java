@@ -70,9 +70,8 @@ public class NewReadingFragment extends EditFragment {
     }
 
     private void checkAutoBackup() {
-        AutoBackup autoBackup = new AutoBackup(getActivity());
-        if (autoBackup.isBackupDue()) {
-            autoBackup.backUpReadings();
+        if (AutoBackup.isBackupDue(getActivity())) {
+            AutoBackup.backUpReadings(getActivity());
         }
     }
 

@@ -1,37 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
+    android:layout_height="match_parent"
+    android:background="@drawable/white"
     android:orientation="vertical">
-<EditText 
-    android:hint="@string/import_hint"
-    android:id="@+id/ImportEdit"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:inputType="textMultiLine|textNoSuggestions"
-    android:background="#FFF"
-    android:scrollbars="vertical|horizontal"
-    android:gravity="top"
-    android:layout_weight="1"
-    style="@android:style/TextAppearance.Small"
-    />    
-  <Button 
-    android:id="@+id/ImportLoadBackupButton"
-    android:text="@string/import_load_backup_button"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    style="@android:style/TextAppearance.Large"
-    android:minHeight="60dp"
-    android:layout_weight="0"
-      />
-<Button 
-    android:id="@+id/ImportOKButton"
-    android:text="@string/import_import_button"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    style="@android:style/TextAppearance.Large"
-    android:minHeight="60dp"
-    android:layout_weight="0"
-      />
+
+    <EditText
+        android:id="@+id/ImportEdit"
+        style="@android:style/TextAppearance.Small"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFF"
+        android:gravity="top"
+        android:hint="@string/import_hint"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:scrollbars="vertical|horizontal"
+        />
+
+    <Button
+        android:id="@+id/ImportOKButton"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:minHeight="60dp"
+        android:text="@string/import_import_button"
+        />
 </LinearLayout>

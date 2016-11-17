@@ -27,7 +27,7 @@ public class ImportActivity extends AppCompatActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_import);
-		((Button) findViewById(R.id.ImportOKButton))
+		findViewById(R.id.ImportOKButton)
 				.setOnClickListener(new OnClickListener() {
 					public void onClick(View v) {
 						importReadings();
@@ -38,9 +38,6 @@ public class ImportActivity extends AppCompatActivity {
 		if (null != uri) {
 			loadReadings(uri);
 		}
-		else {
-			showHelp();
-		}
 	}
 
 	private void loadReadings(Uri uri) {
@@ -50,31 +47,14 @@ public class ImportActivity extends AppCompatActivity {
 			textView.setText(data);
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 		}
-	}
-
-	private void showHelp() {
-		String title = getResources().getString(R.string.import_dialog_title);
-		String message = getResources().getString(
-				R.string.import_dialog_message);
-		new AlertDialog.Builder(this)
-				.setIcon(android.R.drawable.ic_dialog_info)
-				.setTitle(title)
-				.setMessage(message)
-				.setPositiveButton(R.string.ok,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int which) {
-								dialog.dismiss();
-							}
-						}).show();
-
 	}
 
 	private void importReadings() {
 		EditText editText = (EditText) findViewById(R.id.ImportEdit);
 		String text = editText.getText().toString();
-		if (text == null || "".equals(text)) {
+		if ("".equals(text)) {
 			Toast.makeText(this, getString(R.string.import_no_text),
 					Toast.LENGTH_SHORT).show();
 		}
@@ -97,8 +77,7 @@ public class ImportActivity extends AppCompatActivity {
 			}
 			Toast.makeText(
 					this,
-					String.valueOf(count)
-							+ getString(R.string.import_readings_added),
+					String.format(getString(R.string.import_readings_added), count),
 					Toast.LENGTH_SHORT).show();
 		}
 		this.finish();

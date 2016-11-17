@@ -115,17 +115,12 @@
     <string name="settings_purchase_color_pack_title">Purchase Required</string>
     <string name="settings_purchase_color_pack_message">Please purchase the Color Pack item from the Shop to unlock the background color settings.</string>
     <string name="import_import_button">Import</string>
-    <string name="import_load_backup_button">Get Backup Readings</string>
     <string name="import_no_backup_file">No backup available</string>
     <string name="import_error_loading_backup_file">Error loading backup</string>
     <string name="import_hint">Paste readings here</string>
     <string name="import_no_text">Nothing to import</string>
-    <string name="import_readings_added">\u0020Readings Added</string>
+    <string name="import_readings_added">%d Readings Added</string>
     <string name="import_dialog_title">Import Help</string>
-    <string name="import_dialog_message">
-        Press the Get Backup Readings button to load your latest backup readings if available.
-        \n\nPress the Import button to merge the readings into the app.
-        \n\nSee the help screen for further details.</string>
     <string name="help_html">
         <![CDATA[
 		<b>Introduction</b><br/><br/>

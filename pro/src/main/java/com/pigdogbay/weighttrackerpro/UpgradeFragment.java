@@ -60,6 +60,11 @@ public class UpgradeFragment extends Fragment implements GoogleApiClient.Connect
             sharedDriveFragmentCode.connect(this);
         }
     }
+    @Override
+    public void onPause() {
+        super.onPause();
+        sharedDriveFragmentCode.disconnect();
+    }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
@@ -74,6 +79,8 @@ public class UpgradeFragment extends Fragment implements GoogleApiClient.Connect
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        sharedDriveFragmentCode.onActivityResult(requestCode,resultCode, this);
+        if (sharedDriveFragmentCode!=null) {
+            sharedDriveFragmentCode.onActivityResult(requestCode, resultCode, this);
+        }
     }
 }

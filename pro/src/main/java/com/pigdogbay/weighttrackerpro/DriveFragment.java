@@ -1,6 +1,7 @@
 package com.pigdogbay.weighttrackerpro;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -125,5 +126,14 @@ public class DriveFragment extends Fragment implements GoogleApiClient.Connectio
     {
         sharedDriveFragmentCode.onConnectionSuspended();
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (sharedDriveFragmentCode!=null) {
+            sharedDriveFragmentCode.onActivityResult(requestCode, resultCode, this);
+        }
+    }
+
 
 }

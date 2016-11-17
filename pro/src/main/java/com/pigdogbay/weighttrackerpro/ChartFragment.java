@@ -1,22 +1,9 @@
 package com.pigdogbay.weighttrackerpro;
 
-import java.io.File;
-import java.util.List;
-
-import com.pigdogbay.lib.utils.ActivityUtils;
-import com.pigdogbay.lib.utils.FileUtils;
-import com.pigdogbay.weightrecorder.model.ChartLogic;
-import com.pigdogbay.weightrecorder.model.DummyData;
-import com.pigdogbay.weightrecorder.model.MainModel;
-import com.pigdogbay.weightrecorder.model.Query;
-import com.pigdogbay.weightrecorder.model.Reading;
-import com.pigdogbay.weightrecorder.model.UserSettings;
-import com.pigdogbay.weightrecorder.utils.ActivitiesHelper;
-
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,6 +12,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.pigdogbay.lib.utils.ActivityUtils;
+import com.pigdogbay.weightrecorder.model.ChartLogic;
+import com.pigdogbay.weightrecorder.model.DummyData;
+import com.pigdogbay.weightrecorder.model.MainModel;
+import com.pigdogbay.weightrecorder.model.Query;
+import com.pigdogbay.weightrecorder.model.Reading;
+import com.pigdogbay.weightrecorder.model.UserSettings;
+import com.pigdogbay.weightrecorder.utils.ActivitiesHelper;
+
+import java.util.List;
 
 public class ChartFragment extends Fragment {
 	public static final String TAG = "chart";
@@ -43,7 +41,10 @@ public class ChartFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_chart, container,false);
-		((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+		if (supportActionBar!=null) {
+			supportActionBar.setDisplayHomeAsUpEnabled(true);
+		}
 		setHasOptionsMenu(true);
 		return rootView;
 	}
@@ -131,19 +132,14 @@ public class ChartFragment extends Fragment {
 		try
 		{
 			Bitmap screenshot = ActivityUtils.takeScreenShot(getActivity());
-			String filename = FileUtils.appendDate(this.getString(R.string.app_name),".png");
-			File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-			File file = new File(path,filename);
-			if (file.exists()) {
-				file.delete();
-			}			
-			FileUtils.writeImage(file, screenshot);
-			ActivitiesHelper.SendFile(getActivity(), file,"image/png", R.string.chart_share_chooser_title);
+			ActivitiesHelper.saveToCache(getActivity(),screenshot);
+			ActivitiesHelper.shareCacheImage(getActivity(),R.string.chart_share_chooser_title);
 		}
 		catch(Exception e){
 			Toast.makeText(getActivity(),
-					this.getString(R.string.readings_export_error),
-					Toast.LENGTH_SHORT).show();		}
+					this.getString(R.string.chart_share_fail),
+					Toast.LENGTH_SHORT).show();
+		}
 	}
 
 }

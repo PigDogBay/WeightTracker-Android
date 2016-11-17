@@ -26,6 +26,7 @@
     <string name="chart_xaxis_title">Date</string>
     <string name="chart_yaxis_title">Weight</string>
     <string name="chart_share_chooser_title">Share Chart</string>
+    <string name="chart_share_fail">Unable to share chart</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="main_btn_enter">New</string>

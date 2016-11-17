@@ -1,6 +1,7 @@
 package com.pigdogbay.weighttrackerpro;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
@@ -201,6 +202,11 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		setTitle(getString(R.string.title_import));
 		replaceFragment(new ImportFragment(), ImportFragment.TAG);
 	}
+
+	public void showUpgrade() {
+		setTitle(getString(R.string.title_upgrade));
+		replaceFragment(new UpgradeFragment(), UpgradeFragment.TAG);
+	}
 	
 	
 	@Override
@@ -213,5 +219,19 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 	public void setBackgroundColor(int id) {
 		ActivityUtils.setBackground(this, R.id.root_layout, id);
 	}
+
+	/***
+	 * onActivityResult does not work for fragment, do it myself!
+     */
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		Fragment f= getSupportFragmentManager().findFragmentById(R.id.root_layout);
+		if (f!=null){
+			f.onActivityResult(requestCode,resultCode,data);
+		}
+
+	}
+
 
 }

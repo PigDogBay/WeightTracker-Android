@@ -314,5 +314,6 @@ http://www.pigdogbay.com<br/>
     <string name="connect_restore_help_text">Connected to Google Drive.\nPress RESTORE to retrieve any previous readings</string>
     <string name="drive_status_connected">Connected</string>
     <string name="connect_restore_button">Restore Readings</string>
-
+    <string name="upgrade_help_text">Automatically back up your readings and transfer them to other devices. Press CONNECT to allow the app access to your Google Drive and backup your data</string>
+    <string name="title_upgrade">Upgrade</string>
 </resources>

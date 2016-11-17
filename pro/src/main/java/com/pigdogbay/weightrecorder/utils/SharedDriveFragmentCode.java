@@ -3,6 +3,7 @@ package com.pigdogbay.weightrecorder.utils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.IntentSender;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -43,7 +44,7 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
     private static final String MIME_TYPE = "text/csv";
 
     private final Activity activity;
-    private int resolutionCounter;
+    private int resolutionCounter, onActivityResultCounter;
     private boolean isTaskRunning;
     private GoogleApiClient googleApiClient;
     private TextView statusTextView;
@@ -55,6 +56,7 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
     public SharedDriveFragmentCode(Activity activity){
         this.activity = activity;
         resolutionCounter = 0;
+        onActivityResultCounter = 0;
         isTaskRunning = false;
 
     }
@@ -114,6 +116,23 @@ public class SharedDriveFragmentCode implements GoogleApiClient.OnConnectionFail
             result.startResolutionForResult(activity, REQUEST_CODE_RESOLUTION);
         } catch (IntentSender.SendIntentException e) {
             e.printStackTrace();
+        }
+
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, GoogleApiClient.ConnectionCallbacks connectionCallbacks) {
+
+        //Only try to connect once
+        onActivityResultCounter++;
+        if (onActivityResultCounter>1){return;}
+
+        if (resultCode == Activity.RESULT_OK){
+            switch (requestCode){
+                case SharedDriveFragmentCode.REQUEST_CODE_RESOLUTION:
+                    //try to connect again
+                    connect(connectionCallbacks);
+                    break;
+            }
         }
 
     }

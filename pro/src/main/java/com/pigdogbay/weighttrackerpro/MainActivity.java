@@ -3,25 +3,20 @@ package com.pigdogbay.weighttrackerpro;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.pigdogbay.lib.apprate.AppRate;
 import com.pigdogbay.lib.mvp.BackgroundColorPresenter;
 import com.pigdogbay.lib.mvp.IBackgroundColorView;
 import com.pigdogbay.lib.utils.ActivityUtils;
-import com.pigdogbay.lib.utils.FileUtils;
 import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.Reading;
 import com.pigdogbay.weightrecorder.model.SettingsUtils;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements OnSharedPreferenceChangeListener,IBackgroundColorView{
@@ -46,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 				checkRate();
 			}
 			catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 		mainModel.close();
@@ -71,53 +67,19 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 					.init();
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	private void checkFirstTime(MainModel mainModel) {
 		if (!mainModel.getIsFirstTime()) {
 			SettingsUtils.setDefaultSettings(Locale.getDefault(), new MainModel(this));
 			mainModel.setIsFirstTime(true);
-			loadReadingsInBackground();
 			showWelcome();
 		}
 		else
 		{
 			showHome();
 		}
-	}
-	
-	private void loadReadingsInBackground()
-	{
-		new AsyncTask<Void, Void, Void>() {
-			@Override
-			protected Void doInBackground(Void... params) 
-			{
-				try
-				{
-					loadReadings();
-				}
-				catch(Exception e)
-				{
-					Log.v(TAG,"Import readings error");
-				}
-				return null;
-			}
-		}.execute();
-	}
-	private void loadReadings() throws IOException {
-		File latest = ActivitiesHelper.getLatestBackupFile(this);
-		if (latest==null)
-		{
-			Log.v(TAG,"No readings file");
-			return;
-		}
-		String data = FileUtils.readText(latest);
-		if (data == null || "".equals(data)) {
-			Log.v(TAG,"Readings is empty");
-			return;
-		}
-		int count = ActivitiesHelper.mergeReadings(this, data);
-		Log.v(TAG,"Import "+count+" files");
 	}
 	
 	private AlertDialog.Builder createRateDialog() {

@@ -81,50 +81,7 @@ public class ActivitiesHelper {
 					Toast.LENGTH_SHORT).show();
 		}
 	}
-	
-	public static void backupReadings(Activity activity)
-	{
-		try {
-			MainModel mainModel = new MainModel(activity);
-			List<Reading> readings = mainModel.getReverseOrderedReadings();
-			mainModel.close();
-			if (readings.size() == 0) {
-				return;
-			}
-			String text = ReadingsSerializer.format(readings);
-			String filename = FileUtils.appendDate(
-					activity.getString(R.string.app_name), CSV_FILE_EXTENSION);
-			File path = Environment
-					.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-			File file = new File(path, filename);
-			if (file.exists()) {
-				file.delete();
-			}
-			FileUtils.writeTextFile(file, text);
-			Toast.makeText(activity, filename, Toast.LENGTH_SHORT).show();
 
-		}
-		catch (Exception e) {
-			Toast.makeText(activity,
-					activity.getString(R.string.backup_readings_error),
-					Toast.LENGTH_SHORT).show();
-		}
-		
-	}
-	
-	public static File getLatestBackupFile(Activity activity)
-	{
-		File dir = Environment
-				.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-		File[] matches = dir.listFiles(new DateStampedFileFilter(activity.getString(R.string.app_name), CSV_FILE_EXTENSION));
-		if (matches!=null && matches.length>0)
-		{
-			Arrays.sort(matches, new DateStampComparator());
-			return matches[matches.length-1];
-		}
-		return null;
-	}
-	
 	public static int mergeReadings(Activity activity, String data){
 		List<Reading> readings = ReadingsSerializer.parse(data);
 		int count = readings.size();
@@ -142,6 +99,7 @@ public class ActivitiesHelper {
 		}
 		return count;
 	}
+
 	public static void SendFile(Activity activity, File file, String type, int chooserTitleID) {
 		Intent i = new Intent(Intent.ACTION_SEND);
 		i.setType(type);

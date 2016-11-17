@@ -1,9 +1,7 @@
 package com.pigdogbay.weighttrackerpro;
 
-import java.io.File;
-import com.pigdogbay.lib.utils.FileUtils;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import com.pigdogbay.weightrecorder.utils.ActivitiesHelper;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -12,9 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class ImportFragment extends Fragment {

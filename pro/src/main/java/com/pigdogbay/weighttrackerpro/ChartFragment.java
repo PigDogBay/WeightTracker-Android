@@ -11,6 +11,7 @@ import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.Query;
 import com.pigdogbay.weightrecorder.model.Reading;
 import com.pigdogbay.weightrecorder.model.UserSettings;
+import com.pigdogbay.weightrecorder.utils.ActivitiesHelper;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;

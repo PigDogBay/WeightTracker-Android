@@ -1,8 +1,4 @@
-package com.pigdogbay.weighttrackerpro;
-
-import java.io.File;
-import java.util.Arrays;
-import java.util.List;
+package com.pigdogbay.weightrecorder.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,25 +6,19 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Environment;
 import android.widget.Toast;
 
-import com.pigdogbay.lib.utils.DateStampComparator;
-import com.pigdogbay.lib.utils.DateStampedFileFilter;
-import com.pigdogbay.lib.utils.FileUtils;
+import com.pigdogbay.lib.utils.ActivityUtils;
 import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.Reading;
 import com.pigdogbay.weightrecorder.model.ReadingsSerializer;
 import com.pigdogbay.weightrecorder.model.Synchronization;
+import com.pigdogbay.weighttrackerpro.R;
+
+import java.io.File;
+import java.util.List;
 
 public class ActivitiesHelper {
-
-	private static final String CSV_FILE_EXTENSION = ".csv";
-
-	public static void startImportActivity(Activity activity) {
-		Intent intent = new Intent(activity, ImportActivity.class);
-		activity.startActivity(intent);
-	}
 
 	public static void showInfoDialog(Context context, int titleID,
 			int messageID) {
@@ -62,18 +52,7 @@ public class ActivitiesHelper {
 
 			}
 			String text = ReadingsSerializer.format(readings);
-			String filename = FileUtils.appendDate(
-					activity.getString(R.string.app_name), CSV_FILE_EXTENSION);
-			File path = Environment
-					.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-			File file = new File(path, filename);
-			if (file.exists()) {
-				file.delete();
-			}
-			FileUtils.writeTextFile(file, text);
-			Toast.makeText(activity, filename, Toast.LENGTH_SHORT).show();
-			SendFile(activity, file, "text/plain", R.string.readings_share_chooser_title);
-
+			ActivityUtils.shareText(activity, activity.getString(R.string.app_name),text, R.string.share_readings_chooser_title);
 		}
 		catch (Exception e) {
 			Toast.makeText(activity,
@@ -118,23 +97,4 @@ public class ActivitiesHelper {
 					Toast.LENGTH_SHORT).show();
 		}
 	}
-
-	public static void shareText(Activity activity, String subject, String text, int chooserTitleID) {
-		Intent i = new Intent(Intent.ACTION_SEND);
-		i.setType("text/plain");
-		i.putExtra(Intent.EXTRA_EMAIL, "");
-		i.putExtra(Intent.EXTRA_SUBJECT, subject);
-		i.putExtra(Intent.EXTRA_TEXT, text);
-		try {
-			activity.startActivity(Intent.createChooser(i,
-					activity.getString(chooserTitleID)));
-		}
-		catch (android.content.ActivityNotFoundException ex) {
-			Toast.makeText(activity,
-					activity.getString(R.string.about_no_market_app),
-					Toast.LENGTH_SHORT).show();
-		}
-
-	}
-	
 }

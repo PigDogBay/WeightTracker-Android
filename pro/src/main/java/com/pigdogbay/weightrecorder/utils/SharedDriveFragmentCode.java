@@ -21,7 +21,6 @@ import com.pigdogbay.lib.utils.FileUtils;
 import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.Reading;
 import com.pigdogbay.weightrecorder.model.ReadingsSerializer;
-import com.pigdogbay.weighttrackerpro.ActivitiesHelper;
 import com.pigdogbay.weighttrackerpro.MainActivity;
 import com.pigdogbay.weighttrackerpro.R;
 

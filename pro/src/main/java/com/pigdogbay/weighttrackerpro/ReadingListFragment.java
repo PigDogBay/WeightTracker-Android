@@ -5,6 +5,7 @@ import com.pigdogbay.weightrecorder.model.BMICalculator;
 import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.Reading;
 import com.pigdogbay.weightrecorder.model.ReportFormatting;
+import com.pigdogbay.weightrecorder.utils.ActivitiesHelper;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;

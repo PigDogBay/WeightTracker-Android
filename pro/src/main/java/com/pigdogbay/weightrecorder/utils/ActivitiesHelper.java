@@ -82,31 +82,15 @@ public class ActivitiesHelper {
         return count;
     }
 
-    public static void SendFile(Activity activity, File file, String type, int chooserTitleID) {
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType(type);
-        i.putExtra(Intent.EXTRA_EMAIL, "");
-        i.putExtra(Intent.EXTRA_SUBJECT, file.getName());
-        i.putExtra(Intent.EXTRA_TEXT, activity.getString(R.string.facebookPage));
-        Uri uri = Uri.fromFile(file);
-        i.putExtra(Intent.EXTRA_STREAM, uri);
-        try {
-            activity.startActivity(Intent.createChooser(i,
-                    activity.getString(chooserTitleID)));
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(activity,
-                    activity.getString(R.string.about_no_market_app),
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
     /**
      * Sharing Images using cache
+     *
+     * Also need
+     * xml/filepaths.xml
+     * AndroidManifest - provider
      * See
      * http://stackoverflow.com/questions/9049143/android-share-intent-for-a-bitmap-is-it-possible-not-to-save-it-prior-sharing
      */
-
     private static final String IMAGE_CACHE_DIR = "images";
     private static final String IMAGE_CACHE_FILE_NAME = "image.png";
 

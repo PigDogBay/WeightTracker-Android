@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 import com.pigdogbay.lib.mvp.BackgroundColorModel;
-import com.pigdogbay.lib.mvp.IBackgroundColorModel;
 import com.pigdogbay.lib.utils.PreferencesHelper;
 import com.pigdogbay.weighttrackerpro.R;
 
@@ -16,13 +15,11 @@ import android.content.Context;
  */
 public class MainModel
 {
-	public static final double DEFAULT_HEIGHT=1.72D;
 	//Same as 175lb
 	public static final double DEFAULT_TARGET_WEIGHT=79.3787D;
 	public static final double DEFAULT_HEIGHT_INCHES=72D;
 	public static final double DEFAULT_TARGET_WEIGHT_POUNDS=175D;
-	public static final long AD_FREE_GRACE_PERIOD_IN_MILLIS = 7L*24L*60L*60L*1000L;
-	
+
 	private Context _Context;
 	private IReadingsDatabase _DatabaseHelper;
 	private PreferencesHelper _PreferencesHelper; 
@@ -55,9 +52,10 @@ public class MainModel
 			_DatabaseHelper.close();
 		}
 	}
-	public IBackgroundColorModel createBackgroundColorModel()
+	public BackgroundColorModel createBackgroundColorModel()
 	{
-		return new BackgroundColorModel(getPreferencesHelper());
+		int defaultValue = _Context.getResources().getInteger(R.integer.default_background_color);
+		return new BackgroundColorModel(getPreferencesHelper(), defaultValue);
 	}
 	
 	public List<Reading> getReverseOrderedReadings(){

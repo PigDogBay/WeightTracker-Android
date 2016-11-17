@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Indigo-->
-    <!--<color name="colorPrimary">#3F51B5</color>-->
-    <!--<color name="colorPrimaryDark">#303F9F</color>-->
-    <!--<color name="colorAccent">#304ffe</color>-->
-    <!--Teal-->
-    <!--<color name="colorPrimary">#009688</color>-->
-    <!--<color name="colorPrimaryDark">#00796b</color>-->
-    <!--<color name="colorAccent">#00bfa5</color>-->
-    <!--purple-->
-    <color name="colorPrimary">#9c27b0</color>
-    <color name="colorPrimaryDark">#7b1fa2</color>
-    <color name="colorPrimaryDarkest">#4a148c</color>
-    <color name="colorPrimaryLight">#ba6bc8</color>
-    <color name="colorPrimaryLighter">#e1bee7</color>
-    <color name="colorPrimaryLightest">#f3e5f5</color>
-    <color name="colorAccent">#aa00ff</color>
-    <!--Deep Purple-->
-    <!--<color name="colorPrimary">#673ab7</color>-->
-    <!--<color name="colorPrimaryDark">#512dab</color>-->
-    <!--<color name="colorAccent">#6200ea</color>-->
-    <!--Blue Grey-->
-    <!--<color name="colorPrimary">#607d8b</color>-->
-    <!--<color name="colorPrimaryDark">#455a64</color>-->
-    <!--<color name="colorAccent">#00b8d4</color>-->
+    <color name="colorPrimary">#3F51B5</color> <!--500-->
+    <color name="colorPrimaryDark">#303F9F</color> <!--700-->
+    <color name="colorPrimaryDarkest">#1a237e</color> <!--900-->
+    <color name="colorPrimaryLight">#7986CB</color> <!--300-->
+    <color name="colorPrimaryLighter">#C5CAE9</color> <!--100-->
+    <color name="colorPrimaryLightest">#E8EAF6</color> <!--50-->
+    <color name="colorAccent">#304ffe</color> <!--A700-->
 
     <color name="skyblue">#00145E9D</color>
     <color name="pink">#fffdd7e4</color>

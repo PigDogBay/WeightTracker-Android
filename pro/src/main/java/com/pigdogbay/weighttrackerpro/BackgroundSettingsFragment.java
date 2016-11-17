@@ -1,7 +1,8 @@
 package com.pigdogbay.weighttrackerpro;
 
 import com.pigdogbay.lib.mvp.BackgroundColorModel;
-import com.pigdogbay.lib.utils.PreferencesHelper;
+import com.pigdogbay.weightrecorder.model.MainModel;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,19 +16,20 @@ public class BackgroundSettingsFragment extends Fragment implements OnClickListe
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-    	_BackgroundColorModel = new BackgroundColorModel(new PreferencesHelper(getActivity()));
+		MainModel mainModel = new MainModel(getContext());
+    	_BackgroundColorModel = mainModel.createBackgroundColorModel();
 	}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_background_setting, container, false);
     	dataExchangeToControls(rootView);
-    	((RadioButton)rootView.findViewById(R.id.BackgroundSettingSkyBlue)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.BackgroundSettingDarkPink)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.BackgroundSettingLightPink)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.BackgroundSettingTurquoise)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.BackgroundSettingYellow)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.BackgroundSettingGrey)).setOnClickListener(this);
-    	((RadioButton)rootView.findViewById(R.id.BackgroundSettingWhite)).setOnClickListener(this);
+    	rootView.findViewById(R.id.BackgroundSettingSkyBlue).setOnClickListener(this);
+    	rootView.findViewById(R.id.BackgroundSettingDarkPink).setOnClickListener(this);
+    	rootView.findViewById(R.id.BackgroundSettingLightPink).setOnClickListener(this);
+    	rootView.findViewById(R.id.BackgroundSettingTurquoise).setOnClickListener(this);
+    	rootView.findViewById(R.id.BackgroundSettingYellow).setOnClickListener(this);
+    	rootView.findViewById(R.id.BackgroundSettingGrey).setOnClickListener(this);
+    	rootView.findViewById(R.id.BackgroundSettingWhite).setOnClickListener(this);
         return rootView;
     }
 

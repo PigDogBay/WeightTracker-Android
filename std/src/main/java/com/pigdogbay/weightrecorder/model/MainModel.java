@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 import com.pigdogbay.lib.mvp.BackgroundColorModel;
-import com.pigdogbay.lib.mvp.IBackgroundColorModel;
 import com.pigdogbay.lib.utils.PreferencesHelper;
 import com.pigdogbay.weightrecorder.R;
 import android.content.Context;
@@ -54,9 +53,9 @@ public class MainModel
 			_DatabaseHelper.close();
 		}
 	}
-	public IBackgroundColorModel createBackgroundColorModel()
+	public BackgroundColorModel createBackgroundColorModel()
 	{
-		return new BackgroundColorModel(getPreferencesHelper());
+		return new BackgroundColorModel(getPreferencesHelper(), BackgroundColorModel.SKY_BLUE_INDEX);
 	}
 	
 	public List<Reading> getReverseOrderedReadings(){

@@ -78,11 +78,16 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 			SettingsUtils.setDefaultSettings(Locale.getDefault(), new MainModel(this));
 			mainModel.setIsFirstTime(true);
 			showWelcome();
+		} else if (mainModel.getShowUpgrade()){
+			//Transition Users from SD card to Google Drive
+			showUpgrade();
+			_BackgroundColorPresenter.resetBackground();
 		}
 		else
 		{
 			showHome();
 		}
+		mainModel.setShowUpgrade(false);
 	}
 	
 	private AlertDialog.Builder createRateDialog() {

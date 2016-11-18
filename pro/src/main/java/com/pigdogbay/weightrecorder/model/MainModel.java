@@ -174,6 +174,12 @@ public class MainModel
 	public boolean getDriveConnected(){
 		return getPreferencesHelper().getBoolean(R.string.code_pref_drive_connected_key,false);
 	}
+	public void setShowUpgrade(boolean showUpgrade){
+		getPreferencesHelper().setBoolean(R.string.code_pref_show_upgrade_screen,showUpgrade);
+	}
+	public boolean getShowUpgrade(){
+		return getPreferencesHelper().getBoolean(R.string.code_pref_show_upgrade_screen,true);
+	}
 
 	public UserSettings getUserSettings()
 	{

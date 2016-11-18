@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <string translatable="false" name="app_name">Weight Tracker</string>
+    <string translatable="false" name="market_weightrecorder">market://details?id=com.pigdogbay.weightrecorder</string>
+    <string translatable="false" name="about_version">Version 1.18.03</string>
+    <string translatable="false" name="image_cache_fileprovider">com.pigdogbay.weightrecorder.fileprovider</string>
+</resources>

@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 	public static final String TAG = "WeightTracker";
 
 	BackgroundColorPresenter _BackgroundColorPresenter;
+	//Hack fro ConnectToDriveFragment
+	public int resultCode, requestCode, onActivityCount;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -160,6 +162,9 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		replaceFragment(new AboutFragment(), AboutFragment.TAG);
 	}
 	public void showWelcome(){
+		requestCode=-1;
+		resultCode=RESULT_CANCELED;
+		onActivityCount=0;
 		setTitle(getString(R.string.title_welcome));
 		replaceFragment(new WelcomeWizardFragment(), WelcomeWizardFragment.TAG);
 	}
@@ -226,11 +231,13 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+		onActivityCount++;
+		this.requestCode = requestCode;
+		this.resultCode = resultCode;
 		Fragment f= getSupportFragmentManager().findFragmentById(R.id.root_layout);
 		if (f!=null){
 			f.onActivityResult(requestCode,resultCode,data);
 		}
-
 	}
 
 

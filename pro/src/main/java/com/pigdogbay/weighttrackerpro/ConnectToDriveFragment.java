@@ -54,10 +54,21 @@ public class ConnectToDriveFragment extends Fragment implements GoogleApiClient.
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        MainActivity mainActivity = (MainActivity) getActivity();
+        if (mainActivity.requestCode!=-1 && mainActivity.onActivityCount==1){
+            sharedDriveFragmentCode.onActivityResult(mainActivity.requestCode,mainActivity.resultCode,this);
+            mainActivity.requestCode=-1;
+        }
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
         sharedDriveFragmentCode.disconnect();
     }
+
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {

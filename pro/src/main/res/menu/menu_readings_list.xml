@@ -4,7 +4,7 @@
     >
     <item
         android:icon="@drawable/ic_share"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:id="@+id/menu_readings_list_export"
         android:title="@string/menu_readings_list_export"/>
     <item

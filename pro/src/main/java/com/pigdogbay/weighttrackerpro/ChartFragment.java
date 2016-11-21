@@ -21,6 +21,7 @@ import com.pigdogbay.weightrecorder.model.Query;
 import com.pigdogbay.weightrecorder.model.Reading;
 import com.pigdogbay.weightrecorder.model.UserSettings;
 import com.pigdogbay.weightrecorder.utils.ActivitiesHelper;
+import com.pigdogbay.weightrecorder.utils.IAds;
 
 import java.util.List;
 
@@ -31,6 +32,8 @@ public class ChartFragment extends Fragment {
 	static int _Period = 0;
 	private MainModel _MainModel;
 	private boolean _UseDummyReadings;
+	private IAds adView;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,6 +49,8 @@ public class ChartFragment extends Fragment {
 			supportActionBar.setDisplayHomeAsUpEnabled(true);
 		}
 		setHasOptionsMenu(true);
+		adView = new com.pigdogbay.weightrecorder.utils.AdsVariation();
+		adView.setUp(rootView);
 		return rootView;
 	}
 	@Override
@@ -57,6 +62,19 @@ public class ChartFragment extends Fragment {
 			ActivitiesHelper.showInfoDialog(getActivity(), R.string.chart_notenoughdata_title, R.string.chart_notenoughdata_message);
 		}
 	}
+
+	@Override
+	public void onPause() {
+		adView.pause();
+		super.onPause();
+	}
+
+	@Override
+	public void onResume() {
+		adView.resume();
+		super.onResume();
+	}
+
 	@Override
 	public void onDestroy() {
 		// TODO Auto-generated method stub

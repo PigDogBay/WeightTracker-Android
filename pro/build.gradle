@@ -44,5 +44,8 @@ dependencies {
     androidTestCompile 'com.android.support.test:rules:0.5'
     // Optional -- Hamcrest library
     androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
-
+    weightTrackerStdCompile 'com.google.firebase:firebase-ads:9.8.0'
 }
+//Comment this out for pro builds as it will pull in firebase dependencies
+//https://developers.google.com/android/guides/google-services-plugin
+apply plugin: 'com.google.gms.google-services'

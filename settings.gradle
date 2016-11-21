@@ -1,2 +1,2 @@
-include ':std', ':lib', ':pro'
+include ':lib', ':pro'
 project(":lib").projectDir = new File("../../MPDBLib/MPDBLib/lib")

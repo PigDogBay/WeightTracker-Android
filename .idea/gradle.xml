@@ -11,7 +11,6 @@
             <option value="$PROJECT_DIR$/../../MPDBLib/MPDBLib/lib" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/pro" />
-            <option value="$PROJECT_DIR$/std" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

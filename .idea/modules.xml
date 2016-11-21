@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/WeightTracker.iml" filepath="$PROJECT_DIR$/WeightTracker.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../MPDBLib/MPDBLib/lib/lib.iml" filepath="$PROJECT_DIR$/../../MPDBLib/MPDBLib/lib/lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro/pro.iml" filepath="$PROJECT_DIR$/pro/pro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/std/std.iml" filepath="$PROJECT_DIR$/std/std.iml" />
     </modules>
   </component>
 </project>

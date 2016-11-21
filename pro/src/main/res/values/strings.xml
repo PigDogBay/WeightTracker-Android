@@ -173,7 +173,7 @@
     </string>
     <string name="report_template">
         <![CDATA[
-Weight Tracker Pro Report<br/>
+Weight Tracker Report<br/>
 <br/>
 --- Body Mass Index ---<br/>
 <br/>
@@ -216,7 +216,6 @@ Last Date	 						\t\t\t\t\t$LastDate<br/>
 Time Spent	 						\t\t\t\t\t$TimeSpent<br/>
 <br/>		
 <br/>		
-http://www.pigdogbay.com<br/>
 		]]>
 	</string>
     <string name="menu_help_text_small">Text Small</string>

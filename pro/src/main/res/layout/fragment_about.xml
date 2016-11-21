@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true" >
-
+    android:fillViewport="true"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,64 +13,53 @@
         <TextView
             style="@style/AboutHeader"
             android:text="@string/about_header_info" />
-
         <TextView
             style="@style/AboutBodyText"
             android:text="@string/about_version" />
-
+        <TextView
+            style="@style/AboutBodyText"
+            android:text="@string/about_web" />
         <TextView
             style="@style/AboutBodyText"
             android:text="@string/about_copyright" />
-
-        <TextView
-            android:id="@+id/aboutWebsiteLink"
-            style="@style/AboutBodyText"
-            android:autoLink="web"
-            android:linksClickable="false"
-            android:text="@string/website" />
-
-        <TextView
-            android:id="@+id/aboutFacebookLink"
-            style="@style/AboutBodyText"
-            android:autoLink="web"
-            android:linksClickable="false"
-            android:text="@string/facebookPage" />
-
-        <TextView
-            android:id="@+id/aboutTwitterLink"
-            style="@style/AboutBodyText"
-            android:autoLink="web"
-            android:linksClickable="false"
-            android:text="@string/twitter" />
-
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:theme="@style/MaterialButton"
+                style="@style/AboutButton"
+                android:id="@+id/aboutBtnReleaseNotes"
+                android:text="@string/about_release_notes" />
+            <Button
+                android:theme="@style/MaterialButton"
+                style="@style/AboutButton"
+                android:id="@+id/aboutBtnLegal"
+                android:text="@string/about_button_legal" />
+        </LinearLayout>
         <TextView
             style="@style/AboutHeader"
             android:text="@string/about_header_feedback" />
-
         <TextView
             style="@style/AboutBodyText"
             android:text="@string/about_body_feedback" />
-
-        <Button
-            android:id="@+id/aboutBtnRate"
-            style="@style/AboutButton"
-            android:background="@drawable/about_blue_button"
-            android:text="@string/about_button_rate" />
-
-        <Button
-            android:id="@+id/aboutBtnFacebook"
-            style="@style/AboutButton"
-            android:background="@drawable/about_blue_button"
-            android:text="@string/about_button_facebook" />
-
-        <Button
-            android:id="@+id/aboutBtnLegal"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="right"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="20dp"
-            android:padding="10dp"
-            android:text="@string/about_button_legal" />
-    </LinearLayout>
+            android:layout_height="wrap_content">
+            <Button
+                android:theme="@style/MaterialButton"
+                style="@style/AboutButton"
+                android:id="@+id/aboutBtnSendFeedback"
+                android:text="@string/about_button_send_feedback"/>
+            <Button
+                android:theme="@style/MaterialButton"
+                style="@style/AboutButton"
+                android:id="@+id/aboutBtnRate"
+                android:text="@string/about_button_rate"/>
+        </LinearLayout>
 
+    </LinearLayout>
 </ScrollView>

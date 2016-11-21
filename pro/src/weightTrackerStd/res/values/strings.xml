@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="title_main">Weight Tracker</string>
+    <string name="about_header_go_pro">Go Pro</string>
+    <string name="about_body_go_pro">\u00a0* Ad free</string>
+    <string name="about_button_go_pro">GO PRO</string>
+
 </resources>

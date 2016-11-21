@@ -20,7 +20,7 @@
     <string translatable="false" name="market_pro_app_url">market://details?id=com.pigdogbay.weighttrackerpro</string>
     <string translatable="false" name="market_weightrecorder">market://details?id=com.pigdogbay.weighttrackerpro</string>
     <string translatable="false" name="about_version">Version 2.02.03</string>
-    <string translatable="false" name="about_copyright">\u00A92017 MPD Bailey Technology</string>
+    <string translatable="false" name="about_copyright">\u00A92016 MPD Bailey Technology</string>
     <string translatable="false" name="about_web">www.pigdogbay.com</string>
     <string translatable="false" name="image_cache_fileprovider">com.pigdogbay.weighttrackerpro.fileprovider</string>
 

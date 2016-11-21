@@ -62,13 +62,6 @@
             android:layout_margin="10dp"
             android:text="@string/addreading_add_btn" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:text="@string/addreading_tip" />
-
         <CheckBox
             android:id="@+id/AddReadingStayOnScreen"
             android:layout_width="wrap_content"

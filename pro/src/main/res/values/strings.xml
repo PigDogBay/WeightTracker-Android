@@ -48,6 +48,7 @@
     <string name="edit_speak_prompt_comment">Speak your comment</string>
     <string name="addreading_stay_on_the_screen">Stay on the screen</string>
     <string name="addreading_tip">Use the +/- buttons to adjust or press the center button to edit. When done, press the Add button to record your reading.</string>
+    <string name="help">Help</string>
     <string name="addreading_added">Reading Added</string>
     <string name="addreading_add_btn">ADD</string>
     <string name="addreading_reached_goal_title">Congratulations!</string>

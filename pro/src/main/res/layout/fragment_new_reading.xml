@@ -56,6 +56,9 @@
 
         <Button
             android:id="@+id/AddReadingBtnAdd"
+            android:theme="@style/MaterialButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textSize="24sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

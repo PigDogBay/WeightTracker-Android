@@ -15,4 +15,4 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
--keep class com.github.mikephil.charting.** { *; }
+-keep class org.achartengine.**

@@ -37,7 +37,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.google.android.gms:play-services-drive:10.0.0'
     compile 'com.android.support:support-v4:25.0.1'
-    compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
     testCompile 'junit:junit:4.12'
     //Instrumentation Unit Tests
     androidTestCompile 'com.android.support:support-annotations:25.0.1'

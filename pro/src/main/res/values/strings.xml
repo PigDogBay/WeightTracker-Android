@@ -371,4 +371,5 @@ $Date<br/><br/>
     <string name="connect_restore_button">Restore Readings</string>
     <string name="upgrade_help_text">Automatically back up your readings and transfer them to other devices. Press CONNECT to allow the app access to your Google Drive and backup your data</string>
     <string name="title_upgrade">Upgrade</string>
+    <string name="report_next_bmi">Next BMI</string>
 </resources>

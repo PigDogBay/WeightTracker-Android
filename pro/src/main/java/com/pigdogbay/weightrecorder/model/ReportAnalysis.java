@@ -68,6 +68,15 @@ public class ReportAnalysis {
 	{
 		return _BMICalculator.calculateBMI(AverageWeight);
 	}
+	public double getNextBMI(){
+		double currentBmi = getLatestBMI();
+		return Math.floor(currentBmi);
+	}
+	public double getNextBMIWeight(){
+		double nextBmi = getNextBMI();
+		return _BMICalculator.calculateWeightFromBMI(nextBmi);
+	}
+
 	public double getWeeklyTrendOverLastWeek()
 	{
 		return _TrendanalysisLastWeek.getTrendInDays()*7D;

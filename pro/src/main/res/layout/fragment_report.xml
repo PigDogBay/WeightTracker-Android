@@ -27,6 +27,19 @@
                 android:layout_weight="5"
                 android:text="27.1 (Overweight)" />
         </LinearLayout>
+        <LinearLayout style="@style/ReportFieldLayout" >
+
+            <TextView
+                style="@style/ReportFieldTitle"
+                android:layout_weight="3"
+                android:text="@string/report_next_bmi" />
+
+            <TextView
+                android:id="@+id/ReportTextViewNextBMI"
+                style="@style/ReportFieldValue"
+                android:layout_weight="5"
+                android:text="27.1 (Overweight)" />
+        </LinearLayout>
 
         <LinearLayout style="@style/ReportFieldLayout" >
 

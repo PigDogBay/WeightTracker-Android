@@ -39,6 +39,9 @@ public class ReportFormatting {
 	public String getIdealWeightRange(double startWeight, double endWeight) {
 		return getWeightString(startWeight) +" - "+getWeightString(endWeight);
 	}
+	public String getNextBMI(double bmi, double weight){
+		return String.format("(%.0f) %s", bmi, getWeightString(weight));
+	}
 	public String getValidDateString(long timeInMillis)
 	{
 		return TrendAnalysis.isGoalDateValid(timeInMillis) ? getDateString(timeInMillis) : InvalidDateString;

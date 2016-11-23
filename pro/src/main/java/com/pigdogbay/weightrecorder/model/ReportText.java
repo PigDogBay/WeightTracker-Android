@@ -64,6 +64,7 @@ public class ReportText {
 		_Map.put(LastDate_Key, formatter.getDateString(analysis.LastReading.getDate()));
 		_Map.put(TimeSpent_Key, formatter.getNumberOfDays(analysis.getTimeSpent()));
 		_Map.put(Date_Key,formatter.getDateString(new Date()));
+		_Map.put("$NextBMI", formatter.getNextBMI(analysis.getNextBMI(),analysis.getNextBMIWeight()));
 	}
 	public Set<Map.Entry<String, String>> getEntrySet()
 	{

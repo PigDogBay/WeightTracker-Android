@@ -102,9 +102,11 @@ public class ReportFragment  extends Fragment {
 			IllegalAccessException, NoSuchFieldException {
 		for (Map.Entry<String, String> entry : _ReportText.getEntrySet()) {
 			String fieldName = entry.getKey().replace("$", TEXT_FIELD_PREFIX);
-			int id = R.id.class.getField(fieldName).getInt(null);
-			TextView textView = (TextView) view.findViewById(id);
-			textView.setText(entry.getValue());
+			try {
+				int id = R.id.class.getField(fieldName).getInt(null);
+				TextView textView = (TextView) view.findViewById(id);
+				textView.setText(entry.getValue());
+			}catch (Exception e){e.printStackTrace();}
 		}
 	}	
 	private void emailReport() {

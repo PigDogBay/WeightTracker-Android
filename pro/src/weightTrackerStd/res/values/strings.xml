@@ -2,7 +2,7 @@
 <resources>
     <string name="title_main">Weight Tracker</string>
     <string name="about_header_go_pro">Go Pro</string>
-    <string name="about_body_go_pro">\u00a0* Ad free</string>
+    <string name="about_body_go_pro">\u00a0* Ad free\n * Print Reports\n * Full screen chart</string>
     <string name="about_button_go_pro">GO PRO</string>
     <string name="about_button_feedback_subject">Weight Tracker v1.18 Feedback</string>
 

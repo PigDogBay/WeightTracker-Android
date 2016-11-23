@@ -1,40 +1,40 @@
 package com.pigdogbay.weightrecorder.model;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import com.pigdogbay.weighttrackerpro.R;
-
 public class ReportText {
 
-	Map<String,String> _Map = new HashMap<String,String>();
+	private Map<String,String> _Map = new HashMap<>();
 
-	public static final String LatestBMI_Key = "$LatestBMI";
-	public static final String GoalBMI_Key = "$GoalBMI";
-	public static final String IdealRange_Key = "$IdealRange";
-	public static final String TrendWeekTitle_Key = "$TrendWeekTitle";
-	public static final String TrendWeekValue_Key = "$TrendWeekValue";
-	public static final String TrendWeekGoalDate_Key = "$TrendWeekGoalDate";
-	public static final String TrendMonthTitle_Key = "$TrendMonthTitle";
-	public static final String TrendMonthValue_Key = "$TrendMonthValue";
-	public static final String TrendMonthGoalDate_Key = "$TrendMonthGoalDate";
-	public static final String TrendAllTitle_Key = "$TrendAllTitle";
-	public static final String TrendAllValue_Key = "$TrendAllValue";
-	public static final String TrendAllGoalDate_Key = "$TrendAllGoalDate";
-	public static final String MinWeight_Key = "$MinWeight";
-	public static final String MaxWeight_Key = "$MaxWeight";
-	public static final String MaxMinusMinWeight_Key = "$MaxMinusMinWeight";
-	public static final String FirstWeight_Key = "$FirstWeight";
-	public static final String LastWeight_Key = "$LastWeight";
-	public static final String FirstMinusLastWeight_Key = "$FirstMinusLastWeight";
-	public static final String AverageWeight_Key = "$AverageWeight";
-	public static final String AverageBMI_Key = "$AverageBMI";
-	public static final String Count_Key = "$Count";
-	public static final String FirstDate_Key = "$FirstDate";
-	public static final String LastDate_Key = "$LastDate";
-	public static final String TimeSpent_Key = "$TimeSpent";
-	
+	private static final String LatestBMI_Key = "$LatestBMI";
+	private static final String GoalBMI_Key = "$GoalBMI";
+	private static final String IdealRange_Key = "$IdealRange";
+	private static final String TrendWeekTitle_Key = "$TrendWeekTitle";
+	private static final String TrendWeekValue_Key = "$TrendWeekValue";
+	private static final String TrendWeekGoalDate_Key = "$TrendWeekGoalDate";
+	private static final String TrendMonthTitle_Key = "$TrendMonthTitle";
+	private static final String TrendMonthValue_Key = "$TrendMonthValue";
+	private static final String TrendMonthGoalDate_Key = "$TrendMonthGoalDate";
+	private static final String TrendAllTitle_Key = "$TrendAllTitle";
+	private static final String TrendAllValue_Key = "$TrendAllValue";
+	private static final String TrendAllGoalDate_Key = "$TrendAllGoalDate";
+	private static final String MinWeight_Key = "$MinWeight";
+	private static final String MaxWeight_Key = "$MaxWeight";
+	private static final String MaxMinusMinWeight_Key = "$MaxMinusMinWeight";
+	private static final String FirstWeight_Key = "$FirstWeight";
+	private static final String LastWeight_Key = "$LastWeight";
+	private static final String FirstMinusLastWeight_Key = "$FirstMinusLastWeight";
+	private static final String AverageWeight_Key = "$AverageWeight";
+	private static final String AverageBMI_Key = "$AverageBMI";
+	private static final String Count_Key = "$Count";
+	private static final String FirstDate_Key = "$FirstDate";
+	private static final String LastDate_Key = "$LastDate";
+	private static final String TimeSpent_Key = "$TimeSpent";
+	private static final String Date_Key = "$Date";
+
 	public ReportText(ReportAnalysis analysis, ReportFormatting formatter)
 	{
 		_Map.put(LatestBMI_Key, formatter.getBMIString(analysis.getLatestBMI()));
@@ -63,6 +63,7 @@ public class ReportText {
 		_Map.put(FirstDate_Key, formatter.getDateString(analysis.FirstReading.getDate()));
 		_Map.put(LastDate_Key, formatter.getDateString(analysis.LastReading.getDate()));
 		_Map.put(TimeSpent_Key, formatter.getNumberOfDays(analysis.getTimeSpent()));
+		_Map.put(Date_Key,formatter.getDateString(new Date()));
 	}
 	public Set<Map.Entry<String, String>> getEntrySet()
 	{

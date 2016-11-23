@@ -172,51 +172,102 @@
         <br/><br/>Google Drive needs a network connection to send and receive data, allow a minute for Google Drive to sync on your device.
 ]]>
     </string>
-    <string name="report_template">
+    <string name="report_template" formatted="false">
         <![CDATA[
-Weight Tracker Report<br/>
+
+<html>
+<head>
+	<style>
+		table {font-family: arial, sans-serif; border-collapse: collapse; width: 50%;}
+		th {border: 1px solid #dddddd; text-align: left; padding: 6px;}
+		td {border: 1px solid #dddddd; text-align: left; padding: 6px; width: 50%}
+	</style>
+</head>
+<body>
+<h1>Weight Tracker Report</h1>
+$Date<br/><br/>
+<table>
+	<tr><th colspan="2">Body Mass Index</th></tr>
+	<tr>
+		<td>Latest</td><td>$LatestBMI</td>
+	</tr>
+	<tr>
+		<td>Average BMI</td><td>$AverageBMI</td>
+	</tr>
+	<tr>
+		<td>Goal</td><td>$GoalBMI</td>
+	</tr>
+	<tr>
+		<td>Ideal Weight</td><td>$IdealRange</td>
+	</tr>
+</table>
 <br/>
---- Body Mass Index ---<br/>
+<table>
+	<tr><th colspan="2">Last 7 Days</th></tr>
+	<tr>
+		<td>$TrendWeekTitle</td><td>$TrendWeekValue</td>
+	</tr>
+	<tr>
+		<td>Goal Date</td><td>$TrendWeekGoalDate</td>
+	</tr>
+	<tr><th colspan="2">Last 30 Days</th></tr>
+	<tr>
+		<td>$TrendMonthTitle</td><td>$TrendMonthValue</td>
+	</tr>
+	<tr>
+		<td>Goal Date</td><td>$TrendMonthGoalDate</td>
+	</tr>
+	<tr><th colspan="2">All Time</th></tr>
+	<tr>
+		<td>$TrendAllTitle</td><td>$TrendAllValue</td>
+	</tr>
+	<tr>
+		<td>Goal Date</td><td>$TrendAllGoalDate</td>
+	</tr>
+</table>
 <br/>
-Latest 								\t\t\t\t\t\t$LatestBMI<br/>
-Average BMI 						\t\t\t\t\t$AverageBMI<br/>
-Goal 								\t\t\t\t\t\t$GoalBMI<br/>
-Ideal Weight 						\t\t\t$IdealRange<br/>
+<table>
+	<tr><th colspan="2">Weight</th></tr>
+	<tr>
+		<td>Average Weight</td><td>$AverageWeight</td>
+	</tr>
+	<tr>
+		<td>Min Weight</td><td>$MinWeight</td>
+	</tr>
+	<tr>
+		<td>Max Weight</td><td>$MaxWeight</td>
+	</tr>
+	<tr>
+		<td>Max - Min</td><td>$MaxMinusMinWeight</td>
+	</tr>
+	<tr>
+		<td>First Weight</td><td>$FirstWeight</td>
+	</tr>
+	<tr>
+		<td>Last Weight</td><td>$LastWeight</td>
+	</tr>
+	<tr>
+		<td>First - Last</td><td>$FirstMinusLastWeight</td>
+	</tr>
+</table>
 <br/>
-<br/>
---- Trends ---<br/>
-<br/>
-Last 7 Days<br/>
-$TrendWeekTitle						\t\t\t\t\t\t$TrendWeekValue<br/>
-Goal Date 							\t\t\t\t$TrendWeekGoalDate<br/>
-<br/>
-Last 30 Days<br/>
-$TrendMonthTitle					\t\t\t\t\t\t$TrendMonthValue<br/>
-Goal Date 							\t\t\t\t$TrendMonthGoalDate<br/>
-<br/>
-All Time<br/>
-$TrendAllTitle						\t\t\t\t\t\t$TrendAllValue<br/>
-Goal Date 							\t\t\t\t$TrendAllGoalDate<br/>
-<br/>
-<br/>
---- Weight ---<br/>
-<br/>
-Average Weight 						\t\t\t\t$AverageWeight<br/>
-Min Weight 							\t\t\t\t\t\t$MinWeight<br/>
-Max Weight 							\t\t\t\t\t$MaxWeight<br/>
-Max - Min 							\t\t\t\t\t$MaxMinusMinWeight<br/>
-First Weight 						\t\t\t\t\t\t$FirstWeight<br/>
-Last Weight 						\t\t\t\t\t$LastWeight<br/>
-First - Last 						\t\t\t\t\t$FirstMinusLastWeight<br/>
-<br/>		
-<br/>		
---- Stats ---<br/>
-Number of Readings 					\t\t$Count<br/>
-Start Date	 						\t\t\t\t\t$FirstDate<br/>
-Last Date	 						\t\t\t\t\t$LastDate<br/>
-Time Spent	 						\t\t\t\t\t$TimeSpent<br/>
-<br/>		
-<br/>		
+<table>
+	<tr><th colspan="2">Stats</th></tr>
+	<tr>
+		<td>Number of Readings</td><td>$Count</td>
+	</tr>
+	<tr>
+		<td>Start Date</td><td>$FirstDate</td>
+	</tr>
+	<tr>
+		<td>Last Date</td><td>$LastDate</td>
+	</tr>
+	<tr>
+		<td>Time Spent</td><td>$TimeSpent</td>
+	</tr>
+</table>
+</body>
+</html>
 		]]>
 	</string>
     <string name="menu_help_text_small">Text Small</string>

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.pigdogbay.lib.utils.ActivityUtils;
+import com.pigdogbay.lib.utils.HtmlPrinting;
 import com.pigdogbay.weightrecorder.model.DummyData;
 import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.Query;
@@ -110,9 +111,10 @@ public class ReportFragment  extends Fragment {
 		Date now = new Date();
 		String dateText = _ReportFormatting.getDateString(now.getTime());
 		String subject = getString(R.string.report_email_subject) + " "	+ dateText;
-		String template = Html.fromHtml(getActivity().getString(R.string.report_template)).toString();
+		String template = getActivity().getString(R.string.report_template);
 		String text = _ReportText.createReport(template);
-		ActivityUtils.shareText(getActivity(), subject, text,R.string.report_share_chooser_title);
+		HtmlPrinting htmlPrinting = new HtmlPrinting(getActivity());
+		htmlPrinting.print(text);
 	}
 
 }

@@ -12,7 +12,7 @@ android {
     buildTypes {
         release {
             //need to be disabled so achart is included
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -20,12 +20,12 @@ android {
         weightTrackerPro{
             applicationId "com.pigdogbay.weighttrackerpro"
             versionCode 20203
-            versionName "2.02.03"
+            versionName "2.02.04"
         }
         weightTrackerStd{
             applicationId "com.pigdogbay.weightrecorder"
             versionCode 11803
-            versionName "1.18.03"
+            versionName "1.18.04"
         }
     }
 }

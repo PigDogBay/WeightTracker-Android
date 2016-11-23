@@ -64,7 +64,12 @@ public class ReportText {
 		_Map.put(LastDate_Key, formatter.getDateString(analysis.LastReading.getDate()));
 		_Map.put(TimeSpent_Key, formatter.getNumberOfDays(analysis.getTimeSpent()));
 		_Map.put(Date_Key,formatter.getDateString(new Date()));
-		_Map.put("$NextBMI", formatter.getNextBMI(analysis.getNextBMI(),analysis.getNextBMIWeight()));
+		_Map.put("$NextBMI0", formatter.getWeightString(analysis.getNextBMIWeight(0)));
+		_Map.put("$NextBMI1", formatter.getWeightString(analysis.getNextBMIWeight(1)));
+		_Map.put("$NextBMI2", formatter.getWeightString(analysis.getNextBMIWeight(2)));
+		_Map.put("$NextBMITitle0", formatter.getNextBMITitle(analysis.getNextBMI()));
+		_Map.put("$NextBMITitle1", formatter.getNextBMITitle(analysis.getNextBMI()-1.0D));
+		_Map.put("$NextBMITitle2", formatter.getNextBMITitle(analysis.getNextBMI()-2.0D));
 	}
 	public Set<Map.Entry<String, String>> getEntrySet()
 	{

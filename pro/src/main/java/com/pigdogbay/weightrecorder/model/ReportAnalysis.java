@@ -3,15 +3,15 @@ package com.pigdogbay.weightrecorder.model;
 import java.util.Date;
 
 public class ReportAnalysis {
-	public static final long DAY_IN_MILLIS = 24L * 60L * 60L * 1000L;
+	private static final long DAY_IN_MILLIS = 24L * 60L * 60L * 1000L;
 
-	UserSettings _UserSettings;
-	BMICalculator _BMICalculator;
-	TrendAnalysis _TrendAnalysis, _TrendanalysisLastWeek, _TrendanalysisLastMonth;
-	public double MinWeight,MaxWeight,AverageWeight; 
-	public boolean IsWeekTrendAvaialble=false, IsMonthTrendAvailable=false;
-	public int Count;
-	public Reading FirstReading, LastReading;
+	private UserSettings _UserSettings;
+	private BMICalculator _BMICalculator;
+	private TrendAnalysis _TrendAnalysis, _TrendanalysisLastWeek, _TrendanalysisLastMonth;
+	double MinWeight,MaxWeight,AverageWeight;
+	private boolean IsWeekTrendAvaialble=false, IsMonthTrendAvailable=false;
+	int Count;
+	Reading FirstReading, LastReading;
 	
 	public ReportAnalysis(UserSettings userSettings, Query query)
 	{
@@ -44,64 +44,67 @@ public class ReportAnalysis {
 			}
 		}
 	}
-	public double getFirstMinusLast()
+	double getFirstMinusLast()
 	{
 		return FirstReading.getWeight()-LastReading.getWeight();
 	}
-	public double getLatestBMI()
+	double getLatestBMI()
 	{
 		return _BMICalculator.calculateBMI(LastReading.getWeight());		
 	}
-	public double getTargetBMI()
+	double getTargetBMI()
 	{
 		return _BMICalculator.calculateBMI(_UserSettings.TargetWeight);
 	}
-	public double getBottomOfIdealWeightRange()
+	double getBottomOfIdealWeightRange()
 	{
 		return _BMICalculator.calculateWeightFromBMI(BMICalculator.UNDERWEIGHT_UPPER_LIMIT);
 	}
-	public double getTopOfIdealWeightRange()
+	double getTopOfIdealWeightRange()
 	{
 		return _BMICalculator.calculateWeightFromBMI(BMICalculator.NORMAL_UPPER_LIMIT);
 	}
-	public double getAverageBMI()
+	double getAverageBMI()
 	{
 		return _BMICalculator.calculateBMI(AverageWeight);
 	}
-	public double getNextBMI(){
+	double getNextBMI(){
 		double currentBmi = getLatestBMI();
 		return Math.floor(currentBmi);
 	}
-	public double getNextBMIWeight(){
-		double nextBmi = getNextBMI();
+	double getNextBMIWeight(double offset){
+		double nextBmi = getNextBMI() -offset;
+		if (nextBmi<0){
+			nextBmi=0;
+		}
 		return _BMICalculator.calculateWeightFromBMI(nextBmi);
 	}
 
-	public double getWeeklyTrendOverLastWeek()
+	double getWeeklyTrendOverLastWeek()
 	{
 		return _TrendanalysisLastWeek.getTrendInDays()*7D;
 	}
-	public double getWeeklyTrendOverLastMonth()
+	double getWeeklyTrendOverLastMonth()
 	{
 		return _TrendanalysisLastMonth.getTrendInDays()*7D;
 	}
-	public double getWeeklyTrendAllTime()
+	double getWeeklyTrendAllTime()
 	{
 		return _TrendAnalysis.getTrendInDays()*7D;
 	}
-	public long getEstimatedDateUsingLastWeek()
+	long getEstimatedDateUsingLastWeek()
 	{
 		return _TrendanalysisLastWeek.getEstimatedDate(_UserSettings.TargetWeight);
 	}
-	public long getEstimatedDateUsingLastMonth()
+	long getEstimatedDateUsingLastMonth()
 	{
 		return _TrendanalysisLastMonth.getEstimatedDate(_UserSettings.TargetWeight);
 	}
-	public long getEstimatedDateUsingAllTime()
+	long getEstimatedDateUsingAllTime()
 	{
 		return _TrendAnalysis.getEstimatedDate(_UserSettings.TargetWeight);
 	}
-	public long getTimeSpent()
+	long getTimeSpent()
 	{
 		return LastReading.getDate().getTime() - FirstReading.getDate().getTime();
 	}

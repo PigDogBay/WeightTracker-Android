@@ -9,8 +9,8 @@ import android.content.Context;
 
 public class ReportFormatting {
 	private static final String InvalidDateString = "---";
-	UserSettings _UserSettings;
-	Context _Context;
+	private UserSettings _UserSettings;
+	private Context _Context;
 	
 	public ReportFormatting(Context context, UserSettings userSettings){
 		_UserSettings = userSettings;
@@ -36,13 +36,13 @@ public class ReportFormatting {
 		}
 		return String.format("%.1f (%s)", bmi, BMICalculator.getString(_Context, bmi));
 	}
-	public String getIdealWeightRange(double startWeight, double endWeight) {
+	String getIdealWeightRange(double startWeight, double endWeight) {
 		return getWeightString(startWeight) +" - "+getWeightString(endWeight);
 	}
-	public String getNextBMI(double bmi, double weight){
-		return String.format("(%.0f) %s", bmi, getWeightString(weight));
+	String getNextBMITitle(double bmi){
+		return String.format("BMI %.0f", bmi);
 	}
-	public String getValidDateString(long timeInMillis)
+	String getValidDateString(long timeInMillis)
 	{
 		return TrendAnalysis.isGoalDateValid(timeInMillis) ? getDateString(timeInMillis) : InvalidDateString;
 	}
@@ -52,13 +52,13 @@ public class ReportFormatting {
 		//One gripe with SDF is that UK locale formats like June 14, 2013 which is more American IMHO
 		return SimpleDateFormat.getDateInstance(SimpleDateFormat.LONG).format(new Date(timeInMillis));
 	}
-	public String getDateString(Date date)
+	String getDateString(Date date)
 	{
 		//DateUtils.formatDateTime suffers from the Year 2038 problem
 		//One gripe with SDF is that UK locale formats like June 14, 2013 which is more American IMHO
 		return SimpleDateFormat.getDateInstance(SimpleDateFormat.LONG).format(date);
 	}
-	public String getNumberOfDays(Long timeInMillis)
+	String getNumberOfDays(Long timeInMillis)
 	{
 		timeInMillis = timeInMillis/(1000L*60L*60L*24L);
 		return Long.toString(timeInMillis)+" "+_Context.getString(R.string.report_days);
@@ -67,12 +67,12 @@ public class ReportFormatting {
 	{
 		return SimpleDateFormat.getDateTimeInstance(SimpleDateFormat.LONG, SimpleDateFormat.MEDIUM).format(date);
 	}
-	public String getWeightTrendDirection(double trend)
+	String getWeightTrendDirection(double trend)
 	{
 		int id =trend>0 ? R.string.report_gaining : R.string.report_losing;
 		return  _Context.getString(id);
 	}
-	public String getWeightTrend(double trend)
+	String getWeightTrend(double trend)
 	{
 		return  String.format("%s %s",getWeightString(trend),_Context.getString(R.string.report_per_week));
 	}

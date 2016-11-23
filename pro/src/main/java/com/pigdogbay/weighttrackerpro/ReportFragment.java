@@ -106,7 +106,7 @@ public class ReportFragment  extends Fragment {
 				int id = R.id.class.getField(fieldName).getInt(null);
 				TextView textView = (TextView) view.findViewById(id);
 				textView.setText(entry.getValue());
-			}catch (Exception e){e.printStackTrace();}
+			}catch (Exception e){}
 		}
 	}	
 	private void emailReport() {

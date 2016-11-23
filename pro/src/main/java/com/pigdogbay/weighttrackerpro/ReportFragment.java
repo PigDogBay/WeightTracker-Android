@@ -14,9 +14,11 @@ import com.pigdogbay.weightrecorder.model.ReportFormatting;
 import com.pigdogbay.weightrecorder.model.ReportText;
 import com.pigdogbay.weightrecorder.model.UserSettings;
 import com.pigdogbay.weightrecorder.utils.ActivitiesHelper;
+import com.pigdogbay.weightrecorder.utils.NativeAd;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Log;
@@ -47,7 +49,11 @@ public class ReportFragment  extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_report, container,false);
-		((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+		if (supportActionBar != null)
+		{
+			supportActionBar.setDisplayHomeAsUpEnabled(true);
+		}
 		setHasOptionsMenu(true);
 		try {
 			populateTextViews(rootView);
@@ -56,8 +62,10 @@ public class ReportFragment  extends Fragment {
 			Log.v(MainActivity.TAG,
 					"Unable to populate views: " + e.getMessage());
 		}
+		NativeAd.setUpAd(rootView.findViewById(R.id.ReportNativeAdHolder));
 		return rootView;
 	}
+
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		super.onCreateOptionsMenu(menu, inflater);

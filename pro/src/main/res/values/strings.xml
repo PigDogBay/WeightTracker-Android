@@ -127,51 +127,7 @@
     <string name="import_no_text">Nothing to import</string>
     <string name="import_readings_added">%d Readings Added</string>
     <string name="import_dialog_title">Import Help</string>
-    <string name="help_html">
-        <![CDATA[
-		<b>Introduction</b><br/><br/>
-        Enter your weight each day, use the chart and report screens to see how your diet is going.
-        <br/><br/><b>Settings</b><br/><br/>
-        Slide your finger over the settings tabs to select them:
-        <br/><br/><i>Weight</i><br/><br/>
-        Set your weight units such as pounds or kilograms.
-        <br/>Enter the weight you would like to be, this is used by the chart and report.
-        <br/><br/><i>Height</i><br/><br/>
-        Your height is needed for the  Body Mass Index calculations which are used in your Report. 
-        <br/>First set your length units and then enter your height.
-        <br/><br/><i>Background Color</i><br/><br/>
-        Personalize the app by choosing one of the exciting background.
-        <br/><br/><i>Other</i><br/><br/>
-        The app will automatically back up your readings every week, you can turn this feature off here.
-        <br/>The chart will display a trend line through your data and your target weight, you can turn these off here.  
-        <br/><br/><b>New</b><br/><br/>
-        Enter new daily weight readings here, the date will already be set and you can also add comments. Past weight measurements can also be entered.
-        <br/><br/>To enter your weight press the button displaying the weight. You can also use the -/+ buttons to adjust the weight.
-        <br/><br/><b>Edit</b><br/><br/>
-        Your readings are all displayed in a list with the most recent first. Press a reading to edit or delete it.
-        <br/><br/>Share your readings with other apps such as Google Drive and Evernote by pressing the Share menu button.
-        <br/><br/>Import readings into the app by pressing the Import menu button.
-        <br/><br/><b>Chart</b><br/><br/>
-        The chart displays weight changes over time. You can drag and zoom the chart using touch or by using the chart buttons.
-        <br/><br/>Your weight goal is shown as a light blue horizontal line and your weight trend is shown as a red straight line going through your weight readings. See if the two lines meet, this is your target weight prediction.
-		<br/><br/>Press the menu for a list of options to change the fit. You can view the last 30, 60, 90 days and 1 year from the current date, press fit all to position all your weight readings onto the chart.         
-        <br/><br/>Share the chart with other apps such as Facebook and Twitter by pressing the Share menu button.
-        <br/><br/><b>Report</b><br/><br/>
-        Displays your latest BMI, weight statistics and trends. Share the report with other apps such as Gmail by pressing the Share menu button. The report is split into 3 sections:
-        <br/><br/><i>Body Mass Index</i><br/><br/>
-        Shows your latest BMI measurement based on your the last weight reading and your height. The goal BMI is based upon your target weight. Ideal weight is based upon your height, see Settings for target weight and height settings.
-        <br/><br/><i>Trends</i><br/><br/>
-        Shows how much weight you are losing or gaining based on your weight entries for the last week, month and overall. The report will calculate when you will reach your target weight (Goal Date) based on your weight loss trends.
-        <br/><br/><i>Stats</i><br/><br/>
-        Shows the minimum, maximum and average weight based on all your readings. Average BMI is based on your average weight and height setting.
-        <br/><br/><b>Sync</b><br/><br/>
-        Share your readings with other devices.
-        <br/><br/>Note you need a Google Account (eg GMail) to use this facility as it needs to access your Google Drive, you may also be asked to allow permission for the app to access Google Drive.
-        <br/><br/>Press the Save button to save your readings to Google Drive
-        <br/><br/>Press the Restore button to load your readings from Google Drive, if no readings are found, wait a minute and try again.
-        <br/><br/>Google Drive needs a network connection to send and receive data, allow a minute for Google Drive to sync on your device.
-]]>
-    </string>
+
     <string name="report_template" formatted="false">
         <![CDATA[
 
@@ -270,9 +226,6 @@ $Date<br/><br/>
 </html>
 		]]>
 	</string>
-    <string name="menu_help_text_small">Text Small</string>
-    <string name="menu_help_text_medium">Text Medium</string>
-    <string name="menu_help_text_large">Text Large</string>
     <string name="length_unit_metres">Metres</string>
     <string name="length_unit_centimetres">Centimetres</string>
     <string name="length_unit_inches">Inches</string>
@@ -311,7 +264,6 @@ $Date<br/><br/>
     <string name="other_settings_backups">Automatic Backups</string>
     <string name="fragment_welcome_end_title">That\'s It!</string>
     <string name="fragment_welcome_end_msg1">You are now ready to begin tracking your weight. Press DONE to exit to the home screen.</string>
-    <string name="fragment_welcome_end_msg2">Tip: Press the help icon on the top right of the home screen for a quick guide.</string>
     <string name="fragment_welcome_end_done_button">Done</string>
     <string name="fragment_welcome_start_title">Welcome!</string>
     <string name="fragment_welcome_start_msg1">Before starting, please enter your height and weight details</string>
@@ -321,8 +273,6 @@ $Date<br/><br/>
     <string name="fragment_welcome_wizard_page_title_height">HEIGHT</string>
     <string name="fragment_welcome_wizard_page_title_connect">CONNECT</string>
     <string name="fragment_welcome_wizard_page_title_finished">FINISHED</string>
-    <string name="fragment_help_wizard_page_title_quick_help">QUICK HELP</string>
-    <string name="fragment_help_wizard_page_title_help">HELP</string>
     <string name="fragment_settings_wizard_page_title_weight">WEIGHT</string>
     <string name="fragment_settings_wizard_page_title_height">HEIGHT</string>
     <string name="fragment_settings_wizard_page_title_background">BACKGROUND</string>

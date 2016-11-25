@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="backup_readings_error">Backup Error</string>
-    <string name="web_error">No Web</string>
+    <string translatable="false" name="web_error">No Web</string>
     <string name="about_header_info">INFO</string>
     <string name="about_header_feedback">HELP OUT</string>
     <string name="about_body_feedback">Keep updates coming by rating the app, your feedback is most welcome. Try out my other Apps on Google Play.</string>
@@ -11,7 +11,7 @@
     <string name="about_no_market_app">Unable to find market app</string>
     <string name="about_release_notes">RELEASE NOTES</string>
     <string name="about_button_send_feedback">FEEDBACK</string>
-    <string name="about_button_feedback_subject">Weight Tracker Pro v2.02 Feedback</string>
+    <string translatable="false" name="about_button_feedback_subject">Weight Tracker Pro v2.02 Feedback</string>
     <string name="menu_settings">Settings</string>
     <string name="title_main">Weight Tracker Pro</string>
     <string name="title_chart">Chart</string>
@@ -39,7 +39,7 @@
     <string name="main_btn_report">Report</string>
     <string name="main_btn_settings">Settings</string>
     <string name="main_btn_shop">Shop</string>
-    <string name="main_btn_help">Help</string>
+    <string name="main_btn_sync">Sync</string>
     <string name="edit_weight_hint">Enter weight</string>
     <string name="edit_comment_hint">Enter comment</string>
     <string name="edit_weight_error">Please enter weight</string>
@@ -285,10 +285,8 @@ $Date<br/><br/>
     <string name="color_yellow">Sunburst</string>
     <string name="color_grey">Shades of Grey</string>
     <string name="color_white">Simply White</string>
-    <string name="main_btn_sync">Sync</string>
     <string name="menu_drive_delete">Delete Drive Files</string>
     <string name="drive_delete_dialog_message">Are you sure you want to delete all the weight tracker files on your Google Drive?</string>
-
     <string name="drive_save_button">Save to Google Drive</string>
     <string name="drive_restore_button">Restore from Google Drive</string>
     <string name="drive_query_button">Refresh Latest</string>

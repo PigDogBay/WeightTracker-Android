@@ -124,7 +124,7 @@
     <string name="import_no_text">Niente da importare</string>
     <string name="import_readings_added">%d Pesate aggiunte</string>
     <string name="import_dialog_title">Aiuto per l\'Import</string>
-    <string name="report_template">
+    <string formatted="false" name="report_template">
         <![CDATA[
 
 <html>
@@ -309,11 +309,11 @@ $Date<br/><br/>
 
     <string name="connect_status_not_connected">Non collegata</string>
     <string name="connect_connect_button">Connettersi a Google Drive</string>
-    <string name="connect_help_text">Automaticamente il backup dei valori e trasferirli ad altri dispositivi. Premete il collegamento per consentire l'accesso app per Google Drive</string>
+    <string name="connect_help_text">Automaticamente il backup dei valori e trasferirli ad altri dispositivi. Premete il collegamento per consentire l\'accesso app per Google Drive</string>
     <string name="connect_restore_help_text">Collegato a Google Drive.\nPremete il ripristino per recuperare eventuali letture precedenti</string>
     <string name="drive_status_connected">Collegato</string>
     <string name="connect_restore_button">Ripristinare Letture</string>
-    <string name="upgrade_help_text">Automaticamente il backup dei valori e trasferirli ad altri dispositivi. Premete il collegamento per consentire l'accesso app per Google Drive e il backup dei dati</string>
+    <string name="upgrade_help_text">Automaticamente il backup dei valori e trasferirli ad altri dispositivi. Premete il collegamento per consentire l\'accesso app per Google Drive e il backup dei dati</string>
     <string name="title_upgrade">Promuovere</string>
 
 </resources>

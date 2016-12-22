@@ -63,8 +63,9 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
     }
 	private void checkRate() {
 		try {
-			new AppRate(this).setCustomDialog(createRateDialog())
-					.setMinDaysUntilPrompt(7).setMinLaunchesUntilPrompt(5)
+			new AppRate(this)
+					.setMinDaysUntilPrompt(7)
+					.setMinLaunchesUntilPrompt(5)
 					// .setMinDaysUntilPrompt(0)
 					// .setMinLaunchesUntilPrompt(0)
 					.init();

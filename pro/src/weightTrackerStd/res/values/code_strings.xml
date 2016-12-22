@@ -3,6 +3,6 @@
     <string translatable="false" name="app_name">Weight Tracker</string>
     <string translatable="false" name="market_app_url">market://details?id=com.pigdogbay.weightrecorder</string>
     <string translatable="false" name="market_weightrecorder">market://details?id=com.pigdogbay.weightrecorder</string>
-    <string translatable="false" name="about_version">Version 1.18.05</string>
+    <string translatable="false" name="about_version">Version 1.19.00</string>
     <string translatable="false" name="image_cache_fileprovider">com.pigdogbay.weightrecorder.fileprovider</string>
 </resources>

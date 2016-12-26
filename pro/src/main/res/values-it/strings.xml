@@ -21,6 +21,7 @@
     <string name="title_help">Guida</string>
     <string name="title_settings">Impostazioni</string>
     <string name="title_welcome">Benvenuto</string>
+    <string name="title_drive">Sincro Letture</string>
     <string name="chart_notenoughdata_title">Pesate insufficienti</string>
     <string name="chart_notenoughdata_message">Hai fatto meno di 3 pesate, per questo il grafico mostra solo un esempio. </string>
     <string name="chart_xaxis_title">Data</string>
@@ -57,7 +58,7 @@
     <string name="editreading_delete_dialog_message">Sei sicuro di voler eliminare tutte le pesate?</string>
     <string name="menu_main_help">Guida</string>
     <string name="menu_main_about">A proposito</string>
-    <string name="menu_main_welcome">Mostra il benvenuto</string>
+    <string name="menu_main_welcome">Pagina di benvenuto</string>
     <string name="menu_chart_all">Mostra tutto</string>
     <string name="menu_chart_share">Condividi</string>
     <string name="menu_chart_30">30 Giorni</string>
@@ -280,11 +281,11 @@ $Date<br/><br/>
     <string name="color_grey">Grigio sfumato</string>
     <string name="color_white">Bianco semplice</string>
 
-    <string name="menu_drive_delete">Elimina file Unità</string>
+    <string name="menu_drive_delete">Elimina i backups su Drive</string>
     <string name="drive_delete_dialog_message">Sei sicuro di voler eliminare tutti i file Tracker peso sul vostro Google Drive?</string>
     <string name="drive_save_button">Salva in Google Drive</string>
     <string name="drive_restore_button">Ripristina da Google Drive</string>
-    <string name="drive_query_button">aggiornare più recenti</string>
+    <string name="drive_query_button">aggiorn più recenti</string>
     <string name="drive_status_connecting">Collegamento</string>
     <string name="drive_status_disconnected">Scollegato</string>
     <string name="drive_status_refreshing">Interrogazione…</string>
@@ -300,11 +301,11 @@ $Date<br/><br/>
     <string name="drive_status_save_no_readings">Non ci sono letture da salvare</string>
     <string name="drive_status_save_create_folder_failed">Impossibile creare la cartella</string>
     <string name="drive_status_save_create_file_failed">Impossibile creare il file</string>
-    <string name="drive_status_save_success">Salva - Successo</string>
+    <string name="drive_status_save_success">Salvataggio con successo</string>
     <string name="drive_status_save_write_failed">Salva - Scrittura non riuscita</string>
     <string name="drive_status_restore_no_files">Nessun file trovato</string>
-    <string name="drive_status_restore_succuess">Restore - Successo</string>
-    <string name="drive_status_restore_load_error">Restore - Fallito</string>
+    <string name="drive_status_restore_succuess">Ripristino con successo</string>
+    <string name="drive_status_restore_load_error">Ripristino - Fallito</string>
 
     <string name="connect_status_not_connected">Non collegata</string>
     <string name="connect_connect_button">Connettersi a Google Drive</string>

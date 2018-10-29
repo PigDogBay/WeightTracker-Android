@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import com.pigdogbay.lib.utils.ActivityUtils;
 import com.pigdogbay.lib.utils.HtmlPrinting;
 import com.pigdogbay.weightrecorder.model.DummyData;
 import com.pigdogbay.weightrecorder.model.MainModel;
@@ -15,13 +14,11 @@ import com.pigdogbay.weightrecorder.model.ReportFormatting;
 import com.pigdogbay.weightrecorder.model.ReportText;
 import com.pigdogbay.weightrecorder.model.UserSettings;
 import com.pigdogbay.weightrecorder.utils.ActivitiesHelper;
-import com.pigdogbay.weightrecorder.utils.NativeAd;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -63,7 +60,6 @@ public class ReportFragment  extends Fragment {
 			Log.v(MainActivity.TAG,
 					"Unable to populate views: " + e.getMessage());
 		}
-		NativeAd.setUpAd(rootView.findViewById(R.id.ReportNativeAdHolder));
 		return rootView;
 	}
 

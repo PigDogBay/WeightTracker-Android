@@ -186,11 +186,6 @@
                 />
         </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/ReportNativeAdHolder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
         <TextView
             style="@style/ReportHeader"
             android:text="@string/report_weight" />

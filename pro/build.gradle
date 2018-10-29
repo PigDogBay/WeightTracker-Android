@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion 21
+        targetSdkVersion 28
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary true
     }
     buildTypes {
         release {
@@ -16,36 +16,50 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "vanilla"
     productFlavors {
         weightTrackerPro{
             applicationId "com.pigdogbay.weighttrackerpro"
-            versionCode 20300
-            versionName "2.03.00"
+            versionCode 20400
+            versionName "2.04.00"
+            dimension "vanilla"
         }
         weightTrackerStd{
             applicationId "com.pigdogbay.weightrecorder"
-            versionCode 11900
-            versionName "1.19.00"
+            versionCode 12000
+            versionName "1.20.00"
+            dimension "vanilla"
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':lib')
-    compile files('libs/achartengine-1.1.0.jar')
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.google.android.gms:play-services-drive:11.0.0'
-    compile 'com.android.support:support-v4:25.3.1'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':lib')
+    implementation files('libs/achartengine-1.1.0.jar')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:animated-vector-drawable:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.google.android.gms:play-services-drive:16.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
     //Instrumentation Unit Tests
-    androidTestCompile 'com.android.support:support-annotations:25.3.1'
-    androidTestCompile 'com.android.support.test:runner:0.5'
-    androidTestCompile 'com.android.support.test:rules:0.5'
+    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
     // Optional -- Hamcrest library
 
-    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
-    weightTrackerStdCompile 'com.google.firebase:firebase-ads:11.0.0'
+    androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
+    weightTrackerStdImplementation 'com.google.firebase:firebase-core:16.0.4'
+    weightTrackerStdImplementation 'com.google.firebase:firebase-ads:17.0.0'
 }
 //Comment this out for pro builds as it will pull in firebase dependencies
 //https://developers.google.com/android/guides/google-services-plugin

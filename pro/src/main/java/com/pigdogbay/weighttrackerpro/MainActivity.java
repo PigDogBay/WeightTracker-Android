@@ -17,6 +17,7 @@ import com.pigdogbay.lib.utils.ActivityUtils;
 import com.pigdogbay.weightrecorder.model.MainModel;
 import com.pigdogbay.weightrecorder.model.Reading;
 import com.pigdogbay.weightrecorder.model.SettingsUtils;
+import com.pigdogbay.weightrecorder.utils.AdsVariation;
 
 import java.util.Locale;
 
@@ -27,11 +28,16 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 	//Hack fro ConnectToDriveFragment
 	public int resultCode, requestCode, onActivityCount;
 
+	private AdsVariation adsVariation;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
+		adsVariation = new AdsVariation(this);
+		adsVariation.setUp();
+
 		MainModel mainModel = new MainModel(this);
 		_BackgroundColorPresenter = new BackgroundColorPresenter(this,mainModel.createBackgroundColorModel());
 		_BackgroundColorPresenter.updateBackground();
@@ -51,12 +57,14 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 	}
 	@Override
     protected void onResume() {
+		adsVariation.resume();
     	super.onResume();
 		PreferenceManager.getDefaultSharedPreferences(this)
 		.registerOnSharedPreferenceChangeListener(this);
     }
     @Override
     protected void onPause() {
+		adsVariation.pause();
     	super.onPause();
 		PreferenceManager.getDefaultSharedPreferences(this)
 		.unregisterOnSharedPreferenceChangeListener(this);

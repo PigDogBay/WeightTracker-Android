@@ -1,18 +1,19 @@
 package com.pigdogbay.weightrecorder.utils;
 
-import android.view.View;
+import android.app.Activity;
 
-public class AdsVariation implements IAds {
+public class AdsVariation{
 
-    @Override
+    public AdsVariation(Activity activity) {
+
+    }
+
     public void pause() {
     }
 
-    @Override
     public void resume() {
     }
 
-    @Override
-    public void setUp(View view) {
+    public void setUp() {
     }
 }

@@ -31,7 +31,7 @@ public class AdsVariation implements IAds {
     public void setUp(View view) {
         MobileAds.initialize(view.getContext(), "ca-app-pub-3582986480189311~6146792389");
         // Look up the AdView as a resource and load a request.
-        _AdView = view.findViewById(R.id.adView);
+        //_AdView = view.findViewById(R.id.adView);
         Bundle extras = new Bundle();
         extras.putString("max_ad_content_rating", "G");
         //MA = Mature Adult, may improve eCPM?

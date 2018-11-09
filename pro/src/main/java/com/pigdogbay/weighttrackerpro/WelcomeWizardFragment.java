@@ -3,12 +3,9 @@ package com.pigdogbay.weighttrackerpro;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +21,8 @@ public class WelcomeWizardFragment extends Fragment {
 		//If you use getFragmentManager then the red/blue/green fragments are not released
 		//when the VPFragment is destroyed
 		WelcomePagerAdapter adapter = new WelcomePagerAdapter(getChildFragmentManager(), getActivity());
-        ViewPager viewPager = (ViewPager)rootView.findViewById(R.id.welcome_wizard_viewpager);
-        viewPager.setAdapter(adapter);		
+        ViewPager viewPager = rootView.findViewById(R.id.welcome_wizard_viewpager);
+        viewPager.setAdapter(adapter);
 		return rootView;
 	}
 	
@@ -47,8 +44,6 @@ public class WelcomeWizardFragment extends Fragment {
                 case 2:
                     return new HeightSettingsFragment();
                 case 3:
-                    return new ConnectToDriveFragment();
-                case 4:
                     return new WelcomeEndFragment();
             }
             return null;
@@ -56,7 +51,7 @@ public class WelcomeWizardFragment extends Fragment {
 
         @Override
         public int getCount() {
-            return 5;
+            return 4;
         }
 
         @Override
@@ -69,8 +64,6 @@ public class WelcomeWizardFragment extends Fragment {
                 case 2:
                     return _Context.getString(R.string.fragment_welcome_wizard_page_title_height);
                 case 3:
-                    return _Context.getString(R.string.fragment_welcome_wizard_page_title_connect);
-                case 4:
                     return _Context.getString(R.string.fragment_welcome_wizard_page_title_finished);
             }
             return null;

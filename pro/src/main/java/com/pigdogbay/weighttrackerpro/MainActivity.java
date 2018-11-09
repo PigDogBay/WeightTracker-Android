@@ -87,16 +87,11 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 			SettingsUtils.setDefaultSettings(Locale.getDefault(), new MainModel(this));
 			mainModel.setIsFirstTime(true);
 			showWelcome();
-		} else if (mainModel.getShowUpgrade()){
-			//Transition Users from SD card to Google Drive
-			showUpgrade();
-			_BackgroundColorPresenter.resetBackground();
 		}
 		else
 		{
 			showHome();
 		}
-		mainModel.setShowUpgrade(false);
 	}
 	
 	private AlertDialog.Builder createRateDialog() {
@@ -222,12 +217,6 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		replaceFragment(new ImportFragment(), ImportFragment.TAG);
 	}
 
-	public void showUpgrade() {
-		setTitle(getString(R.string.title_upgrade));
-		replaceFragment(new UpgradeFragment(), UpgradeFragment.TAG);
-	}
-	
-	
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
 		if (key.equals(getString(R.string.code_pref_background_colour))){

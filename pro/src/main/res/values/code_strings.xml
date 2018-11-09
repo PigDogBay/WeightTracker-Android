@@ -12,7 +12,6 @@
     <string translatable="false" name="code_pref_auto_backup_last_date_key">auto_backup_last_date_key</string>
     <string translatable="false" name="code_pref_enable_goal_congratulations_key">enable_goal_congratulations_key</string>
     <string translatable="false" name="code_pref_drive_connected_key">drive_connected_key</string>
-    <string translatable="false" name="code_pref_show_upgrade_screen">show_upgrade_screen</string>
     <string translatable="false" name="market_pigdogbay_apps">market://search?q=pub:Pig%20Dog%20Bay</string>
     <string translatable="false" name="release_notes_url">https://pigdogbay.blogspot.co.uk/</string>
     <string translatable="false" name="app_name">Weight Tracker Pro</string>

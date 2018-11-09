@@ -137,7 +137,7 @@ public class MainModel
 	}
 	public boolean getIsAutoBackupEnabled()
 	{
-		return getPreferencesHelper().getBoolean(R.string.code_pref_auto_backup_key, true);
+		return getPreferencesHelper().getBoolean(R.string.code_pref_auto_backup_key, false);
 	}
 	public void setIsAutoBackupEnabled(boolean flag)
 	{

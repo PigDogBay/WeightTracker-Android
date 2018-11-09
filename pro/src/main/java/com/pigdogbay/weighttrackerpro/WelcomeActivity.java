@@ -30,4 +30,10 @@ public class WelcomeActivity extends AppCompatActivity implements IBackgroundCol
     public void setBackgroundColor(int id) {
         ActivityUtils.setBackground(this, R.id.welcome_wizard_viewpager, id);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }

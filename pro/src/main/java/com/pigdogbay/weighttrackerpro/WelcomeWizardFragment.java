@@ -80,12 +80,7 @@ public class WelcomeWizardFragment extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_welcome_end, container, false);
-            view.findViewById(R.id.welcomeEndDoneBtn).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    getActivity().onBackPressed();
-                }
-            });
+            view.findViewById(R.id.welcomeEndDoneBtn).setOnClickListener(view1 -> getActivity().onBackPressed());
             return view;
         }
     }		

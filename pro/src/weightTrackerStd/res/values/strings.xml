@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string translatable="false" name="title_main">Weight Tracker</string>
-    <string translatable="false" name="about_header_go_pro">Go Pro</string>
-    <string translatable="false" name="about_body_go_pro">\u00a0* Ad free\n * Print Reports</string>
-    <string translatable="false" name="about_button_go_pro">GO PRO</string>
     <string translatable="false" name="about_button_feedback_subject">Weight Tracker v1.19 Feedback</string>
     <string name="title_about">About Weight Tracker</string>
 

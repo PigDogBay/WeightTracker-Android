@@ -1,7 +1,6 @@
 package com.pigdogbay.weighttrackerpro;
 
 import com.pigdogbay.lib.utils.ActivityUtils;
-import com.pigdogbay.weightrecorder.utils.AboutVariation;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -9,17 +8,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.Toast;
 
 public class AboutFragment extends Fragment {
 	public static final String TAG = "about";
-	AboutVariation aboutVariation;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,7 +24,6 @@ public class AboutFragment extends Fragment {
 			supportActionBar.setDisplayHomeAsUpEnabled(true);
 		}
 		View rootView = inflater.inflate(R.layout.fragment_about, container, false);
-		aboutVariation = new AboutVariation(this,rootView);
 		rootView.findViewById(R.id.aboutBtnRate).setOnClickListener(v -> showWebPage(getActivity(),R.string.market_app_url));
 
 		rootView.findViewById(R.id.aboutBtnSendFeedback).setOnClickListener(v -> sendFeedback(getActivity()));

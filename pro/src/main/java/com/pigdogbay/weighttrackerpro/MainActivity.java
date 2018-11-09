@@ -174,8 +174,7 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		requestCode=-1;
 		resultCode=RESULT_CANCELED;
 		onActivityCount=0;
-		setTitle(getString(R.string.title_welcome));
-		replaceFragment(new WelcomeWizardFragment(), WelcomeWizardFragment.TAG);
+		startActivity(new Intent(this,WelcomeActivity.class));
 	}
 	public void showNew(){
 		setTitle(getString(R.string.title_new));

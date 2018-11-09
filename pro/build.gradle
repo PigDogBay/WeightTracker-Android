@@ -18,13 +18,13 @@ android {
     }
     flavorDimensions "vanilla"
     productFlavors {
-        weightTrackerPro{
+        weightTrackerPro {
             applicationId "com.pigdogbay.weighttrackerpro"
             versionCode 20300
             versionName "2.03.00"
             dimension "vanilla"
         }
-        weightTrackerStd{
+        weightTrackerStd {
             applicationId "com.pigdogbay.weightrecorder"
             versionCode 11900
             versionName "1.19.00"

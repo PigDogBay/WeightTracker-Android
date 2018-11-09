@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="backup_readings_error">Backup Error</string>
-    <string translatable="false" name="web_error">No Web</string>
+    <string name="web_error" translatable="false">No Web</string>
     <string name="about_header_info">INFO</string>
     <string name="about_header_feedback">HELP OUT</string>
     <string name="about_body_feedback">Keep updates coming by rating the app, your feedback is most welcome. Try out my other Apps on Google Play.</string>
@@ -11,9 +11,9 @@
     <string name="about_no_market_app">Unable to find market app</string>
     <string name="about_release_notes">RELEASE NOTES</string>
     <string name="about_button_send_feedback">FEEDBACK</string>
-    <string translatable="false" name="about_button_feedback_subject">Weight Tracker Pro v2.02 Feedback</string>
+    <string name="about_button_feedback_subject" translatable="false">Weight Tracker Pro v2.02 Feedback</string>
     <string name="menu_settings">Settings</string>
-    <string translatable="false" name="title_main">Weight Tracker Pro</string>
+    <string name="title_main" translatable="false">Weight Tracker Pro</string>
     <string name="title_chart">Chart</string>
     <string name="title_list">Readings</string>
     <string name="title_new">New Weight</string>

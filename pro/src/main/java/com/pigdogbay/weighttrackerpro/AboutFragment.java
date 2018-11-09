@@ -30,33 +30,14 @@ public class AboutFragment extends Fragment {
 		}
 		View rootView = inflater.inflate(R.layout.fragment_about, container, false);
 		aboutVariation = new AboutVariation(this,rootView);
-		rootView.findViewById(R.id.aboutBtnRate).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showWebPage(getActivity(),R.string.market_app_url);
-			}
-		});
+		rootView.findViewById(R.id.aboutBtnRate).setOnClickListener(v -> showWebPage(getActivity(),R.string.market_app_url));
 
-		rootView.findViewById(R.id.aboutBtnSendFeedback).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				sendFeedback(getActivity());
-			}
-		});
+		rootView.findViewById(R.id.aboutBtnSendFeedback).setOnClickListener(v -> sendFeedback(getActivity()));
 
-		rootView.findViewById(R.id.aboutBtnLegal).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showLegalNotices();
-			}
-		});
-		rootView.findViewById(R.id.aboutBtnReleaseNotes).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				showWebPage(getActivity(),R.string.release_notes_url);
-			}
-		});
-		return rootView;
+		rootView.findViewById(R.id.aboutBtnLegal).setOnClickListener(v -> showLegalNotices());
+		rootView.findViewById(R.id.aboutBtnReleaseNotes).setOnClickListener(v -> showWebPage(getActivity(),R.string.release_notes_url));
+		rootView.findViewById(R.id.aboutBtnViewPrivacy).setOnClickListener(v -> showWebPage(getActivity(),R.string.privacy_policy_url));
+	return rootView;
 	}
 
 	public static void showWebPage(Activity activity, int urlId)

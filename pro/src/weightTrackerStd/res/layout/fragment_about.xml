@@ -39,16 +39,16 @@
         android:text="@string/about_button_legal" />
     </LinearLayout>
     <TextView
-		style="@style/AboutHeader"
-        android:text="@string/about_header_go_pro" />
+        style="@style/AboutHeader"
+        android:text="@string/about_header_privacy" />
     <TextView
-		style="@style/AboutBodyText"
-        android:text="@string/about_body_go_pro" />
+        style="@style/AboutBodyText"
+        android:text="@string/about_body_privacy" />
     <Button
         android:theme="@style/MaterialButton"
         style="@style/AboutButton"
-        android:id="@+id/aboutBtnGoPro"
-        android:text="@string/about_button_go_pro"/>
+        android:id="@+id/aboutBtnViewPrivacy"
+        android:text="@string/about_button_view_privacy"/>
     <TextView
 		style="@style/AboutHeader"
         android:text="@string/about_header_feedback" />
@@ -71,6 +71,17 @@
         android:id="@+id/aboutBtnRate"
         android:text="@string/about_button_rate"/>
     </LinearLayout>
-    
+    <TextView
+        style="@style/AboutHeader"
+        android:text="@string/about_header_go_pro" />
+    <TextView
+        style="@style/AboutBodyText"
+        android:text="@string/about_body_go_pro" />
+    <Button
+        android:theme="@style/MaterialButton"
+        style="@style/AboutButton"
+        android:id="@+id/aboutBtnGoPro"
+        android:text="@string/about_button_go_pro"/>
+
 </LinearLayout>
 </ScrollView>

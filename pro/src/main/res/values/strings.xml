@@ -12,6 +12,9 @@
     <string name="about_release_notes">RELEASE NOTES</string>
     <string name="about_button_send_feedback">FEEDBACK</string>
     <string name="about_button_feedback_subject" translatable="false">Weight Tracker Pro v2.02 Feedback</string>
+    <string name="about_header_privacy" translatable="false">PRIVACY POLICY</string>
+    <string name="about_body_privacy" translatable="false">This app uses Google\'s Admob and Firebase analytics to deliver relevant ads to you. Your weight readings are stored in a database on your device but will be saved to your Google Drive folder if you use the Sync functions.</string>
+    <string name="about_button_view_privacy" translatable="false">VIEW PRIVACY POLICY</string>
     <string name="menu_settings">Settings</string>
     <string name="title_main" translatable="false">Weight Tracker Pro</string>
     <string name="title_chart">Chart</string>

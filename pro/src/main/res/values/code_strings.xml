@@ -14,7 +14,8 @@
     <string translatable="false" name="code_pref_drive_connected_key">drive_connected_key</string>
     <string translatable="false" name="market_pigdogbay_apps">market://search?q=pub:Pig%20Dog%20Bay</string>
     <string translatable="false" name="release_notes_url">https://pigdogbay.blogspot.co.uk/</string>
-    <string translatable="false" name="privacy_policy_url">https://pigdogbay.blogspot.com/2016/12/privacy-policy.html</string>
+    <string translatable="false" name="privacy_policy_url">https://pigdogbay.blogspot.com/2018/11/weight-tracker-privacy-policy.html</string>
+    <string translatable="false" name="user_guide_url">https://pigdogbay.blogspot.com/2018/11/weight-tracker-user-guide.html</string>
     <string translatable="false" name="app_name">Weight Tracker Pro</string>
     <string translatable="false" name="market_app_url">market://details?id=com.pigdogbay.weighttrackerpro</string>
     <string translatable="false" name="market_pro_app_url">market://details?id=com.pigdogbay.weighttrackerpro</string>

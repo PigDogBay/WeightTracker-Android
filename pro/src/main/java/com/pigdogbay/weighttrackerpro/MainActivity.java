@@ -203,8 +203,7 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 		replaceFragment(new ReportFragment(), ReportFragment.TAG);
 	}
 	public void showHelp(){
-		setTitle(getString(R.string.title_help));
-		replaceFragment(new HelpWizardFragment(), HelpWizardFragment.TAG);
+	    AboutFragment.showWebPage(this,R.string.user_guide_url);
 	}
 	public void showSync() {
 		setTitle(getString(R.string.title_drive));

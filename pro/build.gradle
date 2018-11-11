@@ -26,8 +26,8 @@ android {
         }
         weightTrackerStd {
             applicationId "com.pigdogbay.weightrecorder"
-            versionCode 11900
-            versionName "1.19.00"
+            versionCode 11901
+            versionName "1.19.01"
             dimension "vanilla"
         }
     }

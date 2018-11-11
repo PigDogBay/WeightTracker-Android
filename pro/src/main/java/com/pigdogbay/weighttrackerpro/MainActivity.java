@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 			catch (Exception e) {
 				e.printStackTrace();
 			}
+			showHome();
 		}
 		mainModel.close();
 	}
@@ -87,10 +88,6 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 			SettingsUtils.setDefaultSettings(Locale.getDefault(), new MainModel(this));
 			mainModel.setIsFirstTime(true);
 			showWelcome();
-		}
-		else
-		{
-			showHome();
 		}
 	}
 	
